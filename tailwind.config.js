@@ -11,6 +11,8 @@ module.exports = {
         primary: 'var(--primary)',
         secondary: 'var(--secondary)',
         tertiary: 'var(--tertiary)',
+        input: 'var(--input)',
+        inputSecondary: 'var(--inputSecondary)',
         disabled: 'var(--disabled)',
         yellow: {
           200: '#ffe6cf',
@@ -22,10 +24,12 @@ module.exports = {
         primary: 'var(--text-primary)',
         secondary: 'var(--text-secondary)',
         disabled: 'var(--text-disabled)',
+        subtle: 'var(--text-subtle)',
       },
       shadow: {
         success: 'var(--shadow-success)',
         warning: 'var(--shadow-warning)',
+        inset: 'var(--shadow-inset)',
         focus: 'var(--shadow-focus)',
       },
       keyframes: {

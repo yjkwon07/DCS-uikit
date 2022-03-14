@@ -2,6 +2,8 @@ export const color = {
   primary: '#485861',
   secondary: '#394952',
   tertiary: '#EFF4F5',
+  input: '#eeeaf4',
+  inputSecondary: '#d7caec',
   disabled: '#E9EAEB',
 };
 
@@ -9,11 +11,13 @@ export const text = {
   primary: '#ffe6cf',
   secondary: '#485861',
   disabled: '#BDC2C4',
+  subtle: '#7A6EAA',
 };
 
 export const shadow = {
-  success: '0px 0px 0px 1px #31D0AA, 0px 0px 0px 4px rgba(49, 208, 170, 0.2)',
+  success: '0px 0px 0px 1px #1a73e8, 0px 0px 0px 4px rgba(79, 104, 225, 0.2)',
   warning: '0px 0px 0px 1px #ED4B9E, 0px 0px 0px 4px rgba(237, 75, 158, 0.2)',
+  inset: 'inset 0px 2px 2px -1px rgba(74, 74, 104, 0.1)',
   focus: '0px 0px 0px 1px #7645D9, 0px 0px 0px 4px rgba(118, 69, 217, 0.6)',
 };
 
@@ -21,10 +25,13 @@ export const base = {
   '--primary': color.primary,
   '--secondary': color.secondary,
   '--tertiary': color.tertiary,
+  '--input': color.input,
+  '--inputSecondary': color.inputSecondary,
   '--disabled': color.disabled,
   '--text-primary': text.primary,
   '--text-secondary': text.secondary,
   '--text-disabled': text.disabled,
+  '--text-subtle': text.subtle,
   '--shadow-success': shadow.success,
   '--shadow-warning': shadow.warning,
   '--shadow-focus': shadow.focus,
