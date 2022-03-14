@@ -1,21 +1,21 @@
 import { ReactElement } from 'react';
 
-export const size = {
+export const optionSize = {
   MD: 'md',
   SM: 'sm',
   XS: 'xs',
 } as const;
 
-export type Size = typeof size[keyof typeof size];
+export type Size = typeof optionSize[keyof typeof optionSize];
 
 export interface InputProps {
-  size?: Size;
+  size: Size;
   isSuccess?: boolean;
   isWarning?: boolean;
 }
 
 export interface InputGroupProps {
-  size?: Size;
+  size: Size;
   startIcon?: ReactElement;
   endIcon?: ReactElement;
 }
