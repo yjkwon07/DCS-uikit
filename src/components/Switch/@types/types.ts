@@ -4,7 +4,7 @@ import { Switch } from '@headlessui/react';
 
 import { PolymorphicComponentProps } from '@/typings/utils';
 
-export const size = {
+export const optionSize = {
   MD: 'md',
   SM: 'sm',
   XS: 'xs',

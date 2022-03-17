@@ -2,21 +2,21 @@ import { ButtonHTMLAttributes, CSSProperties, ElementType, ReactNode } from 'rea
 
 import { PolymorphicComponentProps } from '@/typings/utils';
 
-export const size = {
+export const optionSize = {
   MD: 'md',
   SM: 'sm',
   XS: 'xs',
 } as const;
 
-export const variant = {
+export const optionVariant = {
   PRIMARY: 'primary',
   SECONDARY: 'secondary',
   TERTIARY: 'tertiary',
   TEXT: 'text',
 } as const;
 
-export type Size = typeof size[keyof typeof size];
-export type Variant = typeof variant[keyof typeof variant];
+export type Size = typeof optionSize[keyof typeof optionSize];
+export type Variant = typeof optionVariant[keyof typeof optionVariant];
 
 export interface BaseButtonProps extends Omit<ButtonHTMLAttributes<HTMLButtonElement>, 'size'> {
   as?: 'a' | 'button' | ElementType;

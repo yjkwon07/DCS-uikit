@@ -1,21 +1,21 @@
 import tw, { styled, theme } from 'twin.macro';
 
-import { BaseButtonProps, size, variant } from '../@types/types';
+import { BaseButtonProps, optionSize, optionVariant } from '../@types/types';
 
 export const buttonClassName = {
   disable: 'button--disabled',
 };
 
 export const sizeVariant = {
-  [size.MD]: {
+  [optionSize.MD]: {
     height: '48px',
     padding: '0 24px',
   },
-  [size.SM]: {
+  [optionSize.SM]: {
     height: '32px',
     padding: '0 16px',
   },
-  [size.XS]: {
+  [optionSize.XS]: {
     height: '20px',
     fontSize: '12px',
     padding: '0 8px',
@@ -23,11 +23,11 @@ export const sizeVariant = {
 };
 
 export const styleVariant = {
-  [variant.PRIMARY]: {
+  [optionVariant.PRIMARY]: {
     backgroundColor: theme`colors.primary`,
     color: theme`textColor.primary`,
   },
-  [variant.SECONDARY]: {
+  [optionVariant.SECONDARY]: {
     backgroundColor: theme`colors.transparent`,
     border: '2px solid',
     borderColor: theme`colors.primary`,
@@ -37,12 +37,12 @@ export const styleVariant = {
       backgroundColor: theme`colors.transparent`,
     },
   },
-  [variant.TERTIARY]: {
+  [optionVariant.TERTIARY]: {
     backgroundColor: theme`colors.tertiary`,
     boxShadow: 'none',
     color: theme`colors.primary`,
   },
-  [variant.TEXT]: {
+  [optionVariant.TEXT]: {
     backgroundColor: theme`colors.transparent`,
     color: theme`colors.primary`,
     boxShadow: 'none',

@@ -7,7 +7,7 @@ export const switchClassName = {
   disable: 'switch--disabled',
 };
 
-export const sizeVariant = {
+export const optionSizeVariant = {
   [size.MD]: {
     switch: {
       height: '38px',
