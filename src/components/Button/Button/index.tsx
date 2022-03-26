@@ -1,5 +1,7 @@
 import { cloneElement, ElementType, isValidElement } from 'react';
 
+import tw from 'twin.macro';
+
 import externalLinkProps from '@/utils/externalLinkProps';
 
 import { ButtonProps } from '../@types';
@@ -30,15 +32,9 @@ const Button = <E extends ElementType = 'button'>(props: ButtonProps<E>) => {
       {...rest}
     >
       <>
-        {isValidElement(startIcon) &&
-          cloneElement(startIcon, {
-            mr: '0.5rem',
-          })}
+        {isValidElement(startIcon) && cloneElement(startIcon, { css: tw`mr-2` })}
         {children}
-        {isValidElement(endIcon) &&
-          cloneElement(endIcon, {
-            ml: '0.5rem',
-          })}
+        {isValidElement(endIcon) && cloneElement(endIcon, { css: tw`ml-2` })}
       </>
     </StyledButton>
   );
