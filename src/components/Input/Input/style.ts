@@ -2,7 +2,7 @@ import { styled, theme } from 'twin.macro';
 
 import { InputProps, optionSize } from '../@types';
 
-export const sizeVariant = {
+export const optionSizeVariant = {
   [optionSize.MD]: {
     height: '48px',
   },

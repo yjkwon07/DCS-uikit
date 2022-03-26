@@ -3,7 +3,7 @@ import { BrowserRouter, Link } from 'react-router-dom';
 import { theme } from 'twin.macro';
 
 import { AutoRenewIcon, SearchIcon } from '../Svg';
-import { size, variant } from './@types';
+import { SCALE, VARIANT } from './@types';
 import Button from './Button';
 import IconButton from './IconButton';
 
@@ -16,13 +16,13 @@ export default {
 export const Default = () => {
   return (
     <div>
-      {Object.values(variant).map((variant) => {
+      {Object.values(VARIANT).map((variant) => {
         return (
           <div tw="mb-[10px]" key={variant}>
-            {Object.values(size).map((size) => {
+            {Object.values(SCALE).map((scale) => {
               return (
-                <Button tw="mr-[10px]" key={size} variant={variant} size={size} isRound>
-                  {`${capitalize(variant)} ${size.toUpperCase()}`}
+                <Button mr="8px" key={scale} variant={variant} scale={scale}>
+                  {`${capitalize(variant)} ${scale.toUpperCase()}`}
                 </Button>
               );
             })}
@@ -30,10 +30,10 @@ export const Default = () => {
         );
       })}
       <div tw="mb-[10px]">
-        <Button tw="mr-[10px]" disabled isRound>
+        <Button mr="10px" disabled>
           Disabled
         </Button>
-        <Button variant="secondary" disabled isRound>
+        <Button variant="secondary" disabled>
           Disabled
         </Button>
       </div>
@@ -44,21 +44,21 @@ export const Default = () => {
 export const Anchors = () => {
   return (
     <div>
-      {Object.values(variant).map((variant) => {
+      {Object.values(VARIANT).map((variant) => {
         return (
           <div key={variant} tw="mb-[10px]">
-            {Object.values(size).map((size) => {
+            {Object.values(SCALE).map((scale) => {
               return (
                 <Button
                   as="a"
                   tw="mr-[10px]"
                   href="https://www.naver.com"
-                  key={size}
+                  key={scale}
                   variant={variant}
-                  size={size}
+                  scale={scale}
                   external
                 >
-                  {`${capitalize(variant)} anchor ${size.toUpperCase()}`}
+                  {`${capitalize(variant)} anchor ${scale.toUpperCase()}`}
                 </Button>
               );
             })}
@@ -82,37 +82,37 @@ export const Variants = () => {
     <div>
       <div tw="mb-[10px]">
         <BrowserRouter>
-          <Button as={Link} to="/" variant="secondary" isRound>
+          <Button as={Link} to="/" variant="secondary">
             As an React Router link
           </Button>
         </BrowserRouter>
       </div>
       <div tw="flex mb-[10px] gap-[10px]">
-        <Button tw="w-full" variant="primary" isRound startIcon={<SearchIcon color={theme`colors.white`} />}>
-          Full size
+        <Button tw="w-full" variant="primary" startIcon={<SearchIcon color={theme`colors.white`} />}>
+          Full scale
         </Button>
       </div>
       <div tw="flex mb-[10px] gap-[10px]">
-        <Button variant="primary" isLoading isRound startIcon={<AutoRenewIcon color={theme`colors.white`} spin />}>
+        <Button variant="primary" isLoading startIcon={<AutoRenewIcon color={theme`colors.white`} spin />}>
           Search
         </Button>
-        <Button variant="primary" isLoading isRound startIcon={<SearchIcon color={theme`colors.white`} />}>
+        <Button variant="primary" isLoading startIcon={<SearchIcon color={theme`colors.white`} />}>
           Search
         </Button>
       </div>
       <div tw="flex mb-[10px] gap-[10px]">
-        <IconButton variant="primary" size="md" isRound>
+        <IconButton variant="primary" scale="md">
           <SearchIcon color={theme`colors.white`} />
         </IconButton>
-        <IconButton variant="secondary" size="md" isRound>
+        <IconButton variant="secondary" scale="md">
           <SearchIcon />
         </IconButton>
       </div>
       <div tw="flex mb-[10px] gap-[10px]">
-        <IconButton variant="primary" size="sm" isRound>
+        <IconButton variant="primary" scale="sm">
           <SearchIcon color={theme`colors.white`} />
         </IconButton>
-        <IconButton variant="secondary" size="sm" isRound>
+        <IconButton variant="secondary" scale="sm">
           <SearchIcon />
         </IconButton>
       </div>
