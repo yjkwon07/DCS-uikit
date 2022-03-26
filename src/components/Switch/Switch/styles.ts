@@ -1,14 +1,14 @@
 import tw, { css, theme } from 'twin.macro';
 
-import { size } from '../@types/types';
+import { SCALE } from '../@types/types';
 
 export const switchClassName = {
   handle: 'switch--handle',
   disable: 'switch--disabled',
 };
 
-export const optionSizeVariant = {
-  [size.MD]: {
+export const sizeVariant = {
+  [SCALE.MD]: {
     switch: {
       height: '38px',
       width: '74px',
@@ -23,7 +23,7 @@ export const optionSizeVariant = {
       width: '34px',
     },
   },
-  [size.SM]: {
+  [SCALE.SM]: {
     switch: {
       height: '30px',
       width: '57px',
@@ -38,7 +38,7 @@ export const optionSizeVariant = {
       width: '26px',
     },
   },
-  [size.XS]: {
+  [SCALE.XS]: {
     switch: {
       height: '20px',
       width: '36px',
