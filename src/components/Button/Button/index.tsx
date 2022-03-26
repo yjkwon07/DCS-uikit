@@ -1,7 +1,5 @@
 import { cloneElement, ElementType, isValidElement } from 'react';
 
-import tw from 'twin.macro';
-
 import externalLinkProps from '@/utils/externalLinkProps';
 
 import { ButtonProps } from '../@types';
@@ -16,25 +14,31 @@ const Button = <E extends ElementType = 'button'>(props: ButtonProps<E>) => {
   const { startIcon, endIcon, external, className, isLoading, disabled, children, ...rest } = props;
   const internalProps = external ? externalLinkProps() : {};
 
-  const classNames = className ? [className] : [];
+  const classNameList = className ? [className] : [];
   const isDisabled = isLoading || disabled;
 
   if (isDisabled) {
-    classNames.push(buttonClassName.disable);
+    classNameList.push(buttonClassName.disable);
   }
 
   return (
     <StyledButton
-      className={classNames.join(' ')}
+      className={classNameList.join(' ')}
       isLoading={isLoading}
       disabled={isDisabled}
       {...internalProps}
       {...rest}
     >
       <>
-        {isValidElement(startIcon) && cloneElement(startIcon, { css: tw`mr-2` })}
+        {isValidElement(startIcon) &&
+          cloneElement(startIcon, {
+            mr: '0.5rem',
+          })}
         {children}
-        {isValidElement(endIcon) && cloneElement(endIcon, { css: tw`ml-2` })}
+        {isValidElement(endIcon) &&
+          cloneElement(endIcon, {
+            ml: '0.5rem',
+          })}
       </>
     </StyledButton>
   );
