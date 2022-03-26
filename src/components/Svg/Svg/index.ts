@@ -1,4 +1,5 @@
 import { keyframes } from '@emotion/react';
+import { space } from 'styled-system';
 import { styled, css, theme } from 'twin.macro';
 
 import { SvgProps } from '../@types';
@@ -21,10 +22,12 @@ const Svg = styled.svg<SvgProps>`
   fill: ${({ color }) => color};
   flex-shrink: 0;
   ${({ spin }) => spin && spinStyle}
+
+  ${space}
 `;
 
 Svg.defaultProps = {
-  color: theme`textColor.primary`,
+  color: theme`colors.primary`,
   width: '20px',
   xmlns: 'http://www.w3.org/2000/svg',
   spin: false,

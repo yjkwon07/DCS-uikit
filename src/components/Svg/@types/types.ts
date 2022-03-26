@@ -1,5 +1,7 @@
 import { SVGAttributes } from 'react';
 
-export interface SvgProps extends SVGAttributes<HTMLOrSVGElement> {
+import { SpaceProps } from 'styled-system';
+
+export interface SvgProps extends SVGAttributes<HTMLOrSVGElement>, SpaceProps {
   spin?: boolean;
 }

@@ -32,13 +32,13 @@ export const Default = () => {
 export const Icons = () => {
   return (
     <div tw="w-[300px]">
-      <InputGroup mb="24px" startIcon={<Search tw="w-[18px]" />} endIcon={<Moon tw="w-[18px]" />} scale="xs">
+      <InputGroup mb="24px" startIcon={<Search width="18px" />} endIcon={<Moon width="18px" />} scale="xs">
         <Input type="text" defaultValue="Input Group" />
       </InputGroup>
-      <InputGroup mb="24px" startIcon={<Search tw="w-[24px]" />} endIcon={<Moon tw="w-[24px]" />} scale="sm">
+      <InputGroup mb="24px" startIcon={<Search width="24px" />} endIcon={<Moon width="24px" />} scale="sm">
         <Input type="text" defaultValue="Input Group" />
       </InputGroup>
-      <InputGroup mb="24px" startIcon={<Search tw="w-[32px]" />} endIcon={<Moon tw="w-[32px]" />} scale="md">
+      <InputGroup mb="24px" startIcon={<Search width="32px" />} endIcon={<Moon width="32px" />} scale="md">
         <Input type="text" defaultValue="Input Group" />
       </InputGroup>
     </div>
