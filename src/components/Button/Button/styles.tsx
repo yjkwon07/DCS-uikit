@@ -1,4 +1,4 @@
-import { space, layout } from 'styled-system';
+import { space, layout, variant } from 'styled-system';
 import tw, { css, styled, theme } from 'twin.macro';
 
 import { BaseButtonProps, SCALE, VARIANT } from '../@types/types';
@@ -30,18 +30,18 @@ export const styleVariant = {
   },
   [VARIANT.SECONDARY]: {
     backgroundColor: theme`colors.transparent`,
+    color: theme`colors.primary`,
     border: '2px solid',
     borderColor: theme`colors.primary`,
     boxShadow: 'none',
-    color: theme`colors.primary`,
     [`&:disabled, &.${buttonClassName.disable}`]: {
       backgroundColor: theme`colors.transparent`,
     },
   },
   [VARIANT.TERTIARY]: {
     backgroundColor: theme`colors.tertiary`,
-    boxShadow: 'none',
     color: theme`colors.primary`,
+    boxShadow: 'none',
   },
   [VARIANT.TEXT]: {
     backgroundColor: theme`colors.transparent`,
@@ -90,9 +90,14 @@ export const StyledButton = styled.button<BaseButtonProps>`
 
   ${disabledStyle}
 
-  ${({ scale }) => scale && scaleVariant[scale]}
-  ${({ variant }) => variant && styleVariant[variant]}
-
+  ${variant({
+    prop: 'scale',
+    variants: scaleVariant,
+  })}
+  ${variant({
+    variants: styleVariant,
+  })}
+  
   ${layout}
   ${space}
 `;

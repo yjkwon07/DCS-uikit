@@ -50,10 +50,10 @@ export const Anchors = () => {
             {Object.values(SCALE).map((scale) => {
               return (
                 <Button
-                  as="a"
-                  tw="mr-[10px]"
-                  href="https://www.naver.com"
                   key={scale}
+                  as="a"
+                  mr="10px"
+                  href="https://www.naver.com"
                   variant={variant}
                   scale={scale}
                   external
@@ -66,7 +66,7 @@ export const Anchors = () => {
         );
       })}
       <div tw="mb-[10px]">
-        <Button as="a" href="https://www.naver.com" tw="mr-[10px]" external disabled>
+        <Button as="a" href="https://www.naver.com" mr="10px" external disabled>
           Disabled
         </Button>
         <Button as="a" href="https://www.naver.com" variant="secondary" external disabled>
@@ -88,7 +88,7 @@ export const Variants = () => {
         </BrowserRouter>
       </div>
       <div tw="flex mb-[10px] gap-[10px]">
-        <Button tw="w-full" variant="primary" startIcon={<SearchIcon color={theme`colors.white`} />}>
+        <Button width="100%" variant="primary" startIcon={<SearchIcon color={theme`colors.white`} />}>
           Full scale
         </Button>
       </div>
