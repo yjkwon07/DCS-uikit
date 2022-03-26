@@ -1,15 +1,16 @@
+import { layout, space, variant } from 'styled-system';
 import { styled, theme } from 'twin.macro';
 
-import { InputProps, optionSize } from '../@types';
+import { InputProps, SCALE } from '../@types';
 
-export const optionSizeVariant = {
-  [optionSize.MD]: {
+export const scaleVariant = {
+  [SCALE.MD]: {
     height: '48px',
   },
-  [optionSize.SM]: {
+  [SCALE.SM]: {
     height: '40px',
   },
-  [optionSize.XS]: {
+  [SCALE.XS]: {
     height: '32px',
   },
 };
@@ -28,17 +29,20 @@ export const boxShadow = ({ isSuccess = false, isWarning = false }: InputProps) 
 
 export const StyledInput = styled.input<InputProps>`
   background-color: ${theme`colors.tertiary`};
+  color: ${theme`textColor.secondary`};
   border: 0;
   border-radius: 10px;
   box-shadow: ${boxShadow};
-  color: ${theme`textColor.secondary`};
   display: block;
   font-size: 16px;
   outline: 0;
   padding: 0 16px;
   width: 100%;
 
-  ${({ size }) => size && sizeVariant[size]}
+  ${variant({
+    prop: 'scale',
+    variants: scaleVariant,
+  })}
 
   &:disabled {
     background-color: ${theme`colors.disabled`};
@@ -50,4 +54,7 @@ export const StyledInput = styled.input<InputProps>`
   &:focus:not(:disabled) {
     box-shadow: ${theme`shadow.focus`};
   }
+
+  ${layout}
+  ${space}
 `;

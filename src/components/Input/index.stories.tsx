@@ -1,6 +1,6 @@
 import Moon from '../Svg/Icons/Moon';
 import Search from '../Svg/Icons/Search';
-import { optionSize } from './@types';
+import { SCALE } from './@types';
 import Input from './Input';
 import InputGroup from './InputGroup';
 
@@ -13,15 +13,15 @@ export default {
 export const Default = () => {
   return (
     <div>
-      {Object.keys(optionSize).map((key) => (
+      {Object.values(SCALE).map((scale) => (
         <>
-          <div tw="mb-[16px] font-bold">{key}</div>
+          <div tw="mb-[16px] font-bold">{scale.toUpperCase()}</div>
           <div tw="flex mb-[32px] gap[16px]">
-            <Input type="text" size={optionSize[key]} defaultValue="value" />
-            <Input type="text" size={optionSize[key]} placeholder="입력하시오" />
-            <Input type="text" size={optionSize[key]} defaultValue="Disabled" disabled />
-            <Input type="text" size={optionSize[key]} defaultValue="Success" isSuccess />
-            <Input type="text" size={optionSize[key]} defaultValue="Warning" isWarning />
+            <Input type="text" scale={scale} defaultValue="value" />
+            <Input type="text" scale={scale} placeholder="입력하시오" />
+            <Input type="text" scale={scale} defaultValue="Disabled" disabled />
+            <Input type="text" scale={scale} defaultValue="Success" isSuccess />
+            <Input type="text" scale={scale} defaultValue="Warning" isWarning />
           </div>
         </>
       ))}
@@ -32,13 +32,13 @@ export const Default = () => {
 export const Icons = () => {
   return (
     <div tw="w-[300px]">
-      <InputGroup tw="mb-[24px]" startIcon={<Search tw="w-[18px]" />} endIcon={<Moon tw="w-[18px]" />} size="xs">
+      <InputGroup mb="24px" startIcon={<Search tw="w-[18px]" />} endIcon={<Moon tw="w-[18px]" />} scale="xs">
         <Input type="text" defaultValue="Input Group" />
       </InputGroup>
-      <InputGroup tw="mb-[24px]" startIcon={<Search tw="w-[24px]" />} endIcon={<Moon tw="w-[24px]" />} size="sm">
+      <InputGroup mb="24px" startIcon={<Search tw="w-[24px]" />} endIcon={<Moon tw="w-[24px]" />} scale="sm">
         <Input type="text" defaultValue="Input Group" />
       </InputGroup>
-      <InputGroup tw="mb-[24px]" startIcon={<Search tw="w-[32px]" />} endIcon={<Moon tw="w-[32px]" />} size="md">
+      <InputGroup mb="24px" startIcon={<Search tw="w-[32px]" />} endIcon={<Moon tw="w-[32px]" />} scale="md">
         <Input type="text" defaultValue="Input Group" />
       </InputGroup>
     </div>
