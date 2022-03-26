@@ -1,15 +1,15 @@
 import { cloneElement, FC, isValidElement } from 'react';
 
-import { InputGroupProps } from '../@types';
-import { InputIcon, StyledInputGroup } from './style';
+import { InputGroupProps, SCALE } from '../@types';
+import { InputIcon, StyledInputGroup } from './styles';
 
-const InputGroup: FC<InputGroupProps> = ({ size, startIcon, endIcon, children, ...props }) => {
+const InputGroup: FC<InputGroupProps> = ({ scale = SCALE.MD, startIcon, endIcon, children, ...props }) => {
   return (
-    <StyledInputGroup size={size} hasStartIcon={!!startIcon} hasEndIcon={!!endIcon} {...props}>
-      {startIcon && <InputIcon size={size}>{startIcon}</InputIcon>}
-      {isValidElement(children) && cloneElement(children, { size })}
+    <StyledInputGroup scale={scale} hasStartIcon={!!startIcon} hasEndIcon={!!endIcon} {...props}>
+      {startIcon && <InputIcon scale={scale}>{startIcon}</InputIcon>}
+      {isValidElement(children) && cloneElement(children, { scale })}
       {endIcon && (
-        <InputIcon size={size} isEndIcon>
+        <InputIcon scale={scale} isEndIcon>
           {endIcon}
         </InputIcon>
       )}
