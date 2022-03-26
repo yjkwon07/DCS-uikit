@@ -2,7 +2,7 @@ import { useState } from 'react';
 
 import { IconComponent } from '@/components/Svg';
 
-import { size } from './@types';
+import { SCALE } from './@types';
 import Switch from './Switch';
 
 export default {
@@ -17,12 +17,12 @@ export const Default = () => {
   return (
     <div>
       <div tw="mb-[10px]">
-        {Object.values(size).map((size) => {
+        {Object.values(SCALE).map((scale) => {
           return (
-            <div key={size} tw="mb-[10px]">
+            <div key={scale} tw="mb-[10px]">
               <Switch.Group>
-                <Switch.Label tw="mr-10">{size}</Switch.Label>
-                <Switch size={size} checked={enabled} onChange={setEnabled} description="toggle button" />
+                <Switch.Label tw="mr-10">{scale}</Switch.Label>
+                <Switch scale={scale} checked={enabled} onChange={setEnabled} description="toggle button" />
               </Switch.Group>
             </div>
           );
@@ -52,13 +52,13 @@ export const Icon = () => {
   return (
     <div>
       <div tw="mb-[10px]">
-        {Object.values(size).map((size) => {
+        {Object.values(SCALE).map((scale) => {
           return (
-            <div key={size} tw="mb-[10px]">
+            <div key={scale} tw="mb-[10px]">
               <Switch.Group>
-                <Switch.Label tw="mr-10">{size}</Switch.Label>
+                <Switch.Label tw="mr-10">{scale}</Switch.Label>
                 <Switch
-                  size={size}
+                  scale={scale}
                   checked={enabled}
                   onChange={setEnabled}
                   description="toggle button"

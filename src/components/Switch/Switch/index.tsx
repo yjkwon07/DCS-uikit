@@ -3,13 +3,13 @@ import { cloneElement, ElementType, isValidElement } from 'react';
 import { Switch as HSwitch } from '@headlessui/react';
 import tw, { theme } from 'twin.macro';
 
-import { SwitchProps } from '../@types';
+import { SCALE, SwitchProps } from '../@types';
 import { activeRingStyle, disabledStyle, sizeVariant, switchClassName } from './styles';
 
 const Switch = <E extends ElementType = 'button'>({
   checked,
   onChange,
-  size = 'md',
+  scale = SCALE.MD,
   description,
   startIcon,
   endIcon,
@@ -28,14 +28,14 @@ const Switch = <E extends ElementType = 'button'>({
         focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75`,
         activeRingStyle,
         disabledStyle,
-        sizeVariant[size].switch,
+        sizeVariant[scale].switch,
       ]}
       {...reset}
     >
       {(startIcon || endIcon) && (
         <div tw="absolute w-full h-full flex justify-center items-center gap-1">
-          {isValidElement(startIcon) && cloneElement(startIcon, { css: [sizeVariant[size].icon] })}
-          {isValidElement(endIcon) && cloneElement(endIcon, { css: [sizeVariant[size].icon] })}
+          {isValidElement(startIcon) && cloneElement(startIcon, { css: [sizeVariant[scale].icon] })}
+          {isValidElement(endIcon) && cloneElement(endIcon, { css: [sizeVariant[scale].icon] })}
         </div>
       )}
 
@@ -44,17 +44,17 @@ const Switch = <E extends ElementType = 'button'>({
         aria-hidden="true"
         className={switchClassName.handle}
         css={[
-          checked ? sizeVariant[size].checked : tw`translate-x-0`,
+          checked ? sizeVariant[scale].checked : tw`translate-x-0`,
           tw`rounded-full bg-white ring-0 transform transition ease-in duration-200
           inline-flex items-center justify-center
           `,
-          sizeVariant[size].handle,
+          sizeVariant[scale].handle,
         ]}
       >
         {checked
           ? isValidElement(endIcon) &&
-            cloneElement(endIcon, { css: [sizeVariant[size].icon], color: theme`colors.primary` })
-          : isValidElement(startIcon) && cloneElement(startIcon, { css: [sizeVariant[size].icon] })}
+            cloneElement(endIcon, { css: [sizeVariant[scale].icon], color: theme`colors.primary` })
+          : isValidElement(startIcon) && cloneElement(startIcon, { css: [sizeVariant[scale].icon] })}
       </span>
     </HSwitch>
   );

@@ -4,20 +4,20 @@ import { Switch } from '@headlessui/react';
 
 import { PolymorphicComponentProps } from '@/typings/utils';
 
-export const optionSize = {
+export const SCALE = {
   MD: 'md',
   SM: 'sm',
   XS: 'xs',
 } as const;
 
-export type Size = typeof size[keyof typeof size];
+export type Scale = typeof SCALE[keyof typeof SCALE];
 
 export type BaseSwitchProps = ComponentProps<typeof Switch> & {
   as?: 'div' | 'button' | ElementType;
   description?: string;
   className?: string;
   style?: CSSProperties;
-  size?: Size;
+  scale?: Scale;
   disabled?: boolean;
   startIcon?: ReactNode;
   endIcon?: ReactNode;
