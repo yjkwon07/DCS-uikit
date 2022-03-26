@@ -6,7 +6,7 @@ import Button from '../Button';
 const StyledIconButton = styled(Button)<BaseButtonProps>`
   ${tw`border-radius[23px]`}
   padding: 0;
-  width: ${({ size }) => (size === 'sm' ? '32px' : '48px')};
+  width: ${({ scale }) => (scale === 'sm' ? '32px' : '48px')};
 `;
 
 export default StyledIconButton;
