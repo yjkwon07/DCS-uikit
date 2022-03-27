@@ -46,8 +46,8 @@ export const StyledInput = styled.input<InputProps>`
 
   &:disabled {
     background-color: ${theme`colors.disabled`};
-    box-shadow: none;
     color: ${theme`textColor.disabled`};
+    box-shadow: none;
     cursor: not-allowed;
   }
 

@@ -30,7 +30,7 @@ export const styleVariant = {
   },
   [VARIANT.SECONDARY]: {
     backgroundColor: theme`colors.transparent`,
-    color: theme`colors.primary`,
+    color: theme`textColor.secondary`,
     border: '2px solid',
     borderColor: theme`colors.primary`,
     boxShadow: 'none',
@@ -40,12 +40,12 @@ export const styleVariant = {
   },
   [VARIANT.TERTIARY]: {
     backgroundColor: theme`colors.tertiary`,
-    color: theme`colors.primary`,
+    color: theme`textColor.secondary`,
     boxShadow: 'none',
   },
   [VARIANT.TEXT]: {
     backgroundColor: theme`colors.transparent`,
-    color: theme`colors.primary`,
+    color: theme`textColor.secondary`,
     boxShadow: 'none',
   },
 };
@@ -64,9 +64,9 @@ export const disabledStyle = ({ isLoading }: BaseButtonProps) => {
     &:disabled,
     &.${buttonClassName.disable} {
       background-color: ${theme`colors.disabled`};
+      color: ${theme`textColor.disabled`};
       border-color: ${theme`colors.disabled`};
       box-shadow: none;
-      color: ${theme`textColor.disabled`};
       cursor: not-allowed;
     }
   `;

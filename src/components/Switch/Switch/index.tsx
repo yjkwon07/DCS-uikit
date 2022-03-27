@@ -34,7 +34,8 @@ const Switch = <E extends ElementType = 'button'>({
     >
       {(startIcon || endIcon) && (
         <div tw="absolute w-full h-full flex justify-center items-center gap-1">
-          {isValidElement(startIcon) && cloneElement(startIcon, { css: [sizeVariant[scale].icon] })}
+          {isValidElement(startIcon) &&
+            cloneElement(startIcon, { css: [sizeVariant[scale].icon], color: theme`colors.tertiary` })}
           {isValidElement(endIcon) && cloneElement(endIcon, { css: [sizeVariant[scale].icon] })}
         </div>
       )}
