@@ -18,6 +18,7 @@ export const text = {
 export const shadow = {
   success: `0px 0px 0px 1px ${color.success}, 0px 0px 0px 4px rgba(118, 166, 225, 0.2)`,
   warning: `0px 0px 0px 1px ${color.warning}, 0px 0px 0px 4px rgba(237, 75, 158, 0.2)`,
+  inset: 'inset 0px 2px 2px -1px rgba(74, 74, 104, 0.1)',
   focus: `0px 0px 0px 1px ${color.focus}, 0px 0px 0px 4px rgba(183, 148, 255, 0.6)`,
 };
 
@@ -35,6 +36,7 @@ export const base = {
   '--text-subtle': text.subtle,
   '--shadow-success': shadow.success,
   '--shadow-warning': shadow.warning,
+  '--shadow-inset': shadow.inset,
   '--shadow-focus': shadow.focus,
 };
 
