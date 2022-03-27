@@ -30,6 +30,7 @@ module.exports = {
       shadow: {
         success: 'var(--shadow-success)',
         warning: 'var(--shadow-warning)',
+        inset: 'var(--shadow-inset)',
         focus: 'var(--shadow-focus)',
       },
       keyframes: {
