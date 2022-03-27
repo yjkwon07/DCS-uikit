@@ -6,6 +6,9 @@ const babel = require('../babel.config');
 module.exports = {
   stories: ['../src/components/**/*.stories.mdx', '../src/**/*.stories.@(js|jsx|ts|tsx)'],
   addons: ['@storybook/addon-essentials', '@storybook/addon-a11y', '@storybook/addon-links'],
+  core: {
+    builder: 'webpack5',
+  },
   babel: async (options) => {
     const pluginsPackageNameList = babelOptionFlatName(babel.plugins);
     const presetsPackageNameList = babelOptionFlatName(babel.presets);
