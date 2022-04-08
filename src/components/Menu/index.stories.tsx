@@ -1,3 +1,5 @@
+import { theme } from 'twin.macro';
+
 import {
   ArchiveActiveIcon,
   ArchiveInactiveIcon,
@@ -30,9 +32,9 @@ export const Default = () => {
               {({ active }) => (
                 <>
                   {active ? (
-                    <EditActiveIcon tw="w-5 h-5 mr-2" aria-hidden="true" />
+                    <EditActiveIcon tw="w-5 h-5 mr-2" aria-hidden="true" color={theme`textColor.subtle`} />
                   ) : (
-                    <EditInactiveIcon tw="w-5 h-5 mr-2" aria-hidden="true" />
+                    <EditInactiveIcon tw="w-5 h-5 mr-2" aria-hidden="true" color={theme`colors.white`} />
                   )}
                   Edit
                 </>
@@ -42,9 +44,9 @@ export const Default = () => {
               {({ active }) => (
                 <>
                   {active ? (
-                    <DuplicateActiveIcon tw="w-5 h-5 mr-2" aria-hidden="true" />
+                    <DuplicateActiveIcon tw="w-5 h-5 mr-2" aria-hidden="true" color={theme`textColor.subtle`} />
                   ) : (
-                    <DuplicateInactiveIcon tw="w-5 h-5 mr-2" aria-hidden="true" />
+                    <DuplicateInactiveIcon tw="w-5 h-5 mr-2" aria-hidden="true" color={theme`colors.white`} />
                   )}
                   Duplicate
                 </>
@@ -56,9 +58,9 @@ export const Default = () => {
               {({ active }) => (
                 <>
                   {active ? (
-                    <ArchiveActiveIcon tw="w-5 h-5 mr-2" aria-hidden="true" />
+                    <ArchiveActiveIcon tw="w-5 h-5 mr-2" aria-hidden="true" color={theme`textColor.subtle`} />
                   ) : (
-                    <ArchiveInactiveIcon tw="w-5 h-5 mr-2" aria-hidden="true" />
+                    <ArchiveInactiveIcon tw="w-5 h-5 mr-2" aria-hidden="true" color={theme`colors.white`} />
                   )}
                   Archive
                 </>
@@ -68,9 +70,9 @@ export const Default = () => {
               {({ active }) => (
                 <>
                   {active ? (
-                    <MoveActiveIcon tw="w-5 h-5 mr-2" aria-hidden="true" />
+                    <MoveActiveIcon tw="w-5 h-5 mr-2" aria-hidden="true" color={theme`textColor.subtle`} />
                   ) : (
-                    <MoveInactiveIcon tw="w-5 h-5 mr-2" aria-hidden="true" />
+                    <MoveInactiveIcon tw="w-5 h-5 mr-2" aria-hidden="true" color={theme`colors.white`} />
                   )}
                   Move
                 </>
@@ -82,9 +84,9 @@ export const Default = () => {
               {({ active }) => (
                 <>
                   {active ? (
-                    <DeleteActiveIcon tw="w-5 h-5 mr-2" aria-hidden="true" />
+                    <DeleteActiveIcon tw="w-5 h-5 mr-2" aria-hidden="true" color={theme`textColor.subtle`} />
                   ) : (
-                    <DeleteInactiveIcon tw="w-5 h-5 mr-2" aria-hidden="true" />
+                    <DeleteInactiveIcon tw="w-5 h-5 mr-2" aria-hidden="true" color={theme`colors.white`} />
                   )}
                   Delete
                 </>
