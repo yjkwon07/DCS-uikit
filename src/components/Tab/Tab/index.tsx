@@ -3,7 +3,7 @@ import { Fragment } from 'react';
 import { Tab as HTab } from '@headlessui/react';
 import tw from 'twin.macro';
 
-import { GroupProps, ListProps, PanelProps, PanelsProps, TabProps } from '../@types';
+import { TabGroupProps, TabListProps, TabPanelProps, TabPanelsProps, TabProps } from '../@types';
 
 const Tab = ({ as = Fragment, children, ...reset }: TabProps) => {
   return (
@@ -12,8 +12,8 @@ const Tab = ({ as = Fragment, children, ...reset }: TabProps) => {
         <button
           type="button"
           css={[
-            tw`w-full py-2.5 text-sm leading-5 font-weight[600] text-primary rounded-lg`,
-            tw`focus:outline-none focus:ring-2 ring-offset-2 ring-offset-focus ring-white ring-opacity-60`,
+            tw`w-full py-2.5 leading-5 font-weight[600] text-primary rounded-lg`,
+            tw`focus:outline-none focus:ring-2 ring-offset-2 ring-offset-focus ring-white`,
             selected
               ? tw`bg-primary shadow`
               : tw`text-secondary hover:bg-primary hover:text-primary hover:opacity-[0.65]`,
@@ -26,25 +26,22 @@ const Tab = ({ as = Fragment, children, ...reset }: TabProps) => {
   );
 };
 
-const Group = (props: GroupProps) => {
+const Group = (props: TabGroupProps) => {
   return <HTab.Group {...props} />;
 };
 
-const List = (props: ListProps) => {
+const List = (props: TabListProps) => {
   return <HTab.List css={[tw`flex p-1 space-x-1 bg-tertiary rounded-xl`]} {...props} />;
 };
 
-const Panels = (props: PanelsProps) => {
+const Panels = (props: TabPanelsProps) => {
   return <HTab.Panels css={[tw`mt-2`]} {...props} />;
 };
 
-const Panel = (props: PanelProps) => {
+const Panel = (props: TabPanelProps) => {
   return (
     <HTab.Panel
-      css={[
-        tw`rounded-xl p-3`,
-        tw`focus:outline-none focus:ring-2 ring-offset-2 ring-offset-focus ring-white ring-opacity-60`,
-      ]}
+      css={[tw`rounded-xl p-3`, tw`focus:outline-none focus:ring-2 ring-offset-2 ring-offset-focus ring-white`]}
       {...props}
     />
   );
