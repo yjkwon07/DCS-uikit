@@ -1,3 +1,2 @@
-export { default as Input } from './Menu';
-export { default as InputGroup } from './InputGroup';
-export type { InputProps, InputGroupProps, Scale as InputScale } from './@types/types';
+export { default as Menu } from './Menu';
+export type { MenuProps, MenuButtonProps, MenuItemsProps, MenuItemProps } from './@types/types';

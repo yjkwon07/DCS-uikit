@@ -1,5 +1,6 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 /* eslint-disable import/no-extraneous-dependencies */
+const colors = require('tailwindcss/colors');
 const plugin = require('tailwindcss/plugin');
 
 module.exports = {
@@ -20,6 +21,7 @@ module.exports = {
           300: '#fedd15',
           400: '#ffc000',
         },
+        ...colors,
       },
       textColor: {
         primary: 'var(--text-primary)',
