@@ -1,4 +1,14 @@
+export { default as ArchiveActiveIcon } from './ArchiveActive';
+export { default as ArchiveInactiveIcon } from './ArchiveInactive';
 export { default as AutoRenewIcon } from './AutoRenew';
+export { default as DeleteActiveIcon } from './DeleteActive';
+export { default as DeleteInactiveIcon } from './DeleteInactive';
+export { default as DuplicateActiveIcon } from './DuplicateActive';
+export { default as DuplicateInactiveIcon } from './DuplicateInactive';
+export { default as EditActiveIcon } from './EditActive';
+export { default as EditInactiveIcon } from './EditInactive';
+export { default as MoonIcon } from './Moon';
+export { default as MoveActiveIcon } from './MoveActive';
+export { default as MoveInactiveIcon } from './MoveInactive';
 export { default as SearchIcon } from './Search';
 export { default as SunIcon } from './Sun';
-export { default as MoonIcon } from './Moon';
