@@ -1,3 +1,5 @@
+import { theme } from 'twin.macro';
+
 export const color = {
   primary: '#485861',
   secondary: '#394952',
@@ -9,7 +11,7 @@ export const color = {
 };
 
 export const text = {
-  primary: '#ffe6cf',
+  primary: theme`colors.sky.100`,
   secondary: '#485861',
   disabled: '#BDC2C4',
   subtle: '#7A6EAA',
