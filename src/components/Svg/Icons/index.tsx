@@ -1,6 +1,7 @@
 export { default as ArchiveActiveIcon } from './ArchiveActive';
 export { default as ArchiveInactiveIcon } from './ArchiveInactive';
 export { default as AutoRenewIcon } from './AutoRenew';
+export { default as CheckIcon } from './Check';
 export { default as DeleteActiveIcon } from './DeleteActive';
 export { default as DeleteInactiveIcon } from './DeleteInactive';
 export { default as DuplicateActiveIcon } from './DuplicateActive';
