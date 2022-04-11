@@ -12,4 +12,5 @@ export { default as MoonIcon } from './Moon';
 export { default as MoveActiveIcon } from './MoveActive';
 export { default as MoveInactiveIcon } from './MoveInactive';
 export { default as SearchIcon } from './Search';
+export { default as SelectorIcon } from './Selector';
 export { default as SunIcon } from './Sun';
