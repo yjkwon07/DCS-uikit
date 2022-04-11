@@ -46,9 +46,8 @@ const Switch = <E extends ElementType = 'button'>({
         className={switchClassName.handle}
         css={[
           checked ? sizeVariant[scale].checked : tw`translate-x-0`,
-          tw`rounded-full bg-white ring-0 transform transition ease-in duration-200
-          inline-flex items-center justify-center
-          `,
+          tw`rounded-full bg-white ring-0 transform transition ease-in duration-200`,
+          tw`inline-flex items-center justify-center`,
           sizeVariant[scale].handle,
         ]}
       >
