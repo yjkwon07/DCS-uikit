@@ -5,7 +5,7 @@ import Input from './Input';
 import InputGroup from './InputGroup';
 
 export default {
-  title: 'Components/Input',
+  title: 'Form/Input',
   component: Input,
   argTypes: {},
 };
