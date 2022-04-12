@@ -9,6 +9,7 @@
     "dist"
   ],
   "scripts": {
+    "build-storybook": "build-storybook --docs",
     "storybook": "start-storybook -p 6006 -s public",
     "build": "rimraf dist && rollup -c && tsc -d",
     "eslint:fix": "npx eslint --fix ./src/**",
@@ -59,6 +60,7 @@
     "babel-loader": "^8.2.3",
     "babel-plugin-macros": "^3.1.0",
     "babel-plugin-twin": "^1.0.2",
+    "chromatic": "^6.5.4",
     "eslint": "7.32.0",
     "eslint-config-airbnb": "19.0.2",
     "eslint-config-prettier": "^8.5.0",
