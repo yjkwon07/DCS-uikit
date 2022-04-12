@@ -1,10 +1,16 @@
 import { cloneElement, ElementType, isValidElement } from 'react';
 
 import { Switch as HSwitch } from '@headlessui/react';
-import tw, { theme } from 'twin.macro';
+import { layout, space } from 'styled-system';
+import tw, { styled, theme } from 'twin.macro';
 
 import { SCALE, SwitchProps } from '../@types';
 import { activeRingStyle, disabledStyle, sizeVariant, switchClassName } from './styles';
+
+const StyledSwitch = styled(HSwitch)`
+  ${layout}
+  ${space}
+`;
 
 const Switch = <E extends ElementType = 'button'>({
   checked,
@@ -16,7 +22,7 @@ const Switch = <E extends ElementType = 'button'>({
   ...reset
 }: SwitchProps<E>) => {
   return (
-    <HSwitch
+    <StyledSwitch
       checked={checked}
       onChange={onChange}
       css={[
@@ -56,7 +62,7 @@ const Switch = <E extends ElementType = 'button'>({
             cloneElement(endIcon, { css: [sizeVariant[scale].icon], color: theme`colors.primary` })
           : isValidElement(startIcon) && cloneElement(startIcon, { css: [sizeVariant[scale].icon] })}
       </span>
-    </HSwitch>
+    </StyledSwitch>
   );
 };
 

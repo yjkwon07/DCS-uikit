@@ -1,8 +1,9 @@
 import { ComponentProps } from 'react';
 
 import { RadioGroup as HRadioGroup } from '@headlessui/react';
+import { LayoutProps, SpaceProps } from 'styled-system';
 
-export type RadioGroupProps = ComponentProps<typeof HRadioGroup>;
+export type RadioGroupProps = ComponentProps<typeof HRadioGroup> & LayoutProps & SpaceProps;
 export type RadioGroupLabelProps = ComponentProps<typeof HRadioGroup.Label> & {
   checked?: boolean;
   isScreenOnly?: boolean;

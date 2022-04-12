@@ -1,2 +1,2 @@
-export { default as Menu } from './Select';
+export { default as Select } from './Select';
 export type { SelectProps, SelectButtonProps, SelectOptionProps } from './@types/types';
