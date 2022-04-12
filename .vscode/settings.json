@@ -46,6 +46,7 @@
   },
   "tailwindcss.jsxPropImportChecking": false,
   "cSpell.words": [
+    "Combobox",
     "cssprop",
     "headlessui",
     "Listbox",
