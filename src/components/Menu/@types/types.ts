@@ -1,10 +1,11 @@
 import { ComponentProps, CSSProperties, ElementType } from 'react';
 
 import { Menu as HMenu } from '@headlessui/react';
+import { LayoutProps, SpaceProps } from 'styled-system';
 
 import { PolymorphicComponentProps } from '@/typings/utils';
 
-export type MenuProps = ComponentProps<typeof HMenu>;
+export type MenuProps = ComponentProps<typeof HMenu> & LayoutProps & SpaceProps;
 export type MenuButtonProps<E extends ElementType = 'button'> = PolymorphicComponentProps<
   E,
   {

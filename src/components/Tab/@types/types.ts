@@ -1,8 +1,9 @@
 import { ComponentProps } from 'react';
 
 import { Tab as HTab } from '@headlessui/react';
+import { LayoutProps, SpaceProps } from 'styled-system';
 
-export type TabProps = ComponentProps<typeof HTab>;
+export type TabProps = ComponentProps<typeof HTab> & LayoutProps & SpaceProps;
 export type TabGroupProps = ComponentProps<typeof HTab.Group>;
 export type TabListProps = ComponentProps<typeof HTab.List>;
 export type TabPanelsProps = ComponentProps<typeof HTab.Panels>;

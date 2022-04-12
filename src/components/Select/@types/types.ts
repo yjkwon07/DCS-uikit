@@ -16,14 +16,17 @@ export type SelectButtonProps<E extends ElementType = 'button'> = PolymorphicCom
     style?: CSSProperties;
   }
 >;
-export type SelectOptionsProps = {
-  as?: ElementType;
-  className?: string;
-  style?: CSSProperties;
-  static?: boolean;
-  unmount?: undefined;
-  children?: ReactNode;
-};
+export type SelectOptionsProps<E extends ElementType = 'ul'> = PolymorphicComponentProps<
+  E,
+  {
+    as?: ElementType;
+    className?: string;
+    style?: CSSProperties;
+    static?: boolean;
+    unmount?: undefined;
+    children?: ReactNode;
+  }
+>;
 export type SelectOptionProps = ComponentProps<typeof Select.Option> & {
   name: string;
   className?: string;

@@ -43,7 +43,7 @@ const Button = <E extends ElementType = 'button'>({
   );
 };
 
-const Options = (props: SelectOptionsProps) => {
+const Options = <E extends ElementType = 'ul'>(props: SelectOptionsProps<E>) => {
   return (
     <Transition as={Fragment} leave="transition ease-in duration-100" leaveFrom="opacity-100" leaveTo="opacity-0">
       <div tw="relative mt-1">

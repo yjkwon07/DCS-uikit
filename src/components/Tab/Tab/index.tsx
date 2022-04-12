@@ -1,13 +1,19 @@
 import { Fragment } from 'react';
 
 import { Tab as HTab } from '@headlessui/react';
-import tw from 'twin.macro';
+import { layout, space } from 'styled-system';
+import tw, { styled } from 'twin.macro';
 
 import { TabGroupProps, TabListProps, TabPanelProps, TabPanelsProps, TabProps } from '../@types';
 
+const StyledTab = styled(HTab)<TabProps>`
+  ${layout}
+  ${space}
+`;
+
 const Tab = ({ as = Fragment, children, ...reset }: TabProps) => {
   return (
-    <HTab as={as} {...reset}>
+    <StyledTab as={as} {...reset}>
       {({ selected }) => (
         <button
           type="button"
@@ -22,7 +28,7 @@ const Tab = ({ as = Fragment, children, ...reset }: TabProps) => {
           {children}
         </button>
       )}
-    </HTab>
+    </StyledTab>
   );
 };
 
