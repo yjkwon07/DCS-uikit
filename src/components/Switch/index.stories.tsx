@@ -6,7 +6,7 @@ import { SCALE } from './@types';
 import Switch from './Switch';
 
 export default {
-  title: 'Components/Switch',
+  title: 'Form/Switch',
   component: Switch,
   argTypes: {},
 };

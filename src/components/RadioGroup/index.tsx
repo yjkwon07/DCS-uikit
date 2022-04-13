@@ -1,2 +1,7 @@
-export { default as Menu } from './RadioGroup';
-export type { MenuProps, MenuButtonProps, MenuItemsProps, MenuItemProps } from './@types/types';
+export { default as RadioGroup } from './RadioGroup';
+export type {
+  RadioGroupDescriptionProps,
+  RadioGroupLabelProps,
+  RadioGroupOptionProps,
+  RadioGroupProps,
+} from './@types/types';

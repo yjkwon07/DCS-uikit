@@ -58,8 +58,8 @@ const categories = {
 
 export const Default = () => {
   return (
-    <div tw="w-full max-w-md px-2 py-16 sm:px-0">
-      <Tab.Group>
+    <div tw="flex justify-center">
+      <Tab.Group width={1 / 2}>
         <Tab.List>
           {Object.keys(categories).map((category) => (
             <Tab key={category}>{category}</Tab>

@@ -6,14 +6,9 @@ import tw, { styled } from 'twin.macro';
 
 import { TabGroupProps, TabListProps, TabPanelProps, TabPanelsProps, TabProps } from '../@types';
 
-const StyledTab = styled(HTab)<TabProps>`
-  ${layout}
-  ${space}
-`;
-
 const Tab = ({ as = Fragment, children, ...reset }: TabProps) => {
   return (
-    <StyledTab as={as} {...reset}>
+    <HTab as={as} {...reset}>
       {({ selected }) => (
         <button
           type="button"
@@ -28,12 +23,17 @@ const Tab = ({ as = Fragment, children, ...reset }: TabProps) => {
           {children}
         </button>
       )}
-    </StyledTab>
+    </HTab>
   );
 };
 
-const Group = (props: TabGroupProps) => {
-  return <HTab.Group {...props} />;
+const StyledTabGroup = styled(HTab.Group)`
+  ${layout}
+  ${space}
+`;
+
+const Group = ({ as = 'div', ...reset }: TabGroupProps) => {
+  return <StyledTabGroup as={as} {...reset} />;
 };
 
 const List = (props: TabListProps) => {

@@ -3,7 +3,7 @@ import { useState } from 'react';
 import AutoSelect from './AutoSelect';
 
 export default {
-  title: 'Components/AutoSelect',
+  title: 'Form/AutoSelect',
   argTypes: {},
 };
 
