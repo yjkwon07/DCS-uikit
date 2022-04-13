@@ -8,7 +8,7 @@ import Button from './Button';
 import IconButton from './IconButton';
 
 export default {
-  title: 'Components/Button',
+  title: 'Form/Button',
   component: Button,
   argTypes: {},
 };
