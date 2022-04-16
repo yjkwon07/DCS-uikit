@@ -34,6 +34,7 @@
   ],
   "exclude": [
     "node_modules",
+    "**/*.stories.tsx"
   ],
   "typeRoots": [
     "node_modules/@types",
