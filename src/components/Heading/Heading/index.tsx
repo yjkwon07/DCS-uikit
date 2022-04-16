@@ -4,7 +4,7 @@ import { Text } from '@/components/Text';
 
 import { HeadingProps, SCALE, TAG } from '../@types';
 
-const style = {
+const scaleVariant = {
   [SCALE.MD]: {
     fontSize: '20px',
     fontSizeLg: '20px',
@@ -24,12 +24,12 @@ const style = {
 };
 
 const Heading = styled(Text)<HeadingProps>`
-  font-size: ${({ scale }) => style[scale || SCALE.MD].fontSize};
+  font-size: ${({ scale }) => scaleVariant[scale || SCALE.MD].fontSize};
   font-weight: 600;
   line-height: 1.1;
 
   ${theme`screens.lg`} {
-    font-size: ${({ scale }) => style[scale || SCALE.MD].fontSizeLg};
+    font-size: ${({ scale }) => scaleVariant[scale || SCALE.MD].fontSizeLg};
   }
 `;
 
