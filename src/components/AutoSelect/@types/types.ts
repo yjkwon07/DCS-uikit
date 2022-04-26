@@ -2,7 +2,7 @@ import { ComponentProps, CSSProperties, ElementType, ReactNode } from 'react';
 
 import { Combobox as HAutoSelect } from '@headlessui/react';
 
-import { PolymorphicComponentProps } from '@/typings/utils';
+import { PolymorphicComponentProps } from '../../../typings/utils';
 
 export type AutoSelectProps<E extends ElementType = 'div', T = unknown> = PolymorphicComponentProps<
   E,
