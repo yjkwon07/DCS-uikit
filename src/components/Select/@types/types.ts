@@ -3,7 +3,7 @@ import { ComponentProps, CSSProperties, ElementType, ReactNode } from 'react';
 import { Listbox as Select } from '@headlessui/react';
 import { LayoutProps, SpaceProps } from 'styled-system';
 
-import { PolymorphicComponentProps } from '@/typings/utils';
+import { PolymorphicComponentProps } from '../../../typings/utils';
 
 export type SelectProps = ComponentProps<typeof Select> & LayoutProps & SpaceProps;
 export type SelectButtonProps<E extends ElementType = 'button'> = PolymorphicComponentProps<

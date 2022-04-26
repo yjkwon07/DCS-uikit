@@ -3,7 +3,7 @@ import { ComponentProps, CSSProperties, ElementType, ReactNode } from 'react';
 import { Switch } from '@headlessui/react';
 import { LayoutProps, SpaceProps } from 'styled-system';
 
-import { PolymorphicComponentProps } from '@/typings/utils';
+import { PolymorphicComponentProps } from '../../../typings/utils';
 
 export const SCALE = {
   MD: 'md',

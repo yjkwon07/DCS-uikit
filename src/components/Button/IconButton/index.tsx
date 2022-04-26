@@ -1,5 +1,4 @@
-import { PolymorphicComponent } from '@/typings/utils';
-
+import { PolymorphicComponent } from '../../../typings/utils';
 import { BaseButtonProps } from '../@types';
 import StyledIconButton from './styles';
 
