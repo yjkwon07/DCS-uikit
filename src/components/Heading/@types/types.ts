@@ -8,10 +8,10 @@ export const TAG = {
 } as const;
 
 export const SCALE = {
-  MD: 'md',
-  LG: 'lg',
-  XL: 'xl',
   XXL: 'xxl',
+  XL: 'xl',
+  LG: 'lg',
+  MD: 'md',
 } as const;
 
 export type Tag = typeof TAG[keyof typeof TAG];
