@@ -1,6 +1,6 @@
 import { OverlayProps } from '../@types';
 
-const Overlay = ({ className = '', onClick }: OverlayProps) => {
+const Overlay = ({ className, onClick }: OverlayProps) => {
   return (
     <div
       role="presentation"
