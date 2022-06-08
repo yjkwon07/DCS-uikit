@@ -1,5 +1,6 @@
 import { useState } from 'react';
 
+import { Flex } from '../Flex';
 import Select from './Select';
 
 export default {
@@ -20,7 +21,7 @@ export const Default = () => {
   const [selected, setSelected] = useState<{ name: string }>();
 
   return (
-    <div tw="flex justify-center">
+    <Flex justifyContent="center">
       <Select width="300px" value={selected} onChange={setSelected}>
         <Select.Button selectedName={selected?.name} />
         <Select.Options>
@@ -29,6 +30,6 @@ export const Default = () => {
           ))}
         </Select.Options>
       </Select>
-    </div>
+    </Flex>
   );
 };
