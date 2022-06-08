@@ -1,14 +1,3 @@
-import { background, border, layout, position, space } from 'styled-system';
-import { styled } from 'twin.macro';
-
-import { BoxProps } from '../@types';
-
-const Box = styled.div<BoxProps>`
-  ${background}
-  ${border}
-  ${layout}
-  ${position}
-  ${space}
-`;
+import { StyledBox as Box } from './styles';
 
 export default Box;

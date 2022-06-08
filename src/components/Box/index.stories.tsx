@@ -10,10 +10,10 @@ export default {
 
 export const Default = () => {
   return (
-    <div>
+    <Box as="div">
       <Box as="p" background={theme`colors.tertiary`}>
         Contains background, border, layout, position, and space from
       </Box>
-    </div>
+    </Box>
   );
 };
