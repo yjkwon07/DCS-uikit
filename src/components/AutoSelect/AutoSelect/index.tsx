@@ -1,11 +1,10 @@
 import { ElementType, Fragment } from 'react';
 
 import { Combobox as HAutoSelect, Transition } from '@headlessui/react';
-import { space, layout, compose } from 'styled-system';
-import tw, { styled } from 'twin.macro';
+import { space, layout } from 'styled-system';
+import tw from 'twin.macro';
 
-import { CheckIcon, SelectorIcon } from '@/components/Svg';
-
+import { CheckIcon, SelectorIcon } from '../../Svg';
 import {
   AutoSelectProps,
   AutoSelectButtonProps,
@@ -16,7 +15,18 @@ import {
 } from '../@types';
 
 const AutoSelect = <E extends ElementType, T>(props: AutoSelectProps<E, T>) => {
-  return <HAutoSelect as="div" {...props} />;
+  return (
+    <HAutoSelect
+      as="div"
+      css={[
+        `
+        ${space}
+        ${layout}
+      `,
+      ]}
+      {...props}
+    />
+  );
 };
 
 const InputGroup = (props: AutoSelectInputGroupProps) => {
@@ -109,10 +119,10 @@ const Option = ({ name, ...reset }: AutoSelectOptionProps) => {
   );
 };
 
-export default Object.assign(styled(AutoSelect)(compose(space, layout)), {
-  InputGroup,
-  Input,
-  Button,
-  Options,
-  Option,
-});
+AutoSelect.InputGroup = InputGroup;
+AutoSelect.Input = Input;
+AutoSelect.Button = Button;
+AutoSelect.Options = Options;
+AutoSelect.Option = Option;
+
+export default AutoSelect;

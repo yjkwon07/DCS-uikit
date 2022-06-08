@@ -47,7 +47,7 @@ export type AutoSelectOptionProps = ComponentProps<typeof HAutoSelect.Option> & 
   name: string;
   className?: string;
   style?: CSSProperties;
-  children?: (bag: {
+  children?: (option: {
     selected: boolean;
     active: boolean;
     disabled: boolean;
