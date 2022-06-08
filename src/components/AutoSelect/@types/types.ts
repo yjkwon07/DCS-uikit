@@ -1,20 +1,23 @@
 import { ComponentProps, CSSProperties, ElementType, ReactNode } from 'react';
 
 import { Combobox as HAutoSelect } from '@headlessui/react';
+import { LayoutProps, SpaceProps } from 'styled-system';
 
 import { PolymorphicComponentProps } from '../../../typings/utils';
 
-export type AutoSelectProps<E extends ElementType = 'div', T = unknown> = PolymorphicComponentProps<
-  E,
-  {
-    as?: ElementType;
-    className?: string;
-    style?: CSSProperties;
-    value: T;
-    onChange(value: T): void;
-    disabled?: boolean | undefined;
-  }
->;
+export type AutoSelectProps<E extends ElementType = 'div', T = unknown> = LayoutProps &
+  SpaceProps &
+  PolymorphicComponentProps<
+    E,
+    {
+      as?: ElementType;
+      className?: string;
+      style?: CSSProperties;
+      value: T;
+      onChange(value: T): void;
+      disabled?: boolean | undefined;
+    }
+  >;
 export type AutoSelectInputGroupProps = {
   children?: ReactNode;
 };

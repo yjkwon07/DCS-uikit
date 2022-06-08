@@ -4,8 +4,7 @@ import { Listbox as HSelect, Transition } from '@headlessui/react';
 import { space, layout } from 'styled-system';
 import tw, { styled } from 'twin.macro';
 
-import { CheckIcon, SelectorIcon } from '@/components/Svg';
-
+import { CheckIcon, SelectorIcon } from '../../Svg';
 import { SelectButtonProps, SelectOptionProps, SelectOptionsProps, SelectProps } from '../@types';
 
 const StyledSelect = styled(HSelect)<SelectProps>`

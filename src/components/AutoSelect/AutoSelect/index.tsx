@@ -2,7 +2,7 @@ import { ElementType, Fragment } from 'react';
 
 import { Combobox as HAutoSelect, Transition } from '@headlessui/react';
 import { space, layout } from 'styled-system';
-import tw from 'twin.macro';
+import tw, { styled } from 'twin.macro';
 
 import { CheckIcon, SelectorIcon } from '../../Svg';
 import {
@@ -14,19 +14,13 @@ import {
   AutoSelectInputGroupProps,
 } from '../@types';
 
+const StyledAutoSelect = styled(HAutoSelect as any)`
+  ${layout}
+  ${space}
+`;
+
 const AutoSelect = <E extends ElementType, T>(props: AutoSelectProps<E, T>) => {
-  return (
-    <HAutoSelect
-      as="div"
-      css={[
-        `
-        ${space}
-        ${layout}
-      `,
-      ]}
-      {...props}
-    />
-  );
+  return <StyledAutoSelect as="div" {...props} />;
 };
 
 const InputGroup = (props: AutoSelectInputGroupProps) => {

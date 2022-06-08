@@ -2,24 +2,17 @@ import { ElementType, Fragment } from 'react';
 
 import { Menu as HMenu, Transition } from '@headlessui/react';
 import { layout, space } from 'styled-system';
-import tw from 'twin.macro';
+import tw, { styled } from 'twin.macro';
 
 import { MenuButtonProps, MenuItemProps, MenuItemsProps, MenuProps } from '../@types';
 
+const StyledMenu = styled(HMenu)`
+  ${layout}
+  ${space}
+`;
+
 const Menu = (props: MenuProps) => {
-  return (
-    <HMenu
-      as="div"
-      css={[
-        `
-        ${space}
-        ${layout}
-      `,
-        tw`relative inline-block text-left`,
-      ]}
-      {...props}
-    />
-  );
+  return <StyledMenu as="div" css={[tw`relative inline-block text-left`]} {...props} />;
 };
 
 const Button = <E extends ElementType = 'button'>(props: MenuButtonProps<E>) => {
