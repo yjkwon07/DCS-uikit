@@ -15,7 +15,7 @@ export const scaleVariant = {
   },
 };
 
-export const boxShadow = ({ isSuccess = false, isWarning = false }: InputProps) => {
+export const boxShadowStyle = ({ isSuccess = false, isWarning = false }: InputProps) => {
   if (isWarning) {
     return theme`shadow.warning`;
   }
@@ -32,7 +32,7 @@ export const StyledInput = styled.input<InputProps>`
   color: ${theme`textColor.secondary`};
   border: 0;
   border-radius: 10px;
-  box-shadow: ${boxShadow};
+  box-shadow: ${boxShadowStyle};
   display: block;
   font-size: 16px;
   outline: 0;
