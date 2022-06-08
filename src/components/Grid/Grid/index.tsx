@@ -1,13 +1,3 @@
-import { grid, flexbox } from 'styled-system';
-import { styled } from 'twin.macro';
-
-import { Box } from '../../Box';
-import { GridProps } from '../@types';
-
-const Grid = styled(Box)<GridProps>`
-  display: grid;
-  ${flexbox}
-  ${grid}
-`;
+import { StyledGrid as Grid } from './styles';
 
 export default Grid;
