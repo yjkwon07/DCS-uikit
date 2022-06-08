@@ -1,5 +1,6 @@
 import { useState } from 'react';
 
+import { Box } from '../Box';
 import RadioGroup from './RadioGroup';
 
 export default {
@@ -36,7 +37,7 @@ export const Default = () => {
       <div tw="w-full max-w-md mx-auto">
         <RadioGroup value={selected} onChange={setSelected}>
           <RadioGroup.Label tw="sr-only">Server size</RadioGroup.Label>
-          <div tw="space-y-2">
+          <Box tw="space-y-2">
             {plans.map((plan) => (
               <RadioGroup.Option key={plan.name} value={plan}>
                 {({ checked }) => (
@@ -54,7 +55,7 @@ export const Default = () => {
                 )}
               </RadioGroup.Option>
             ))}
-          </div>
+          </Box>
         </RadioGroup>
       </div>
     </div>
