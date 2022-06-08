@@ -1,12 +1,11 @@
-/* eslint-disable react/default-props-match-prop-types */
-import { cloneElement, FC, isValidElement } from 'react';
+import { cloneElement, isValidElement } from 'react';
 
 import tw from 'twin.macro';
 
-import { TagProps } from '../@types/types';
+import { TagProps } from '../@types';
 import { StyledTag } from './styles';
 
-const Tag: FC<TagProps> = ({ startIcon, endIcon, children, ...reset }) => (
+const Tag: React.FC<TagProps> = ({ startIcon, endIcon, children, ...reset }) => (
   <StyledTag {...reset}>
     {isValidElement(startIcon) &&
       cloneElement(startIcon, {

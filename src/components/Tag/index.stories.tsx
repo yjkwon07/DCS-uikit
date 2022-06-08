@@ -1,5 +1,4 @@
 import { capitalize } from 'lodash-es';
-import { theme } from 'twin.macro';
 
 import { Box } from '../Box';
 import { Flex } from '../Flex';
