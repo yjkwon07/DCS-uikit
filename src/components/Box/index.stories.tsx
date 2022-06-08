@@ -11,8 +11,8 @@ export default {
 export const Default = () => {
   return (
     <div>
-      <Box as="p" background={theme`colors.disabled`}>
-        Contains background, border, layout, position, and space from{' '}
+      <Box as="p" background={theme`colors.tertiary`}>
+        Contains background, border, layout, position, and space from
       </Box>
     </div>
   );
