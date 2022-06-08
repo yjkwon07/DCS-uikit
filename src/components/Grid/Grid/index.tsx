@@ -1,8 +1,7 @@
 import { grid, flexbox } from 'styled-system';
 import { styled } from 'twin.macro';
 
-import { Box } from '@/components/Box';
-
+import { Box } from '../../Box';
 import { GridProps } from '../@types';
 
 const Grid = styled(Box)<GridProps>`

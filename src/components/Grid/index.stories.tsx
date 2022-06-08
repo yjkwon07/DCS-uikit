@@ -18,8 +18,8 @@ export const Default = () => {
       gridColumnGap="16px"
       background={theme`colors.disabled`}
     >
-      <Box style={{ backgroundColor: '#1fc7d4', width: '300px', height: '300px' }} />
-      <Box style={{ backgroundColor: '#1fc7d4', width: '300px', height: '300px' }} />
+      <Box background="#1fc7d4" width={300} height={300} />
+      <Box background="#1fc7d4" width={300} height={300} />
     </Grid>
   );
 };
