@@ -1,3 +1,5 @@
+import { Box } from '../Box';
+import { Heading } from '../Heading';
 import Moon from '../Svg/Icons/Moon';
 import Search from '../Svg/Icons/Search';
 import { SCALE } from './@types';
@@ -15,7 +17,9 @@ export const Default = () => {
     <div>
       {Object.values(SCALE).map((scale) => (
         <>
-          <div tw="mb-[16px] font-bold">{scale.toUpperCase()}</div>
+          <Heading mb="16px" bold>
+            {scale.toUpperCase()}
+          </Heading>
           <div tw="flex mb-[32px] gap[16px]">
             <Input type="text" scale={scale} defaultValue="value" />
             <Input type="text" scale={scale} placeholder="입력하시오" />
@@ -31,7 +35,7 @@ export const Default = () => {
 
 export const Icons = () => {
   return (
-    <div tw="w-[300px]">
+    <Box width={300}>
       <InputGroup mb="24px" startIcon={<Search width="18px" />} endIcon={<Moon width="18px" />} scale="xs">
         <Input type="text" defaultValue="Input Group" />
       </InputGroup>
@@ -41,6 +45,6 @@ export const Icons = () => {
       <InputGroup mb="24px" startIcon={<Search width="32px" />} endIcon={<Moon width="32px" />} scale="md">
         <Input type="text" defaultValue="Input Group" />
       </InputGroup>
-    </div>
+    </Box>
   );
 };

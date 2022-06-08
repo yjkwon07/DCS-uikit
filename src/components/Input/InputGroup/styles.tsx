@@ -4,7 +4,7 @@ import tw, { css, styled } from 'twin.macro';
 import { SCALE, Scale } from '../@types';
 import Input from '../Input';
 
-const styledInputPadding = (scale: Scale, hasIcon: boolean) => {
+const inputPaddingStyle = (scale: Scale, hasIcon: boolean) => {
   if (!hasIcon) {
     return '16px';
   }
@@ -23,8 +23,8 @@ const styledInputPadding = (scale: Scale, hasIcon: boolean) => {
 export const StyledInputGroup = styled.div<{ scale: Scale; hasStartIcon: boolean; hasEndIcon: boolean }>`
   ${tw`relative w-full`}
   ${Input} {
-    padding-left: ${({ hasStartIcon, scale }) => styledInputPadding(scale, hasStartIcon)};
-    padding-right: ${({ hasEndIcon, scale }) => styledInputPadding(scale, hasEndIcon)};
+    padding-left: ${({ hasStartIcon, scale }) => inputPaddingStyle(scale, hasStartIcon)};
+    padding-right: ${({ hasEndIcon, scale }) => inputPaddingStyle(scale, hasEndIcon)};
   }
 
   ${layout}
