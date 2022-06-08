@@ -11,7 +11,7 @@
   "scripts": {
     "build-storybook": "build-storybook --docs",
     "storybook": "start-storybook -p 6006 -s public",
-    "build": "rimraf dist && rollup -c && tsc -d",
+    "build": "rimraf dist && rollup -c && tsc -p tsconfig.prod.json",
     "eslint:fix": "npx eslint --fix ./src/**",
     "prepack": "npm run build"
   },
