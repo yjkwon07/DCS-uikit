@@ -2,9 +2,8 @@ import { cloneElement, ElementType, isValidElement } from 'react';
 
 import tw from 'twin.macro';
 
-import externalLinkProps from '@/utils/externalLinkProps';
-
-import { ButtonProps } from '../@types';
+import externalLinkProps from '../../../utils/externalLinkProps';
+import { ButtonProps, SCALE, VARIANT } from '../@types';
 import { buttonClassName, StyledButton } from './styles';
 
 /**
@@ -12,8 +11,16 @@ import { buttonClassName, StyledButton } from './styles';
  * @see https://ui.toast.com/weekly-pick/ko_20210505
  */
 
-const Button = <E extends ElementType = 'button'>(props: ButtonProps<E>) => {
-  const { startIcon, endIcon, external, className, isLoading, disabled, children, ...rest } = props;
+const Button = <E extends ElementType = 'button'>({
+  startIcon,
+  endIcon,
+  external,
+  className,
+  isLoading,
+  disabled,
+  children,
+  ...rest
+}: ButtonProps<E>) => {
   const internalProps = external ? externalLinkProps() : {};
 
   const classNameList = className ? [className] : [];
@@ -38,6 +45,14 @@ const Button = <E extends ElementType = 'button'>(props: ButtonProps<E>) => {
       </>
     </StyledButton>
   );
+};
+
+Button.defaultProps = {
+  isLoading: false,
+  external: false,
+  variant: VARIANT.PRIMARY,
+  scale: SCALE.MD,
+  disabled: false,
 };
 
 export default Button;

@@ -1,8 +1,7 @@
-import { PolymorphicComponent } from '../../../typings/utils';
-import { BaseButtonProps } from '../@types';
+import { ButtonProps } from '../@types';
 import StyledIconButton from './styles';
 
-const IconButton: PolymorphicComponent<BaseButtonProps, 'button'> = (props) => {
+const IconButton = (props: ButtonProps<'button'>) => {
   return <StyledIconButton aria-label="icon-button" {...props} />;
 };
 
