@@ -1,18 +1,23 @@
 import { RadioGroup as HRadioGroup } from '@headlessui/react';
 import { layout, space } from 'styled-system';
-import tw, { styled } from 'twin.macro';
+import tw from 'twin.macro';
 
 import { CheckIcon } from '@/components/Svg';
 
 import { RadioGroupDescriptionProps, RadioGroupLabelProps, RadioGroupOptionProps, RadioGroupProps } from '../@types';
 
-const StyledRadioGroup = styled(HRadioGroup)`
-  ${layout}
-  ${space}
-`;
-
 const RadioGroup = (props: RadioGroupProps) => {
-  return <StyledRadioGroup {...props} />;
+  return (
+    <HRadioGroup
+      css={[
+        `
+        ${layout}
+        ${space}
+      `,
+      ]}
+      {...props}
+    />
+  );
 };
 
 const Option = ({ children, ...reset }: RadioGroupOptionProps) => {
