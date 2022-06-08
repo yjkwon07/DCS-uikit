@@ -1,5 +1,7 @@
 import { theme } from 'twin.macro';
 
+import { Box } from '../Box';
+import { Flex } from '../Flex';
 import {
   ArchiveActiveIcon,
   ArchiveInactiveIcon,
@@ -21,20 +23,32 @@ export default {
 
 export const Default = () => {
   return (
-    <div tw="w-full flex justify-center">
+    <Flex justifyContent="center" width="100%">
       <Menu>
-        <div>
+        <Box>
           <Menu.Button>Options</Menu.Button>
-        </div>
+        </Box>
         <Menu.Items>
-          <div tw="px-1 py-1">
+          <Box px={1} py={1}>
             <Menu.Item>
               {({ active }) => (
                 <>
                   {active ? (
-                    <EditActiveIcon tw="w-5 h-5 mr-2" aria-hidden="true" color={theme`textColor.subtle`} />
+                    <EditActiveIcon
+                      width="1.25rem"
+                      height="1.25rem"
+                      mr="0.5rem"
+                      aria-hidden="true"
+                      color={theme`textColor.subtle`}
+                    />
                   ) : (
-                    <EditInactiveIcon tw="w-5 h-5 mr-2" aria-hidden="true" color={theme`colors.white`} />
+                    <EditInactiveIcon
+                      width="1.25rem"
+                      height="1.25rem"
+                      mr="0.5rem"
+                      aria-hidden="true"
+                      color={theme`colors.white`}
+                    />
                   )}
                   Edit
                 </>
@@ -44,23 +58,47 @@ export const Default = () => {
               {({ active }) => (
                 <>
                   {active ? (
-                    <DuplicateActiveIcon tw="w-5 h-5 mr-2" aria-hidden="true" color={theme`textColor.subtle`} />
+                    <DuplicateActiveIcon
+                      width="1.25rem"
+                      height="1.25rem"
+                      mr="0.5rem"
+                      aria-hidden="true"
+                      color={theme`textColor.subtle`}
+                    />
                   ) : (
-                    <DuplicateInactiveIcon tw="w-5 h-5 mr-2" aria-hidden="true" color={theme`colors.white`} />
+                    <DuplicateInactiveIcon
+                      width="1.25rem"
+                      height="1.25rem"
+                      mr="0.5rem"
+                      aria-hidden="true"
+                      color={theme`colors.white`}
+                    />
                   )}
                   Duplicate
                 </>
               )}
             </Menu.Item>
-          </div>
-          <div tw="px-1 py-1">
+          </Box>
+          <Box px={1} py={1}>
             <Menu.Item>
               {({ active }) => (
                 <>
                   {active ? (
-                    <ArchiveActiveIcon tw="w-5 h-5 mr-2" aria-hidden="true" color={theme`textColor.subtle`} />
+                    <ArchiveActiveIcon
+                      width="1.25rem"
+                      height="1.25rem"
+                      mr="0.5rem"
+                      aria-hidden="true"
+                      color={theme`textColor.subtle`}
+                    />
                   ) : (
-                    <ArchiveInactiveIcon tw="w-5 h-5 mr-2" aria-hidden="true" color={theme`colors.white`} />
+                    <ArchiveInactiveIcon
+                      width="1.25rem"
+                      height="1.25rem"
+                      mr="0.5rem"
+                      aria-hidden="true"
+                      color={theme`colors.white`}
+                    />
                   )}
                   Archive
                 </>
@@ -70,31 +108,55 @@ export const Default = () => {
               {({ active }) => (
                 <>
                   {active ? (
-                    <MoveActiveIcon tw="w-5 h-5 mr-2" aria-hidden="true" color={theme`textColor.subtle`} />
+                    <MoveActiveIcon
+                      width="1.25rem"
+                      height="1.25rem"
+                      mr="0.5rem"
+                      aria-hidden="true"
+                      color={theme`textColor.subtle`}
+                    />
                   ) : (
-                    <MoveInactiveIcon tw="w-5 h-5 mr-2" aria-hidden="true" color={theme`colors.white`} />
+                    <MoveInactiveIcon
+                      width="1.25rem"
+                      height="1.25rem"
+                      mr="0.5rem"
+                      aria-hidden="true"
+                      color={theme`colors.white`}
+                    />
                   )}
                   Move
                 </>
               )}
             </Menu.Item>
-          </div>
-          <div tw="px-1 py-1">
+          </Box>
+          <Box px={1} py={1}>
             <Menu.Item>
               {({ active }) => (
                 <>
                   {active ? (
-                    <DeleteActiveIcon tw="w-5 h-5 mr-2" aria-hidden="true" color={theme`textColor.subtle`} />
+                    <DeleteActiveIcon
+                      width="1.25rem"
+                      height="1.25rem"
+                      mr="0.5rem"
+                      aria-hidden="true"
+                      color={theme`textColor.subtle`}
+                    />
                   ) : (
-                    <DeleteInactiveIcon tw="w-5 h-5 mr-2" aria-hidden="true" color={theme`colors.white`} />
+                    <DeleteInactiveIcon
+                      width="1.25rem"
+                      height="1.25rem"
+                      mr="0.5rem"
+                      aria-hidden="true"
+                      color={theme`colors.white`}
+                    />
                   )}
                   Delete
                 </>
               )}
             </Menu.Item>
-          </div>
+          </Box>
         </Menu.Items>
       </Menu>
-    </div>
+    </Flex>
   );
 };
