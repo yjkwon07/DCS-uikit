@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/ban-ts-comment */
 import { theme } from 'twin.macro';
 
 import IconComponent from './IconComponent';
@@ -19,7 +20,9 @@ export const Default = () => {
   );
 };
 
+// @ts-ignore
 const context = require.context('./Icons', true, /.tsx$/);
+// @ts-ignore
 const components = context.keys().reduce((acc, path) => {
   const file = path.substring(2).replace('.tsx', '');
   return {
