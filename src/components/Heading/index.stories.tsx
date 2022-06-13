@@ -9,14 +9,22 @@ export default {
   argTypes: {},
 };
 
-export const Size = () => {
+export const Scale = () => {
   return (
     <Box background={theme`colors.primary`}>
       <Heading>Default</Heading>
-      <Heading scale="md">Size md</Heading>
-      <Heading scale="lg">Size lg</Heading>
-      <Heading scale="xl">Size xl</Heading>
-      <Heading scale="xxl">Size xxl</Heading>
+      <Heading scale="9xl">(9xl) In Heading</Heading>
+      <Heading scale="8xl">(8xl) In Heading</Heading>
+      <Heading scale="7xl">(7xl) In Heading</Heading>
+      <Heading scale="6xl">(6xl) In Heading</Heading>
+      <Heading scale="5xl">(5xl) In Heading</Heading>
+      <Heading scale="4xl">(4xl) In Heading</Heading>
+      <Heading scale="3xl">(3xl) In Heading</Heading>
+      <Heading scale="2xl">(2xl) In Heading</Heading>
+      <Heading scale="xl">(xl) In Heading</Heading>
+      <Heading scale="lg">(lg) In Heading</Heading>
+      <Heading scale="xs">(xs) In Heading</Heading>
+      <Heading scale="base">(base) In Heading</Heading>
     </Box>
   );
 };

@@ -1,7 +1,7 @@
 import { StyledText as Text } from './styles';
 
 Text.defaultProps = {
-  fontSize: 'base',
+  scale: 'base',
   color: 'primary',
   ellipsis: false,
 };

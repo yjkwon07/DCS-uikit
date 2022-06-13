@@ -1,6 +1,6 @@
 import { theme } from 'twin.macro';
 
-const size = {
+const fontScale = {
   base: theme`fontSize.base`,
   xs: theme`fontSize.xs`,
   sm: theme`fontSize.sm`,
@@ -13,6 +13,7 @@ const size = {
   '6xl': theme`fontSize.6xl`,
   '7xl': theme`fontSize.7xl`,
   '8xl': theme`fontSize.8xl`,
+  '9xl': theme`fontSize.9xl`,
 };
 
-export default size;
+export default fontScale;

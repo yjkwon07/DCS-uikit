@@ -1,2 +1,2 @@
 export * from './color';
-export { default as size } from './size';
+export { default as fontScale } from './fontScale';
