@@ -17,8 +17,8 @@ export default {
         type: null,
       },
     },
-    fontSize: {
-      name: 'fontSize',
+    scale: {
+      name: 'scale',
       table: {
         type: { summary: 'string', detail: 'Fontsize in px or em' },
         defaultValue: { summary: 'base' },
@@ -43,15 +43,18 @@ export default {
 export const Default = () => {
   return (
     <Box background={theme`colors.primary`}>
-      <Text fontSize="6xl">(6xl) In Text</Text>
-      <Text fontSize="5xl">(5xl) In Text</Text>
-      <Text fontSize="4xl">(4xl) In Text</Text>
-      <Text fontSize="3xl">(3xl) In Text</Text>
-      <Text fontSize="2xl">(2xl) In Text</Text>
-      <Text fontSize="xl">(xl) In Text</Text>
-      <Text fontSize="lg">(lg) In Text</Text>
-      <Text fontSize="xs">(xs) In Text</Text>
-      <Text fontSize="base">(base) In Text</Text>
+      <Text scale="9xl">(9xl) In Text</Text>
+      <Text scale="8xl">(8xl) In Text</Text>
+      <Text scale="7xl">(7xl) In Text</Text>
+      <Text scale="6xl">(6xl) In Text</Text>
+      <Text scale="5xl">(5xl) In Text</Text>
+      <Text scale="4xl">(4xl) In Text</Text>
+      <Text scale="3xl">(3xl) In Text</Text>
+      <Text scale="2xl">(2xl) In Text</Text>
+      <Text scale="xl">(xl) In Text</Text>
+      <Text scale="lg">(lg) In Text</Text>
+      <Text scale="xs">(xs) In Text</Text>
+      <Text scale="base">(base) In Text</Text>
     </Box>
   );
 };

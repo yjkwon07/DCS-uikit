@@ -1,10 +1,10 @@
 import { LayoutProps, SpaceProps, TypographyProps } from 'styled-system';
 
-import { size } from '../../../theme';
+import { fontScale } from '../../../theme';
 
 export interface TextProps extends SpaceProps, TypographyProps, LayoutProps {
   color?: string;
-  fontSize?: keyof typeof size;
+  scale?: keyof typeof fontScale;
   bold?: boolean;
   ellipsis?: boolean;
   textTransform?: 'uppercase' | 'lowercase' | 'capitalize';
