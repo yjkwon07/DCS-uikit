@@ -1,5 +1,4 @@
-import { FlexboxProps } from 'styled-system';
-
 import { BoxProps } from '../../Box';
+import { GapProps } from '../../Grid';
 
-export interface FlexProps extends BoxProps, FlexboxProps {}
+export interface FlexProps extends BoxProps, GapProps {}
