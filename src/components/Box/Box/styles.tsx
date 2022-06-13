@@ -1,4 +1,4 @@
-import { background, border, layout, position, space } from 'styled-system';
+import { background, border, flexbox, layout, position, space } from 'styled-system';
 import { styled } from 'twin.macro';
 
 import colorStyle from '../../../utils/colorStyle';
@@ -12,4 +12,5 @@ export const StyledBox = styled.div<BoxProps>`
   ${layout}
   ${position}
   ${space}
+  ${flexbox}
 `;
