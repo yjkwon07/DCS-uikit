@@ -88,6 +88,11 @@ export const StyledButton = styled.button<BaseButtonProps>`
     opacity: 0.65;
   }
 
+  &:focus {
+    outline: none;
+    box-shadow: ${theme`shadow.focus`};
+  }
+
   ${disabledStyle}
 
   ${variant({
