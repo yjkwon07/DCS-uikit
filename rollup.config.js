@@ -5,9 +5,9 @@ import resolve from '@rollup/plugin-node-resolve';
 import typescript from '@rollup/plugin-typescript';
 import url from '@rollup/plugin-url';
 import svgr from '@svgr/rollup';
-import analyze from 'rollup-plugin-analyzer';
 import bundleSize from 'rollup-plugin-bundle-size';
 import peerDepsExternal from 'rollup-plugin-peer-deps-external';
+import { visualizer } from 'rollup-plugin-visualizer';
 
 import pkg from './package.json';
 
@@ -44,6 +44,6 @@ export default {
     svgr(), // SVG를 컴포넌트로 사용 할 수 있게 해줌.
 
     bundleSize(),
-    analyze(),
+    visualizer(),
   ],
 };
