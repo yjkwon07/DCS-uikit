@@ -7,9 +7,6 @@ module.exports = {
   purge: ['./src/**/*.{js,jsx,ts,tsx}', './public/index.html'],
   darkMode: false,
   theme: {
-    svg: {
-      fill: 'var(--svg-fill)',
-    },
     extend: {
       colors: {
         ...colors,
@@ -28,17 +25,19 @@ module.exports = {
         select: {
           primary: 'var(--colors-select-primary)',
           secondary: 'var(--colors-select-secondary)',
-          list: 'var(--colors-select-list)',
+        },
+        svg: {
+          primary: 'var(--colors-svg-primary)',
         },
         toggle: {
-          checked: 'var(--colors-toggle-checked)',
-          noneChecked: 'var(--colors-toggle-noneChecked)',
+          primary: 'var(--colors-toggle-primary)',
+          secondary: 'var(--colors-toggle-secondary)',
           icon: 'var(--colors-toggle-icon)',
           disabled: 'var(--colors-toggle-disabled)',
         },
         tab: {
           primary: 'var(--colors-tab-primary)',
-          list: 'var(--colors-tab-list)',
+          secondary: 'var(--colors-tab-secondary)',
         },
         tag: {
           primary: 'var(--colors-tag-primary)',
@@ -61,7 +60,7 @@ module.exports = {
         select: {
           primary: 'var(--text-color-tab-primary)',
           secondary: 'var(--text-color-tab-secondary)',
-          selected: 'var(--text-colors-select-selected)',
+          icon: 'var(--text-colors-select-icon)',
         },
         tab: {
           primary: 'var(--text-color-tab-primary)',

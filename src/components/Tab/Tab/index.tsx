@@ -37,7 +37,7 @@ const Group = ({ as = 'div', ...reset }: TabGroupProps) => {
 };
 
 const List = (props: TabListProps) => {
-  return <HTab.List css={[tw`flex p-1 space-x-1 bg-tab-list rounded-xl`]} {...props} />;
+  return <HTab.List css={[tw`flex p-1 space-x-1 bg-tab-secondary rounded-xl`]} {...props} />;
 };
 
 const Panels = (props: TabPanelsProps) => {

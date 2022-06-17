@@ -36,7 +36,7 @@ const Button = <E extends ElementType = 'button'>({
     >
       <span tw="block truncate">{selectedName || placeholder}</span>
       <span tw="absolute inset-y-0 right-0 flex items-center pr-2 pointer-events-none">
-        <SelectorIcon tw="w-5 h-5 text-select-selected" aria-hidden="true" />
+        <SelectorIcon tw="w-5 h-5 text-select-icon" aria-hidden="true" />
       </span>
     </HSelect.Button>
   );
@@ -51,7 +51,7 @@ const Options = <E extends ElementType = 'ul'>(props: SelectOptionsProps<E>) => 
             tw`absolute w-full py-1 mt-1 max-h-60`,
             tw`overflow-auto`,
             tw`font-size[14px] font-weight[600] letter-spacing[0.03em] line-height[18px]`,
-            tw`bg-select-list rounded-md shadow-sm`,
+            tw`bg-select-secondary rounded-md shadow-sm`,
             tw`ring-1 ring-black ring-opacity-5 focus:outline-none`,
           ]}
           {...props}

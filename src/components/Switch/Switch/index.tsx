@@ -26,7 +26,7 @@ const Switch = <E extends ElementType = 'button'>({
       checked={checked}
       onChange={onChange}
       css={[
-        checked ? tw`bg-toggle-checked` : tw`bg-toggle-noneChecked`,
+        checked ? tw`bg-toggle-primary` : tw`bg-toggle-secondary`,
         tw`relative inline-flex flex-shrink-0 
         border-2 border-transparent 
         rounded-full cursor-pointer 

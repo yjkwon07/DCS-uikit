@@ -19,29 +19,28 @@ export const text = {
 
 export const select = {
   primary: '#485861',
-  secondary: '#394952',
-  list: '#ffff',
+  secondary: '#ffff',
   text: {
     primary: theme`colors.sky.100`,
     secondary: '#485861',
-    selected: theme`colors.gray.400`,
+    icon: theme`colors.gray.400`,
   },
 };
 
 export const svg = {
-  fill: '#485861',
+  primary: '#485861',
 };
 
 export const toggle = {
-  checked: '#485861',
-  noneChecked: '#EFF4F5',
+  primary: '#485861',
+  secondary: '#EFF4F5',
   icon: '#EFF4F5',
   disabled: '#E9EAEB',
 };
 
 export const tab = {
   primary: '#485861',
-  list: '#EFF4F5',
+  secondary: '#EFF4F5',
   text: {
     primary: theme`colors.sky.100`,
     secondary: '#485861',
@@ -83,20 +82,19 @@ export const base = {
 
   '--colors-select-primary': select.primary,
   '--colors-select-secondary': select.secondary,
-  '--colors-select-list': select.list,
   '--text-colors-select-primary': select.text.primary,
   '--text-colors-select-secondary': select.text.secondary,
-  '--colors-select-selected': select.text.selected,
+  '--colors-select-icon': select.text.icon,
 
-  '--svg-fill': svg.fill,
+  '--colors-svg-primary': svg.primary,
 
-  '--colors-toggle-checked': toggle.checked,
-  '--colors-toggle-noneChecked': toggle.noneChecked,
+  '--colors-toggle-primary': toggle.primary,
+  '--colors-toggle-secondary': toggle.secondary,
   '--colors-toggle-icon': toggle.icon,
   '--colors-toggle-disabled': toggle.disabled,
 
   '--colors-tab-primary': tab.primary,
-  '--colors-tab-list': tab.list,
+  '--colors-tab-secondary': tab.secondary,
   '--text-color-tab-primary': tab.text.primary,
   '--text-color-tab-secondary': tab.text.secondary,
 
