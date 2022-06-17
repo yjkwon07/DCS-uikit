@@ -17,6 +17,17 @@ export const text = {
   subtle: '#7A6EAA',
 };
 
+export const select = {
+  primary: '#485861',
+  secondary: '#394952',
+  list: '#ffff',
+  text: {
+    primary: theme`colors.sky.100`,
+    secondary: '#485861',
+    selected: theme`colors.gray.400`,
+  },
+};
+
 export const svg = {
   fill: '#485861',
 };
@@ -69,6 +80,13 @@ export const base = {
   '--shadow-warning': shadow.warning,
   '--shadow-inset': shadow.inset,
   '--shadow-focus': shadow.focus,
+
+  '--colors-select-primary': select.primary,
+  '--colors-select-secondary': select.secondary,
+  '--colors-select-list': select.list,
+  '--text-colors-select-primary': select.text.primary,
+  '--text-colors-select-secondary': select.text.secondary,
+  '--colors-select-selected': select.text.selected,
 
   '--svg-fill': svg.fill,
 

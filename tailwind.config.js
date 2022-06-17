@@ -25,6 +25,11 @@ module.exports = {
           300: '#fedd15',
           400: '#ffc000',
         },
+        select: {
+          primary: 'var(--colors-select-primary)',
+          secondary: 'var(--colors-select-secondary)',
+          list: 'var(--colors-select-list)',
+        },
         toggle: {
           checked: 'var(--colors-toggle-checked)',
           noneChecked: 'var(--colors-toggle-noneChecked)',
@@ -53,6 +58,11 @@ module.exports = {
         secondary: 'var(--text-secondary)',
         disabled: 'var(--text-disabled)',
         subtle: 'var(--text-subtle)',
+        select: {
+          primary: 'var(--text-color-tab-primary)',
+          secondary: 'var(--text-color-tab-secondary)',
+          selected: 'var(--text-colors-select-selected)',
+        },
         tab: {
           primary: 'var(--text-color-tab-primary)',
           secondary: 'var(--text-color-tab-secondary)',
