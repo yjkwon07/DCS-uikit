@@ -7,8 +7,18 @@ module.exports = {
   purge: ['./src/**/*.{js,jsx,ts,tsx}', './public/index.html'],
   darkMode: false,
   theme: {
+    svg: {
+      fill: 'var(--svg-fill)',
+    },
+    tag: {
+      primary: 'var(--tag-primary)',
+      secondary: 'var(--tag-secondary)',
+      success: 'var(--tag-success)',
+      warning: 'var(--tag-warning)',
+    },
     extend: {
       colors: {
+        ...colors,
         primary: 'var(--primary)',
         secondary: 'var(--secondary)',
         tertiary: 'var(--tertiary)',
@@ -21,13 +31,12 @@ module.exports = {
           300: '#fedd15',
           400: '#ffc000',
         },
-        ...colors,
-      },
-      textColor: {
-        primary: 'var(--text-primary)',
-        secondary: 'var(--text-secondary)',
-        disabled: 'var(--text-disabled)',
-        subtle: 'var(--text-subtle)',
+        toggle: {
+          checked: 'var(--colors-toggle-checked)',
+          noneChecked: 'var(--colors-toggle-noneChecked)',
+          icon: 'var(--colors-toggle-icon)',
+          disabled: 'var(--colors-toggle-disabled)',
+        },
       },
       shadow: {
         success: 'var(--shadow-success)',
@@ -35,6 +44,13 @@ module.exports = {
         inset: 'var(--shadow-inset)',
         focus: 'var(--shadow-focus)',
       },
+      textColor: {
+        primary: 'var(--text-primary)',
+        secondary: 'var(--text-secondary)',
+        disabled: 'var(--text-disabled)',
+        subtle: 'var(--text-subtle)',
+      },
+
       keyframes: {
         'slide-down': {
           from: {

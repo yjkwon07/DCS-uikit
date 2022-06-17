@@ -26,7 +26,7 @@ const Switch = <E extends ElementType = 'button'>({
       checked={checked}
       onChange={onChange}
       css={[
-        checked ? tw`bg-primary` : tw`bg-tertiary`,
+        checked ? tw`bg-toggle-checked` : tw`bg-toggle-noneChecked`,
         tw`relative inline-flex flex-shrink-0 
         border-2 border-transparent 
         rounded-full cursor-pointer 
@@ -41,8 +41,8 @@ const Switch = <E extends ElementType = 'button'>({
       {(startIcon || endIcon) && (
         <div tw="absolute w-full h-full flex justify-center items-center gap-1">
           {isValidElement(startIcon) &&
-            cloneElement(startIcon, { css: [sizeVariant[scale].icon], color: theme`colors.tertiary` })}
-          {isValidElement(endIcon) && cloneElement(endIcon, { css: [sizeVariant[scale].icon] })}
+            cloneElement(startIcon, { ...sizeVariant[scale].icon, color: theme`colors.toggle.icon` })}
+          {isValidElement(endIcon) && cloneElement(endIcon, { ...sizeVariant[scale].icon })}
         </div>
       )}
 
@@ -59,8 +59,8 @@ const Switch = <E extends ElementType = 'button'>({
       >
         {checked
           ? isValidElement(endIcon) &&
-            cloneElement(endIcon, { css: [sizeVariant[scale].icon], color: theme`colors.primary` })
-          : isValidElement(startIcon) && cloneElement(startIcon, { css: [sizeVariant[scale].icon] })}
+            cloneElement(endIcon, { ...sizeVariant[scale].icon, color: theme`colors.toggle.icon` })
+          : isValidElement(startIcon) && cloneElement(startIcon, { ...sizeVariant[scale].icon })}
       </span>
     </StyledSwitch>
   );

@@ -10,11 +10,31 @@ export const color = {
   focus: '#b08ef5',
 };
 
+export const tab = {};
+
+export const tag = {
+  primary: '#485861',
+  secondary: '#394952',
+  success: '#96b0ff',
+  warning: '#ff97cc',
+};
+
 export const text = {
   primary: theme`colors.sky.100`,
   secondary: '#485861',
   disabled: '#BDC2C4',
   subtle: '#7A6EAA',
+};
+
+export const svg = {
+  fill: '#485861',
+};
+
+export const toggle = {
+  checked: '#485861',
+  noneChecked: '#EFF4F5',
+  icon: '#EFF4F5',
+  disabled: '#E9EAEB',
 };
 
 export const shadow = {
@@ -32,14 +52,28 @@ export const base = {
   '--success': color.success,
   '--warning': color.warning,
   '--focus': color.focus,
+
+  '--tag-primary': tag.primary,
+  '--tag-secondary': tag.secondary,
+  '--tag-success': tag.success,
+  '--tag-warning': tag.warning,
+
   '--text-primary': text.primary,
   '--text-secondary': text.secondary,
   '--text-disabled': text.disabled,
   '--text-subtle': text.subtle,
+
   '--shadow-success': shadow.success,
   '--shadow-warning': shadow.warning,
   '--shadow-inset': shadow.inset,
   '--shadow-focus': shadow.focus,
+
+  '--svg-fill': svg.fill,
+
+  '--colors-toggle-checked': toggle.checked,
+  '--colors-toggle-noneChecked': toggle.noneChecked,
+  '--colors-toggle-icon': toggle.icon,
+  '--colors-toggle-disabled': toggle.disabled,
 };
 
 export const light = {};

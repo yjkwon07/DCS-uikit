@@ -68,10 +68,9 @@ export const activeRingStyle = css`
 export const disabledStyle = css`
   &:disabled,
   &.${switchClassName.disable} {
-    background-color: ${theme`colors.disabled`};
-    border-color: ${theme`colors.disabled`};
+    background-color: ${theme`colors.toggle.disabled`};
+    border-color: ${theme`colors.toggle.disabled`};
     box-shadow: none;
-    color: ${theme`textColor.disabled`};
     cursor: not-allowed;
   }
 `;
