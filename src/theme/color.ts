@@ -10,13 +10,6 @@ export const color = {
   focus: '#b08ef5',
 };
 
-export const tag = {
-  primary: '#485861',
-  secondary: '#394952',
-  success: '#96b0ff',
-  warning: '#ff97cc',
-};
-
 export const text = {
   primary: theme`colors.sky.100`,
   secondary: '#485861',
@@ -44,6 +37,13 @@ export const tab = {
   },
 };
 
+export const tag = {
+  primary: '#485861',
+  secondary: '#394952',
+  success: '#96b0ff',
+  warning: '#ff97cc',
+};
+
 export const shadow = {
   success: `0px 0px 0px 1px ${color.success}, 0px 0px 0px 4px rgba(118, 166, 225, 0.2)`,
   warning: `0px 0px 0px 1px ${color.warning}, 0px 0px 0px 4px rgba(237, 75, 158, 0.2)`,
@@ -59,11 +59,6 @@ export const base = {
   '--success': color.success,
   '--warning': color.warning,
   '--focus': color.focus,
-
-  '--tag-primary': tag.primary,
-  '--tag-secondary': tag.secondary,
-  '--tag-success': tag.success,
-  '--tag-warning': tag.warning,
 
   '--text-primary': text.primary,
   '--text-secondary': text.secondary,
@@ -86,6 +81,11 @@ export const base = {
   '--colors-tab-list': tab.list,
   '--text-color-tab-primary': tab.text.primary,
   '--text-color-tab-secondary': tab.text.secondary,
+
+  '--colors-tag-primary': tag.primary,
+  '--colors-tag-secondary': tag.secondary,
+  '--colors-tag-success': tag.success,
+  '--colors-tag-warning': tag.warning,
 };
 
 export const light = {};

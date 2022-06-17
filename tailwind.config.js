@@ -10,12 +10,6 @@ module.exports = {
     svg: {
       fill: 'var(--svg-fill)',
     },
-    tag: {
-      primary: 'var(--tag-primary)',
-      secondary: 'var(--tag-secondary)',
-      success: 'var(--tag-success)',
-      warning: 'var(--tag-warning)',
-    },
     extend: {
       colors: {
         ...colors,
@@ -40,6 +34,12 @@ module.exports = {
         tab: {
           primary: 'var(--colors-tab-primary)',
           list: 'var(--colors-tab-list)',
+        },
+        tag: {
+          primary: 'var(--colors-tag-primary)',
+          secondary: 'var(--colors-tag-secondary)',
+          success: 'var(--colors-tag-success)',
+          warning: 'var(--colors-tag-warning)',
         },
       },
       shadow: {
