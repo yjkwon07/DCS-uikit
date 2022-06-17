@@ -58,7 +58,6 @@ module.exports = {
           secondary: 'var(--text-color-tab-secondary)',
         },
       },
-
       keyframes: {
         'slide-down': {
           from: {
