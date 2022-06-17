@@ -10,8 +10,6 @@ export const color = {
   focus: '#b08ef5',
 };
 
-export const tab = {};
-
 export const tag = {
   primary: '#485861',
   secondary: '#394952',
@@ -35,6 +33,15 @@ export const toggle = {
   noneChecked: '#EFF4F5',
   icon: '#EFF4F5',
   disabled: '#E9EAEB',
+};
+
+export const tab = {
+  primary: '#485861',
+  list: '#EFF4F5',
+  text: {
+    primary: theme`colors.sky.100`,
+    secondary: '#485861',
+  },
 };
 
 export const shadow = {
@@ -74,6 +81,11 @@ export const base = {
   '--colors-toggle-noneChecked': toggle.noneChecked,
   '--colors-toggle-icon': toggle.icon,
   '--colors-toggle-disabled': toggle.disabled,
+
+  '--colors-tab-primary': tab.primary,
+  '--colors-tab-list': tab.list,
+  '--text-color-tab-primary': tab.text.primary,
+  '--text-color-tab-secondary': tab.text.secondary,
 };
 
 export const light = {};

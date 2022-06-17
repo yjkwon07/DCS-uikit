@@ -37,6 +37,10 @@ module.exports = {
           icon: 'var(--colors-toggle-icon)',
           disabled: 'var(--colors-toggle-disabled)',
         },
+        tab: {
+          primary: 'var(--colors-tab-primary)',
+          list: 'var(--colors-tab-list)',
+        },
       },
       shadow: {
         success: 'var(--shadow-success)',
@@ -49,6 +53,10 @@ module.exports = {
         secondary: 'var(--text-secondary)',
         disabled: 'var(--text-disabled)',
         subtle: 'var(--text-subtle)',
+        tab: {
+          primary: 'var(--text-color-tab-primary)',
+          secondary: 'var(--text-color-tab-secondary)',
+        },
       },
 
       keyframes: {
