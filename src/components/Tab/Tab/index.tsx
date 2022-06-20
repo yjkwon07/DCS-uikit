@@ -13,7 +13,7 @@ const Tab = ({ as = Fragment, children, ...reset }: TabProps) => {
         <button
           type="button"
           css={[
-            tw`w-full py-2.5 leading-5 font-weight[600] text-tab-primary rounded-lg`,
+            tw`w-full py-2.5 leading-5 [font-weight:600] text-tab-primary rounded-lg`,
             tw`focus:outline-none focus:ring-2 ring-offset-2 ring-offset-focus ring-white`,
             selected
               ? tw`bg-tab-primary shadow`

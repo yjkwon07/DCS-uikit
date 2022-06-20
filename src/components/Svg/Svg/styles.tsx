@@ -19,7 +19,7 @@ const spinStyle = css`
 
 export const StyledSvg = styled.svg<SvgProps>`
   align-self: center; // Safari fix
-  fill: ${({ fill, color = theme`colors.svg.primary` }) => fill !== 'none' && color};
+  fill: ${({ fill = theme`colors.svg.primary` }) => fill};
   flex-shrink: 0;
   ${({ spin }) => spin && spinStyle}
 

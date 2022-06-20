@@ -1,15 +1,13 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 /* eslint-disable import/no-extraneous-dependencies */
-const colors = require('tailwindcss/colors');
 const plugin = require('tailwindcss/plugin');
 
 module.exports = {
-  purge: ['./src/**/*.{js,jsx,ts,tsx}', './public/index.html'],
+  content: ['./src/**/*.{js,jsx,ts,tsx}', './public/index.html'],
   darkMode: false,
   theme: {
     extend: {
       colors: {
-        ...colors,
         primary: 'var(--primary)',
         secondary: 'var(--secondary)',
         tertiary: 'var(--tertiary)',
@@ -24,9 +22,14 @@ module.exports = {
         },
         button: {
           primary: 'var(--colors-button-primary)',
-          secondary: 'var(--colors-button-secondary)',
           tertiary: 'var(--colors-button-tertiary)',
           disabled: 'var(--colors-button-disabled)',
+          icon: {
+            primary: 'var(--colors-button-icon-primary)',
+            secondary: 'var(--colors-button-icon-secondary)',
+            tertiary: 'var(--colors-button-icon-tertiary)',
+            text: 'var(--colors-button-icon-text)',
+          },
         },
         checkbox: {
           primary: 'var(--colors-checkbox-primary)',
@@ -34,8 +37,9 @@ module.exports = {
           disabled: 'var(--colors-checkbox-disabled)',
         },
         input: {
-          secondary: 'var(--colors-input-secondary)',
+          primary: 'var(--colors-input-primary)',
           disabled: 'var(--colors-input-disabled)',
+          icon: 'var(--colors-input-icon)',
         },
         menu: {
           primary: 'var(--colors-menu-primary)',
@@ -49,7 +53,7 @@ module.exports = {
           primary: 'var(--colors-radio-primary)',
           secondary: 'var(--colors-radio-secondary)',
           disabled: 'var(--colors-radio-disabled)',
-          icon: 'var(--colors-radio-icon)',
+          handle: 'var(--colors-radio-handle)',
         },
         radioGroup: {
           primary: 'var(--colors-radioGroup-primary)',
@@ -58,6 +62,9 @@ module.exports = {
         select: {
           primary: 'var(--colors-select-primary)',
           secondary: 'var(--colors-select-secondary)',
+          icon: 'var(--colors-select-icon)',
+          active: 'var(--colors-select-active)',
+          selected: 'var(--colors-select-selected)',
         },
         svg: {
           primary: 'var(--colors-svg-primary)',
@@ -97,10 +104,8 @@ module.exports = {
         button: {
           primary: 'var(--text-colors-button-primary)',
           secondary: 'var(--text-colors-button-secondary)',
+          tertiary: 'var(--text-colors-button-tertiary)',
           disabled: 'var(--text-colors-button-disabled)',
-        },
-        checkbox: {
-          disabled: 'var(--text-colors-checkbox-disabled)',
         },
         input: {
           primary: 'var(--text-colors-input-primary)',
@@ -109,9 +114,6 @@ module.exports = {
         menu: {
           primary: 'var(--text-colors-menu-primary)',
           secondary: 'var(--text-colors-menu-secondary)',
-        },
-        radio: {
-          disabled: 'var(--text-colors-radio-disabled)',
         },
         radioGroup: {
           label: {
@@ -122,19 +124,16 @@ module.exports = {
             primary: 'var(--text-colors-radioGroup-description-primary)',
             secondary: 'var(--text-colors-radioGroup-description-secondary)',
           },
-          icon: 'var(--text-colors-radioGroup-icon)',
         },
         select: {
-          primary: 'var(--text-color-tab-primary)',
-          secondary: 'var(--text-color-tab-secondary)',
-          icon: 'var(--text-colors-select-icon)',
-        },
-        toggle: {
-          disabled: 'var(--text-color-toggle-disabled)',
+          primary: 'var(--text-colors-select-primary)',
+          secondary: 'var(--text-colors-select-secondary)',
+          active: 'var(--text-colors-select-active)',
+          selected: 'var(--text-colors-select-selected)',
         },
         tab: {
-          primary: 'var(--text-color-tab-primary)',
-          secondary: 'var(--text-color-tab-secondary)',
+          primary: 'var(--text-colors-tab-primary)',
+          secondary: 'var(--text-colors-tab-secondary)',
         },
       },
       keyframes: {

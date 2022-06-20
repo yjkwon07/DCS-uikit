@@ -20,7 +20,7 @@ export const Default = () => {
           <Heading mb="16px" bold>
             {scale.toUpperCase()}
           </Heading>
-          <div tw="flex mb-[32px] gap[16px]">
+          <div tw="flex mb-[32px] [gap:16px]">
             <Input type="text" scale={scale} defaultValue="value" />
             <Input type="text" scale={scale} placeholder="입력하시오" />
             <Input type="text" scale={scale} defaultValue="Disabled" disabled />

@@ -52,7 +52,7 @@ export const StyledTag = styled.div<TagProps>`
   white-space: nowrap;
 
   & > svg {
-    ${tw`fill[currentColor]`};
+    ${tw`[fill:currentColor]`};
   }
 
   ${({ textTransform }) => textTransform && `text-transform: ${textTransform};`}

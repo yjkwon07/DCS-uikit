@@ -1,6 +1,5 @@
 import { capitalize } from 'lodash-es';
 import { BrowserRouter, Link } from 'react-router-dom';
-import { theme } from 'twin.macro';
 
 import { AutoRenewIcon, SearchIcon } from '../Svg';
 import { SCALE, VARIANT } from './@types';
@@ -88,21 +87,21 @@ export const Variants = () => {
         </BrowserRouter>
       </div>
       <div tw="flex mb-[10px] gap-[10px]">
-        <Button width="100%" variant="primary" startIcon={<SearchIcon color={theme`colors.white`} />}>
+        <Button width="100%" variant="primary" startIcon={<SearchIcon />}>
           Full scale
         </Button>
       </div>
       <div tw="flex mb-[10px] gap-[10px]">
-        <Button variant="primary" isLoading startIcon={<AutoRenewIcon color={theme`colors.white`} spin />}>
+        <Button variant="primary" isLoading startIcon={<AutoRenewIcon spin />}>
           Search
         </Button>
-        <Button variant="primary" isLoading startIcon={<SearchIcon color={theme`colors.white`} />}>
+        <Button variant="primary" isLoading startIcon={<SearchIcon />}>
           Search
         </Button>
       </div>
       <div tw="flex mb-[10px] gap-[10px]">
         <IconButton variant="primary" scale="md">
-          <SearchIcon color={theme`colors.white`} />
+          <SearchIcon />
         </IconButton>
         <IconButton variant="secondary" scale="md">
           <SearchIcon />
@@ -110,7 +109,7 @@ export const Variants = () => {
       </div>
       <div tw="flex mb-[10px] gap-[10px]">
         <IconButton variant="primary" scale="sm">
-          <SearchIcon color={theme`colors.white`} />
+          <SearchIcon />
         </IconButton>
         <IconButton variant="secondary" scale="sm">
           <SearchIcon />

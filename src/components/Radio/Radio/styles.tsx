@@ -70,7 +70,7 @@ export const StyledRadio = styled.input<RadioProps>`
   &:checked {
     background-color: ${theme`colors.radio.primary`};
     &:after {
-      background-color: ${theme`colors.radio.icon`};
+      background-color: ${theme`colors.radio.handle`};
     }
   }
 
@@ -78,7 +78,6 @@ export const StyledRadio = styled.input<RadioProps>`
     background-color: ${theme`colors.radio.disabled`};
     border-color: ${theme`colors.radio.disabled`};
     box-shadow: none;
-    color: ${theme`textColor.radio.disabled`};
     cursor: not-allowed;
   }
 

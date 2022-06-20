@@ -40,7 +40,7 @@ export const styleVariant = {
   },
   [VARIANT.TERTIARY]: {
     backgroundColor: theme`colors.button.tertiary`,
-    color: theme`textColor.button.primary`,
+    color: theme`textColor.button.tertiary`,
     boxShadow: 'none',
   },
   [VARIANT.TEXT]: {
@@ -74,10 +74,10 @@ export const disabledStyle = ({ isLoading }: BaseButtonProps) => {
 
 export const StyledButton = styled.button<BaseButtonProps>`
   ${[
-    tw`font-size[14px] font-weight[600] letter-spacing[0.03em] line-height[18px]`,
+    tw`[font-size:14px] [font-weight:600] [letter-spacing:0.03em] [line-height:18px]`,
     tw`inline-flex items-center justify-center`,
-    tw`border-0 border-radius[8px]`,
-    tw`padding[10px 15px]`,
+    tw`border-0 [border-radius:8px]`,
+    tw`[padding:10px 15px]`,
     ({ isLoading = false }) => (isLoading ? tw`opacity-[.5]` : tw`opacity-[1]`),
     tw`focus:outline-none`,
   ]}

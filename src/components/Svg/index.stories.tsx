@@ -39,10 +39,10 @@ export const Icons = () => {
         .map((file) => {
           const Icon = components[file].default;
           return (
-            <div key={file} tw="flex flex-col items-center justify-center w-[128px] h-[96px] border[1px solid #eee]">
+            <div key={file} tw="flex flex-col items-center justify-center w-[128px] h-[96px] [border:1px solid #eee]">
               <div tw="flex items-center justify-center flex-1 h-full">
                 <Icon width="48px" />
-                <Icon width="24px" color={theme`textColor.subtle`} ml="4px" />
+                <Icon width="24px" fill={theme`textColor.subtle`} ml="4px" />
               </div>
               <div>{file}</div>
             </div>

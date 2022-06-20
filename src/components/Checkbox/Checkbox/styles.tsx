@@ -67,10 +67,9 @@ export const StyledCheckbox = styled.input<CheckboxProps>`
   }
 
   &:disabled {
-    background-color: ${theme`colors.disabled`};
-    border-color: ${theme`colors.disabled`};
+    background-color: ${theme`colors.checkbox.disabled`};
+    border-color: ${theme`colors.checkbox.disabled`};
     box-shadow: none;
-    color: ${theme`textColor.disabled`};
     cursor: not-allowed;
   }
 

@@ -28,7 +28,7 @@ export const boxShadowStyle = ({ isSuccess = false, isWarning = false }: InputPr
 };
 
 export const StyledInput = styled.input<InputProps>`
-  background-color: ${theme`colors.input.secondary`};
+  background-color: ${theme`colors.input.primary`};
   color: ${theme`textColor.input.primary`};
   border: 0;
   border-radius: 10px;
@@ -55,6 +55,9 @@ export const StyledInput = styled.input<InputProps>`
     box-shadow: ${theme`shadow.focus`};
   }
 
+  ::placeholder {
+    color: ${theme`textColor.input.primary`};
+  }
   ${layout}
   ${space}
 `;

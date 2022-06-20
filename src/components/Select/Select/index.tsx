@@ -25,9 +25,9 @@ const Button = <E extends ElementType = 'button'>({
     <HSelect.Button
       css={[
         tw`relative w-full py-2 pl-3 pr-10 text-select-primary`,
-        tw`text-left bg-white rounded-lg shadow-sm`,
-        tw`font-size[14px] font-weight[600] letter-spacing[0.03em] line-height[18px]`,
-        tw`border-0 border-radius[8px]`,
+        tw`text-left bg-select-primary rounded-lg shadow-sm`,
+        tw`[font-size:14px] [font-weight:600] [letter-spacing:0.03em] [line-height:18px]`,
+        tw`border-0 [border-radius:8px]`,
         tw`cursor-pointer`,
         tw`focus:outline-none focus:ring-2 ring-offset-2 ring-offset-focus ring-white`,
         tw`hover:opacity-[0.65]`,
@@ -36,7 +36,7 @@ const Button = <E extends ElementType = 'button'>({
     >
       <span css={[tw`block truncate`]}>{selectedName || placeholder}</span>
       <span css={[tw`absolute inset-y-0 right-0 flex items-center pr-2 pointer-events-none`]}>
-        <SelectorIcon css={[tw`w-5 h-5 text-select-icon`]} aria-hidden="true" />
+        <SelectorIcon css={[tw`w-5 h-5 fill-select-icon`]} aria-hidden="true" />
       </span>
     </HSelect.Button>
   );
@@ -50,7 +50,7 @@ const Options = <E extends ElementType = 'ul'>(props: SelectOptionsProps<E>) => 
           css={[
             tw`absolute w-full py-1 mt-1 max-h-60`,
             tw`overflow-auto`,
-            tw`font-size[14px] font-weight[600] letter-spacing[0.03em] line-height[18px]`,
+            tw`[font-size:14px] [font-weight:600] [letter-spacing:0.03em] [line-height:18px]`,
             tw`bg-select-secondary rounded-md shadow-sm`,
             tw`ring-1 ring-black ring-opacity-5 focus:outline-none`,
           ]}
@@ -68,10 +68,10 @@ const Option = ({ name, ...reset }: SelectOptionProps) => {
         <div
           css={[
             tw`relative cursor-pointer select-none py-2 pl-10 pr-4`,
-            tw`font-size[14px] font-weight[600] letter-spacing[0.03em] line-height[18px]`,
+            tw`[font-size:14px] [font-weight:600] [letter-spacing:0.03em] [line-height:18px]`,
             tw`text-select-secondary`,
-            props.active && tw`text-select-primary bg-select-primary hover:opacity-[0.65]`,
-            props.selected && tw`text-select-primary bg-select-primary opacity-[0.65]`,
+            props.active && tw`text-select-active bg-select-active hover:opacity-[0.65]`,
+            props.selected && tw`text-select-selected bg-select-selected opacity-[0.65]`,
           ]}
         >
           {props.selected && (
