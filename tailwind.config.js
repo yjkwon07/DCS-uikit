@@ -75,8 +75,14 @@ module.exports = {
           disabled: 'var(--colors-toggle-disabled)',
           handle: 'var(--colors-toggle-handle)',
           icon: {
-            primary: 'var(--colors-toggle-icon-primary)',
-            secondary: 'var(--colors-toggle-icon-secondary)',
+            primary: {
+              start: 'var(--colors-toggle-icon-primary-start)',
+              end: 'var(--colors-toggle-icon-primary-end)',
+            },
+            secondary: {
+              start: 'var(--colors-toggle-icon-secondary-start)',
+              end: 'var(--colors-toggle-icon-secondary-end)',
+            },
           },
         },
         tab: {

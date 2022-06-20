@@ -41,8 +41,9 @@ const Switch = <E extends ElementType = 'button'>({
       {(startIcon || endIcon) && (
         <div tw="absolute w-full h-full flex justify-center items-center gap-1">
           {isValidElement(startIcon) &&
-            cloneElement(startIcon, { ...sizeVariant[scale].icon, fill: theme`colors.toggle.icon.secondary` })}
-          {isValidElement(endIcon) && cloneElement(endIcon, { ...sizeVariant[scale].icon })}
+            cloneElement(startIcon, { ...sizeVariant[scale].icon, fill: theme`colors.toggle.icon.primary.start` })}
+          {isValidElement(endIcon) &&
+            cloneElement(endIcon, { ...sizeVariant[scale].icon, fill: theme`colors.toggle.icon.primary.end` })}
         </div>
       )}
       <span tw="sr-only">{description}</span>
@@ -58,8 +59,9 @@ const Switch = <E extends ElementType = 'button'>({
       >
         {checked
           ? isValidElement(endIcon) &&
-            cloneElement(endIcon, { ...sizeVariant[scale].icon, fill: theme`colors.toggle.icon.primary` })
-          : isValidElement(startIcon) && cloneElement(startIcon, { ...sizeVariant[scale].icon })}
+            cloneElement(endIcon, { ...sizeVariant[scale].icon, fill: theme`colors.toggle.icon.secondary.start` })
+          : isValidElement(startIcon) &&
+            cloneElement(startIcon, { ...sizeVariant[scale].icon, fill: theme`colors.toggle.icon.secondary.end` })}
       </span>
     </StyledSwitch>
   );

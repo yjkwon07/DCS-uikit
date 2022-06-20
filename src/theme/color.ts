@@ -118,8 +118,16 @@ export const toggle = {
   disabled: '#E9EAEB',
   handle: '#ffff',
   icon: {
-    primary: '#485861', // select icon fill
-    secondary: '#ffff', // none-select icon fill
+    // select icon fill
+    primary: {
+      start: '#ffff',
+      end: '#485861',
+    },
+    // none-select icon fill
+    secondary: {
+      start: '#485861',
+      end: '#485861',
+    },
   },
 };
 
@@ -216,8 +224,10 @@ export const base = {
   '--colors-toggle-secondary': toggle.secondary,
   '--colors-toggle-disabled': toggle.disabled,
   '--colors-toggle-handle': toggle.handle,
-  '--colors-toggle-icon-primary': toggle.icon.primary,
-  '--colors-toggle-icon-secondary': toggle.icon.secondary,
+  '--colors-toggle-icon-primary-start': toggle.icon.primary.start,
+  '--colors-toggle-icon-primary-end': toggle.icon.primary.end,
+  '--colors-toggle-icon-secondary-start': toggle.icon.secondary.start,
+  '--colors-toggle-icon-secondary-end': toggle.icon.secondary.end,
 
   '--colors-tab-primary': tab.primary,
   '--colors-tab-secondary': tab.secondary,
