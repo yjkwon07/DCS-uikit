@@ -6,11 +6,10 @@ import fontScaleStyle from '../../../utils/fontScaleStyle';
 import { TextProps } from '../@types';
 
 export const StyledText = styled.div<TextProps>`
-  ${colorStyle}
+  ${colorStyle('textColor')}
   ${fontScaleStyle}
 
   font-weight: ${({ bold }) => (bold ? 600 : 400)};
-  line-height: 1.5;
   ${({ textTransform }) => textTransform && `text-transform: ${textTransform};`}
   ${({ ellipsis }) =>
     ellipsis &&

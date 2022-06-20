@@ -1,10 +1,9 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 /* eslint-disable import/no-extraneous-dependencies */
-const colors = require('tailwindcss/colors');
 const plugin = require('tailwindcss/plugin');
 
 module.exports = {
-  purge: ['./src/**/*.{js,jsx,ts,tsx}', './public/index.html'],
+  content: ['./src/**/*.{js,jsx,ts,tsx}', './public/index.html'],
   darkMode: false,
   theme: {
     extend: {
@@ -21,13 +20,81 @@ module.exports = {
           300: '#fedd15',
           400: '#ffc000',
         },
-        ...colors,
-      },
-      textColor: {
-        primary: 'var(--text-primary)',
-        secondary: 'var(--text-secondary)',
-        disabled: 'var(--text-disabled)',
-        subtle: 'var(--text-subtle)',
+        button: {
+          primary: 'var(--colors-button-primary)',
+          tertiary: 'var(--colors-button-tertiary)',
+          disabled: 'var(--colors-button-disabled)',
+          icon: {
+            primary: 'var(--colors-button-icon-primary)',
+            secondary: 'var(--colors-button-icon-secondary)',
+            tertiary: 'var(--colors-button-icon-tertiary)',
+            text: 'var(--colors-button-icon-text)',
+          },
+        },
+        checkbox: {
+          primary: 'var(--colors-checkbox-primary)',
+          secondary: 'var(--colors-checkbox-secondary)',
+          disabled: 'var(--colors-checkbox-disabled)',
+        },
+        input: {
+          primary: 'var(--colors-input-primary)',
+          disabled: 'var(--colors-input-disabled)',
+          icon: 'var(--colors-input-icon)',
+        },
+        menu: {
+          primary: 'var(--colors-menu-primary)',
+          secondary: 'var(--colors-menu-secondary)',
+          divide: 'var(--colors-menu-divide)',
+        },
+        overlay: {
+          primary: 'var(--colors-overlay-primary)',
+        },
+        radio: {
+          primary: 'var(--colors-radio-primary)',
+          secondary: 'var(--colors-radio-secondary)',
+          disabled: 'var(--colors-radio-disabled)',
+          handle: 'var(--colors-radio-handle)',
+        },
+        radioGroup: {
+          primary: 'var(--colors-radioGroup-primary)',
+          secondary: 'var(--colors-radioGroup-secondary)',
+        },
+        select: {
+          primary: 'var(--colors-select-primary)',
+          secondary: 'var(--colors-select-secondary)',
+          icon: 'var(--colors-select-icon)',
+          active: 'var(--colors-select-active)',
+          selected: 'var(--colors-select-selected)',
+        },
+        svg: {
+          primary: 'var(--colors-svg-primary)',
+        },
+        toggle: {
+          primary: 'var(--colors-toggle-primary)',
+          secondary: 'var(--colors-toggle-secondary)',
+          disabled: 'var(--colors-toggle-disabled)',
+          handle: 'var(--colors-toggle-handle)',
+          icon: {
+            primary: {
+              start: 'var(--colors-toggle-icon-primary-start)',
+              end: 'var(--colors-toggle-icon-primary-end)',
+            },
+            secondary: {
+              start: 'var(--colors-toggle-icon-secondary-start)',
+              end: 'var(--colors-toggle-icon-secondary-end)',
+            },
+          },
+        },
+        tab: {
+          primary: 'var(--colors-tab-primary)',
+          secondary: 'var(--colors-tab-secondary)',
+        },
+        tag: {
+          primary: 'var(--colors-tag-primary)',
+          secondary: 'var(--colors-tag-secondary)',
+          success: 'var(--colors-tag-success)',
+          warning: 'var(--colors-tag-warning)',
+        },
       },
       shadow: {
         success: 'var(--shadow-success)',
@@ -35,43 +102,45 @@ module.exports = {
         inset: 'var(--shadow-inset)',
         focus: 'var(--shadow-focus)',
       },
-      keyframes: {
-        'slide-down': {
-          from: {
-            transform: 'translateY(-60px)',
-            opacity: 0,
+      textColor: {
+        primary: 'var(--text-primary)',
+        secondary: 'var(--text-secondary)',
+        disabled: 'var(--text-disabled)',
+        subtle: 'var(--text-subtle)',
+        button: {
+          primary: 'var(--text-colors-button-primary)',
+          secondary: 'var(--text-colors-button-secondary)',
+          tertiary: 'var(--text-colors-button-tertiary)',
+          disabled: 'var(--text-colors-button-disabled)',
+        },
+        input: {
+          primary: 'var(--text-colors-input-primary)',
+          disabled: 'var(--text-colors-input-disabled)',
+        },
+        menu: {
+          primary: 'var(--text-colors-menu-primary)',
+          secondary: 'var(--text-colors-menu-secondary)',
+        },
+        radioGroup: {
+          label: {
+            primary: 'var(--text-colors-radioGroup-label-primary)',
+            secondary: 'var(--text-colors-radioGroup-label-secondary)',
           },
-          to: {
-            transform: 'translateY(0px)',
-            opacity: 1,
+          description: {
+            primary: 'var(--text-colors-radioGroup-description-primary)',
+            secondary: 'var(--text-colors-radioGroup-description-secondary)',
           },
         },
-        'fade-in-up-aqua': {
-          from: {
-            opacity: 0,
-            transform: 'translateY(20px)',
-            color: 'aqua',
-          },
-          to: {
-            opacity: 1,
-            transform: 'translateY(0)',
-          },
+        select: {
+          primary: 'var(--text-colors-select-primary)',
+          secondary: 'var(--text-colors-select-secondary)',
+          active: 'var(--text-colors-select-active)',
+          selected: 'var(--text-colors-select-selected)',
         },
-        'fade-in-left': {
-          from: {
-            opacity: 0,
-            transform: 'translateX(30px) scaleX(1.1)',
-          },
-          to: {
-            opacity: 1,
-            transform: 'translateX(0)',
-          },
+        tab: {
+          primary: 'var(--text-colors-tab-primary)',
+          secondary: 'var(--text-colors-tab-secondary)',
         },
-      },
-      animation: {
-        'slide-down': 'slide-down 0.5s both',
-        'fade-in-up-aqua': 'fade-in-up-aqua 0.5s both',
-        'fade-in-left': 'fade-in-left 1s cubic-bezier(0.19, 1, 0.22, 1) both',
       },
     },
   },
@@ -79,16 +148,9 @@ module.exports = {
     extend: {},
   },
   plugins: [
-    plugin(({ addBase, addComponents, addUtilities, theme }) => {
+    plugin(({ addBase, addComponents, addUtilities }) => {
       addBase({});
-      addComponents({
-        '.example': {
-          backgroundColor: theme('colors.white'),
-          borderRadius: theme('borderRadius.lg'),
-          padding: theme('spacing.6'),
-          boxShadow: theme('boxShadow.xl'),
-        },
-      });
+      addComponents({});
       addUtilities({
         '.z-overlay': {
           zIndex: 19,

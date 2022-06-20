@@ -18,16 +18,16 @@ export const scaleVariant = {
 
 export const styleVariant = {
   [VARIANT.PRIMARY]: {
-    backgroundColor: theme`colors.primary`,
+    backgroundColor: theme`colors.tag.primary`,
   },
   [VARIANT.SECONDARY]: {
-    backgroundColor: theme`colors.secondary`,
+    backgroundColor: theme`colors.tag.secondary`,
   },
   [VARIANT.SUCCESS]: {
-    backgroundColor: theme`colors.success`,
+    backgroundColor: theme`colors.tag.success`,
   },
   [VARIANT.WARNING]: {
-    backgroundColor: theme`colors.warning`,
+    backgroundColor: theme`colors.tag.warning`,
   },
 };
 
@@ -52,7 +52,7 @@ export const StyledTag = styled.div<TagProps>`
   white-space: nowrap;
 
   & > svg {
-    ${tw`fill[currentColor]`};
+    ${tw`[fill:currentColor]`};
   }
 
   ${({ textTransform }) => textTransform && `text-transform: ${textTransform};`}

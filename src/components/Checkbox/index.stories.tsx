@@ -17,6 +17,12 @@ export const Default: React.FC = () => {
       <Box>
         <Checkbox scale="sm" />
       </Box>
+      <Box>
+        <Checkbox scale="sm" disabled />
+      </Box>
+      <Box>
+        <Checkbox scale="sm" checked disabled />
+      </Box>
     </Grid>
   );
 };

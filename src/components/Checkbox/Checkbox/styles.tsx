@@ -15,7 +15,7 @@ export const scaleVariant = {
 };
 
 export const StyledCheckbox = styled.input<CheckboxProps>`
-  background-color: ${theme`colors.tertiary`};
+  background-color: ${theme`colors.checkbox.secondary`};
   border: 0;
   border-radius: 8px;
   box-shadow: ${theme`shadow.inset`};
@@ -60,17 +60,16 @@ export const StyledCheckbox = styled.input<CheckboxProps>`
   }
 
   &:checked {
-    background-color: ${theme`colors.primary`};
+    background-color: ${theme`colors.checkbox.primary`};
     &:after {
       border-color: white;
     }
   }
 
   &:disabled {
-    background-color: ${theme`colors.disabled`};
-    border-color: ${theme`colors.disabled`};
+    background-color: ${theme`colors.checkbox.disabled`};
+    border-color: ${theme`colors.checkbox.disabled`};
     box-shadow: none;
-    color: ${theme`textColor.disabled`};
     cursor: not-allowed;
   }
 

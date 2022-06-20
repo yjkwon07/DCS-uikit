@@ -1,7 +1,5 @@
 import { cloneElement, isValidElement } from 'react';
 
-import tw from 'twin.macro';
-
 import { TagProps } from '../@types';
 import { StyledTag } from './styles';
 
@@ -9,12 +7,12 @@ const Tag: React.FC<TagProps> = ({ startIcon, endIcon, children, ...reset }) => 
   <StyledTag {...reset}>
     {isValidElement(startIcon) &&
       cloneElement(startIcon, {
-        css: tw`mr-2`,
+        mr: '0.5rem',
       })}
     {children}
     {isValidElement(endIcon) &&
       cloneElement(endIcon, {
-        css: tw`ml-2`,
+        ml: '0.5rem',
       })}
   </StyledTag>
 );

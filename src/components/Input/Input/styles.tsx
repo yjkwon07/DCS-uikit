@@ -28,8 +28,8 @@ export const boxShadowStyle = ({ isSuccess = false, isWarning = false }: InputPr
 };
 
 export const StyledInput = styled.input<InputProps>`
-  background-color: ${theme`colors.tertiary`};
-  color: ${theme`textColor.secondary`};
+  background-color: ${theme`colors.input.primary`};
+  color: ${theme`textColor.input.primary`};
   border: 0;
   border-radius: 10px;
   box-shadow: ${boxShadowStyle};
@@ -45,8 +45,8 @@ export const StyledInput = styled.input<InputProps>`
   })}
 
   &:disabled {
-    background-color: ${theme`colors.disabled`};
-    color: ${theme`textColor.disabled`};
+    background-color: ${theme`colors.input.disabled`};
+    color: ${theme`textColor.input.disabled`};
     box-shadow: none;
     cursor: not-allowed;
   }
@@ -55,6 +55,9 @@ export const StyledInput = styled.input<InputProps>`
     box-shadow: ${theme`shadow.focus`};
   }
 
+  ::placeholder {
+    color: ${theme`textColor.input.primary`};
+  }
   ${layout}
   ${space}
 `;

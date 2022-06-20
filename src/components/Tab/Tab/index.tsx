@@ -13,11 +13,11 @@ const Tab = ({ as = Fragment, children, ...reset }: TabProps) => {
         <button
           type="button"
           css={[
-            tw`w-full py-2.5 leading-5 font-weight[600] text-primary rounded-lg`,
+            tw`w-full py-2.5 leading-5 [font-weight:600] text-tab-primary rounded-lg`,
             tw`focus:outline-none focus:ring-2 ring-offset-2 ring-offset-focus ring-white`,
             selected
-              ? tw`bg-primary shadow`
-              : tw`text-secondary hover:bg-primary hover:text-primary hover:opacity-[0.65]`,
+              ? tw`bg-tab-primary shadow`
+              : tw`text-tab-secondary hover:bg-tab-primary hover:text-tab-primary hover:opacity-[0.65]`,
           ]}
         >
           {children}
@@ -37,7 +37,7 @@ const Group = ({ as = 'div', ...reset }: TabGroupProps) => {
 };
 
 const List = (props: TabListProps) => {
-  return <HTab.List css={[tw`flex p-1 space-x-1 bg-tertiary rounded-xl`]} {...props} />;
+  return <HTab.List css={[tw`flex p-1 space-x-1 bg-tab-secondary rounded-xl`]} {...props} />;
 };
 
 const Panels = (props: TabPanelsProps) => {

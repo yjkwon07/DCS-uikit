@@ -22,7 +22,7 @@ export const Default = () => {
 
   return (
     <Flex justifyContent="center">
-      <Select width="300px" value={selected} onChange={setSelected}>
+      <Select width={500} value={selected} onChange={setSelected}>
         <Select.Button selectedName={selected?.name} />
         <Select.Options>
           {people.map((person) => (

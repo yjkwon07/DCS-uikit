@@ -39,7 +39,7 @@ export const Default = () => {
                       height="1.25rem"
                       mr="0.5rem"
                       aria-hidden="true"
-                      color={theme`textColor.subtle`}
+                      fill={theme`textColor.subtle`}
                     />
                   ) : (
                     <EditInactiveIcon
@@ -47,7 +47,7 @@ export const Default = () => {
                       height="1.25rem"
                       mr="0.5rem"
                       aria-hidden="true"
-                      color={theme`colors.white`}
+                      fill={theme`colors.white`}
                     />
                   )}
                   Edit
@@ -63,7 +63,7 @@ export const Default = () => {
                       height="1.25rem"
                       mr="0.5rem"
                       aria-hidden="true"
-                      color={theme`textColor.subtle`}
+                      fill={theme`textColor.subtle`}
                     />
                   ) : (
                     <DuplicateInactiveIcon
@@ -71,7 +71,7 @@ export const Default = () => {
                       height="1.25rem"
                       mr="0.5rem"
                       aria-hidden="true"
-                      color={theme`colors.white`}
+                      fill={theme`colors.white`}
                     />
                   )}
                   Duplicate
@@ -89,7 +89,7 @@ export const Default = () => {
                       height="1.25rem"
                       mr="0.5rem"
                       aria-hidden="true"
-                      color={theme`textColor.subtle`}
+                      fill={theme`textColor.subtle`}
                     />
                   ) : (
                     <ArchiveInactiveIcon
@@ -97,7 +97,7 @@ export const Default = () => {
                       height="1.25rem"
                       mr="0.5rem"
                       aria-hidden="true"
-                      color={theme`colors.white`}
+                      fill={theme`colors.white`}
                     />
                   )}
                   Archive
@@ -113,7 +113,7 @@ export const Default = () => {
                       height="1.25rem"
                       mr="0.5rem"
                       aria-hidden="true"
-                      color={theme`textColor.subtle`}
+                      fill={theme`textColor.subtle`}
                     />
                   ) : (
                     <MoveInactiveIcon
@@ -121,7 +121,7 @@ export const Default = () => {
                       height="1.25rem"
                       mr="0.5rem"
                       aria-hidden="true"
-                      color={theme`colors.white`}
+                      fill={theme`colors.white`}
                     />
                   )}
                   Move
@@ -139,7 +139,7 @@ export const Default = () => {
                       height="1.25rem"
                       mr="0.5rem"
                       aria-hidden="true"
-                      color={theme`textColor.subtle`}
+                      fill={theme`textColor.subtle`}
                     />
                   ) : (
                     <DeleteInactiveIcon
@@ -147,7 +147,7 @@ export const Default = () => {
                       height="1.25rem"
                       mr="0.5rem"
                       aria-hidden="true"
-                      color={theme`colors.white`}
+                      fill={theme`colors.white`}
                     />
                   )}
                   Delete

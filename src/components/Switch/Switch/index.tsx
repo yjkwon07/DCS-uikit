@@ -26,12 +26,12 @@ const Switch = <E extends ElementType = 'button'>({
       checked={checked}
       onChange={onChange}
       css={[
-        checked ? tw`bg-primary` : tw`bg-tertiary`,
-        tw`relative inline-flex flex-shrink-0 
+        checked ? tw`bg-toggle-primary` : tw`bg-toggle-secondary`,
+        tw`relative inline-flex shrink-0 
         border-2 border-transparent 
         rounded-full cursor-pointer 
         transition-colors ease-in-out duration-200
-        focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75`,
+        focus:outline-none`,
         activeRingStyle,
         disabledStyle,
         sizeVariant[scale].switch,
@@ -41,26 +41,27 @@ const Switch = <E extends ElementType = 'button'>({
       {(startIcon || endIcon) && (
         <div tw="absolute w-full h-full flex justify-center items-center gap-1">
           {isValidElement(startIcon) &&
-            cloneElement(startIcon, { css: [sizeVariant[scale].icon], color: theme`colors.tertiary` })}
-          {isValidElement(endIcon) && cloneElement(endIcon, { css: [sizeVariant[scale].icon] })}
+            cloneElement(startIcon, { ...sizeVariant[scale].icon, fill: theme`colors.toggle.icon.primary.start` })}
+          {isValidElement(endIcon) &&
+            cloneElement(endIcon, { ...sizeVariant[scale].icon, fill: theme`colors.toggle.icon.primary.end` })}
         </div>
       )}
-
       <span tw="sr-only">{description}</span>
       <span
         aria-hidden="true"
         className={switchClassName.handle}
         css={[
           checked ? sizeVariant[scale].checked : tw`translate-x-0`,
-          tw`rounded-full bg-white ring-0 transform transition ease-in duration-200`,
+          tw`rounded-full bg-toggle-handle ring-0 transform transition ease-in duration-200`,
           tw`inline-flex items-center justify-center`,
           sizeVariant[scale].handle,
         ]}
       >
         {checked
           ? isValidElement(endIcon) &&
-            cloneElement(endIcon, { css: [sizeVariant[scale].icon], color: theme`colors.primary` })
-          : isValidElement(startIcon) && cloneElement(startIcon, { css: [sizeVariant[scale].icon] })}
+            cloneElement(endIcon, { ...sizeVariant[scale].icon, fill: theme`colors.toggle.icon.secondary.start` })
+          : isValidElement(startIcon) &&
+            cloneElement(startIcon, { ...sizeVariant[scale].icon, fill: theme`colors.toggle.icon.secondary.end` })}
       </span>
     </StyledSwitch>
   );

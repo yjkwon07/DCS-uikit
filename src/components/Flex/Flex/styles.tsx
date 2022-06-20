@@ -9,7 +9,7 @@ import { FlexProps } from '../@types';
 export const StyledFlex = styled(Box)<FlexProps>`
   display: flex;
 
-  ${colorStyle}
+  ${colorStyle('textColor')}
   ${gapStyle}
 
   ${flexbox}

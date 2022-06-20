@@ -1,8 +1,7 @@
 import { cloneElement, ElementType, isValidElement } from 'react';
 
-import tw from 'twin.macro';
-
 import externalLinkProps from '../../../utils/externalLinkProps';
+import getThemeValue from '../../../utils/getThemeValue';
 import { ButtonProps, SCALE, VARIANT } from '../@types';
 import { buttonClassName, StyledButton } from './styles';
 
@@ -39,9 +38,17 @@ const Button = <E extends ElementType = 'button'>({
       {...rest}
     >
       <>
-        {isValidElement(startIcon) && cloneElement(startIcon, { css: tw`mr-2` })}
+        {isValidElement(startIcon) &&
+          cloneElement(startIcon, {
+            mr: '0.5rem',
+            fill: rest.variant && getThemeValue('colors', `button.icon.[${rest.variant}]`),
+          })}
         {children}
-        {isValidElement(endIcon) && cloneElement(endIcon, { css: tw`ml-2` })}
+        {isValidElement(endIcon) &&
+          cloneElement(endIcon, {
+            ml: '0.5rem',
+            fill: rest.variant && getThemeValue('colors', `button.icon.[${rest.variant}]`),
+          })}
       </>
     </StyledButton>
   );

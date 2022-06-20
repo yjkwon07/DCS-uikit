@@ -26,7 +26,7 @@ export const checkedScaleVariant = {
 };
 
 export const StyledRadio = styled.input<RadioProps>`
-  background-color: ${theme`colors.tertiary`};
+  background-color: ${theme`colors.radio.secondary`};
   border: 0;
   border-radius: 50%;
   box-shadow: ${theme`shadow.inset`};
@@ -68,17 +68,16 @@ export const StyledRadio = styled.input<RadioProps>`
   }
 
   &:checked {
-    background-color: ${theme`colors.primary`};
+    background-color: ${theme`colors.radio.primary`};
     &:after {
-      background-color: ${theme`colors.white`};
+      background-color: ${theme`colors.radio.handle`};
     }
   }
 
   &:disabled {
-    background-color: ${theme`colors.disabled`};
-    border-color: ${theme`colors.disabled`};
+    background-color: ${theme`colors.radio.disabled`};
+    border-color: ${theme`colors.radio.disabled`};
     box-shadow: none;
-    color: ${theme`textColor.disabled`};
     cursor: not-allowed;
   }
 
