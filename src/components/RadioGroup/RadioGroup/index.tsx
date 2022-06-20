@@ -26,8 +26,10 @@ const Option = ({ children, ...reset }: RadioGroupOptionProps) => {
             tw`font-size[14px] font-weight[600] letter-spacing[0.03em] line-height[18px]`,
             tw`border-0 border-radius[8px]`,
             tw`focus:outline-none`,
-            props.active && tw`ring-2 ring-offset-2 ring-offset-focus ring-white bg-primary`,
-            props.checked ? tw`bg-primary bg-opacity-75 text-white` : tw`bg-white`,
+            props.active && tw`ring-2 ring-offset-2 ring-offset-focus ring-white bg-radioGroup-primary`,
+            props.checked
+              ? tw`bg-radioGroup-primary bg-opacity-75 text-radioGroup-primary`
+              : tw`bg-radioGroup-secondary`,
           ]}
         >
           <div tw="flex items-center justify-between w-full">
@@ -35,8 +37,8 @@ const Option = ({ children, ...reset }: RadioGroupOptionProps) => {
               <div tw="text-sm">{children && children(props)}</div>
             </div>
             {props.checked && (
-              <div tw="flex-shrink-0 text-white">
-                <CheckIcon width="1.5rem" height="1.5rem" />
+              <div tw="flex-shrink-0">
+                <CheckIcon tw="text-radioGroup-icon" width="1.5rem" height="1.5rem" />
               </div>
             )}
           </div>
@@ -49,7 +51,11 @@ const Option = ({ children, ...reset }: RadioGroupOptionProps) => {
 const Label = ({ isScreenOnly, checked, children, ...reset }: RadioGroupLabelProps) => {
   return (
     <HRadioGroup.Label
-      css={[tw`font-weight[500]`, isScreenOnly && tw`sr-only`, checked ? tw`text-white` : tw`text-secondary`]}
+      css={[
+        tw`font-weight[500]`,
+        isScreenOnly && tw`sr-only`,
+        checked ? tw`text-radioGroup-label-primary` : tw`text-radioGroup-label-secondary`,
+      ]}
       {...reset}
     >
       {children}
@@ -59,7 +65,10 @@ const Label = ({ isScreenOnly, checked, children, ...reset }: RadioGroupLabelPro
 
 const Description = ({ checked, children, ...reset }: RadioGroupDescriptionProps) => {
   return (
-    <HRadioGroup.Description css={[checked ? tw`text-primary` : tw`text-secondary`]} {...reset}>
+    <HRadioGroup.Description
+      css={[checked ? tw`text-radioGroup-description-primary` : tw`text-radioGroup-description-secondary`]}
+      {...reset}
+    >
       {children}
     </HRadioGroup.Description>
   );

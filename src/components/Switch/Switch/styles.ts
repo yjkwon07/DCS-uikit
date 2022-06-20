@@ -71,6 +71,7 @@ export const disabledStyle = css`
     background-color: ${theme`colors.toggle.disabled`};
     border-color: ${theme`colors.toggle.disabled`};
     box-shadow: none;
+    color: ${theme`textColor.toggle.disabled`};
     cursor: not-allowed;
   }
 `;

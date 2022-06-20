@@ -34,9 +34,9 @@ const Button = <E extends ElementType = 'button'>({
       ]}
       {...reset}
     >
-      <span tw="block truncate">{selectedName || placeholder}</span>
-      <span tw="absolute inset-y-0 right-0 flex items-center pr-2 pointer-events-none">
-        <SelectorIcon tw="w-5 h-5 text-select-icon" aria-hidden="true" />
+      <span css={[tw`block truncate`]}>{selectedName || placeholder}</span>
+      <span css={[tw`absolute inset-y-0 right-0 flex items-center pr-2 pointer-events-none`]}>
+        <SelectorIcon css={[tw`w-5 h-5 text-select-icon`]} aria-hidden="true" />
       </span>
     </HSelect.Button>
   );
@@ -74,12 +74,12 @@ const Option = ({ name, ...reset }: SelectOptionProps) => {
             props.selected && tw`text-select-primary bg-select-primary opacity-[0.65]`,
           ]}
         >
-          <span css={[tw`block truncate`]}>{name}</span>
-          {props.selected ? (
-            <span tw="absolute inset-y-0 left-0 flex items-center pl-3 text-select-primary">
+          {props.selected && (
+            <span css={[tw`absolute inset-y-0 left-0 flex items-center pl-3`]}>
               <CheckIcon width="1.25rem" height="1.25rem" aria-hidden="true" />
             </span>
-          ) : null}
+          )}
+          <span css={[tw`block truncate`]}>{name}</span>
         </div>
       )}
     </HSelect.Option>

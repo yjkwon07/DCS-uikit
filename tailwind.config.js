@@ -22,6 +22,39 @@ module.exports = {
           300: '#fedd15',
           400: '#ffc000',
         },
+        button: {
+          primary: 'var(--colors-button-primary)',
+          secondary: 'var(--colors-button-secondary)',
+          tertiary: 'var(--colors-button-tertiary)',
+          disabled: 'var(--colors-button-disabled)',
+        },
+        checkbox: {
+          primary: 'var(--colors-checkbox-primary)',
+          secondary: 'var(--colors-checkbox-secondary)',
+          disabled: 'var(--colors-checkbox-disabled)',
+        },
+        input: {
+          secondary: 'var(--colors-input-secondary)',
+          disabled: 'var(--colors-input-disabled)',
+        },
+        menu: {
+          primary: 'var(--colors-menu-primary)',
+          secondary: 'var(--colors-menu-secondary)',
+          divide: 'var(--colors-menu-divide)',
+        },
+        overlay: {
+          primary: 'var(--colors-overlay-primary)',
+        },
+        radio: {
+          primary: 'var(--colors-radio-primary)',
+          secondary: 'var(--colors-radio-secondary)',
+          disabled: 'var(--colors-radio-disabled)',
+          icon: 'var(--colors-radio-icon)',
+        },
+        radioGroup: {
+          primary: 'var(--colors-radioGroup-primary)',
+          secondary: 'var(--colors-radioGroup-secondary)',
+        },
         select: {
           primary: 'var(--colors-select-primary)',
           secondary: 'var(--colors-select-secondary)',
@@ -32,8 +65,12 @@ module.exports = {
         toggle: {
           primary: 'var(--colors-toggle-primary)',
           secondary: 'var(--colors-toggle-secondary)',
-          icon: 'var(--colors-toggle-icon)',
           disabled: 'var(--colors-toggle-disabled)',
+          handle: 'var(--colors-toggle-handle)',
+          icon: {
+            primary: 'var(--colors-toggle-icon-primary)',
+            secondary: 'var(--colors-toggle-icon-secondary)',
+          },
         },
         tab: {
           primary: 'var(--colors-tab-primary)',
@@ -57,10 +94,43 @@ module.exports = {
         secondary: 'var(--text-secondary)',
         disabled: 'var(--text-disabled)',
         subtle: 'var(--text-subtle)',
+        button: {
+          primary: 'var(--text-colors-button-primary)',
+          secondary: 'var(--text-colors-button-secondary)',
+          disabled: 'var(--text-colors-button-disabled)',
+        },
+        checkbox: {
+          disabled: 'var(--text-colors-checkbox-disabled)',
+        },
+        input: {
+          primary: 'var(--text-colors-input-primary)',
+          disabled: 'var(--text-colors-input-disabled)',
+        },
+        menu: {
+          primary: 'var(--text-colors-menu-primary)',
+          secondary: 'var(--text-colors-menu-secondary)',
+        },
+        radio: {
+          disabled: 'var(--text-colors-radio-disabled)',
+        },
+        radioGroup: {
+          label: {
+            primary: 'var(--text-colors-radioGroup-label-primary)',
+            secondary: 'var(--text-colors-radioGroup-label-secondary)',
+          },
+          description: {
+            primary: 'var(--text-colors-radioGroup-description-primary)',
+            secondary: 'var(--text-colors-radioGroup-description-secondary)',
+          },
+          icon: 'var(--text-colors-radioGroup-icon)',
+        },
         select: {
           primary: 'var(--text-color-tab-primary)',
           secondary: 'var(--text-color-tab-secondary)',
           icon: 'var(--text-colors-select-icon)',
+        },
+        toggle: {
+          disabled: 'var(--text-color-toggle-disabled)',
         },
         tab: {
           primary: 'var(--text-color-tab-primary)',

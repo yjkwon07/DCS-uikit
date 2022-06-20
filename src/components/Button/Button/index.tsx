@@ -39,9 +39,9 @@ const Button = <E extends ElementType = 'button'>({
       {...rest}
     >
       <>
-        {isValidElement(startIcon) && cloneElement(startIcon, { css: tw`mr-2` })}
+        {isValidElement(startIcon) && cloneElement(startIcon, { mr: '0.5rem' })}
         {children}
-        {isValidElement(endIcon) && cloneElement(endIcon, { css: tw`ml-2` })}
+        {isValidElement(endIcon) && cloneElement(endIcon, { ml: '0.5rem' })}
       </>
     </StyledButton>
   );

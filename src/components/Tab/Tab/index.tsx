@@ -16,7 +16,7 @@ const Tab = ({ as = Fragment, children, ...reset }: TabProps) => {
             tw`w-full py-2.5 leading-5 font-weight[600] text-tab-primary rounded-lg`,
             tw`focus:outline-none focus:ring-2 ring-offset-2 ring-offset-focus ring-white`,
             selected
-              ? tw`bg-primary shadow`
+              ? tw`bg-tab-primary shadow`
               : tw`text-tab-secondary hover:bg-tab-primary hover:text-tab-primary hover:opacity-[0.65]`,
           ]}
         >

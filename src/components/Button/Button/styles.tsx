@@ -25,27 +25,27 @@ export const scaleVariant = {
 
 export const styleVariant = {
   [VARIANT.PRIMARY]: {
-    backgroundColor: theme`colors.primary`,
-    color: theme`textColor.primary`,
+    backgroundColor: theme`colors.button.primary`,
+    color: theme`textColor.button.primary`,
   },
   [VARIANT.SECONDARY]: {
     backgroundColor: theme`colors.transparent`,
-    color: theme`textColor.secondary`,
+    color: theme`textColor.button.secondary`,
     border: '2px solid',
-    borderColor: theme`colors.primary`,
+    borderColor: theme`colors.button.primary`,
     boxShadow: 'none',
     [`&:disabled, &.${buttonClassName.disable}`]: {
       backgroundColor: theme`colors.transparent`,
     },
   },
   [VARIANT.TERTIARY]: {
-    backgroundColor: theme`colors.tertiary`,
-    color: theme`textColor.secondary`,
+    backgroundColor: theme`colors.button.tertiary`,
+    color: theme`textColor.button.primary`,
     boxShadow: 'none',
   },
   [VARIANT.TEXT]: {
     backgroundColor: theme`colors.transparent`,
-    color: theme`textColor.secondary`,
+    color: theme`textColor.button.primary`,
     boxShadow: 'none',
   },
 };
