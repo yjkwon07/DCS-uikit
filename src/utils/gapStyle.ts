@@ -1,8 +1,14 @@
 import { css } from 'twin.macro';
 
-import { GapProps } from '../components/Grid';
-
-const gapStyle = ({ gap, rowGap, columnGap }: GapProps) => {
+const gapStyle = ({
+  gap,
+  rowGap,
+  columnGap,
+}: {
+  gap?: string | number;
+  rowGap?: string | number;
+  columnGap?: string | number;
+}) => {
   return css`
     ${gap &&
     css`
