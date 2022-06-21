@@ -49,7 +49,7 @@ export const checkbox = {
 };
 
 export const input = {
-  primary: '#394952', // background
+  primary: '#485861', // background
   disabled: '#E9EAEB',
   icon: '#ffff',
   text: {
