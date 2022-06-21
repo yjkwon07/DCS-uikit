@@ -12,9 +12,9 @@ export const Default = () => {
   return (
     <>
       <Overlay />
-      <Box height={100000}>
+      <Box height={10000}>
         <Text scale="6xl" color="black" bold>
-          height 100000px <br />
+          height 10000px <br />
           no scroll
         </Text>
       </Box>
