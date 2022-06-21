@@ -1,4 +1,5 @@
 import { Box } from '../Box';
+import { IconButton } from '../Button';
 import { Heading } from '../Heading';
 import Moon from '../Svg/Icons/Moon';
 import Search from '../Svg/Icons/Search';
@@ -36,14 +37,106 @@ export const Default = () => {
 export const Icons = () => {
   return (
     <Box width={300}>
-      <InputGroup mb="24px" startIcon={<Search width="18px" />} endIcon={<Moon width="18px" />} scale="xs">
+      <InputGroup mb="24px" startIcon={<Search />} endIcon={<Moon />} scale="xs">
         <Input type="text" defaultValue="Input Group" />
       </InputGroup>
-      <InputGroup mb="24px" startIcon={<Search width="24px" />} endIcon={<Moon width="24px" />} scale="sm">
+      <InputGroup mb="24px" startIcon={<Search />} endIcon={<Moon />} scale="sm">
         <Input type="text" defaultValue="Input Group" />
       </InputGroup>
-      <InputGroup mb="24px" startIcon={<Search width="32px" />} endIcon={<Moon width="32px" />} scale="md">
+      <InputGroup mb="24px" startIcon={<Search />} endIcon={<Moon />} scale="md">
         <Input type="text" defaultValue="Input Group" />
+      </InputGroup>
+      <InputGroup mb="24px" startIcon={<Search />} endIcon={<Moon />} scale="md">
+        <Input type="text" defaultValue="Input disabled" disabled />
+      </InputGroup>
+    </Box>
+  );
+};
+
+export const IconsButton = () => {
+  return (
+    <Box width={300}>
+      <InputGroup
+        mb="24px"
+        startIcon={
+          <IconButton>
+            <Search />
+          </IconButton>
+        }
+        endIcon={
+          <IconButton>
+            <Moon />
+          </IconButton>
+        }
+        scale="xs"
+      >
+        <Input type="text" defaultValue="Input Group" />
+      </InputGroup>
+      <InputGroup
+        mb="24px"
+        startIcon={
+          <IconButton>
+            <Search />
+          </IconButton>
+        }
+        endIcon={
+          <IconButton>
+            <Moon />
+          </IconButton>
+        }
+        scale="sm"
+      >
+        <Input type="text" defaultValue="Input Group" />
+      </InputGroup>
+      <InputGroup
+        mb="24px"
+        startIcon={
+          <IconButton>
+            <Search />
+          </IconButton>
+        }
+        endIcon={
+          <IconButton>
+            <Moon />
+          </IconButton>
+        }
+        scale="md"
+      >
+        <Input type="text" defaultValue="Input Group" />
+      </InputGroup>
+      <InputGroup
+        mb="24px"
+        startIcon={
+          <IconButton>
+            <Search />
+          </IconButton>
+        }
+        endIcon={
+          <IconButton>
+            <Moon />
+          </IconButton>
+        }
+        scale="md"
+        disabled
+      >
+        <Input type="text" defaultValue="Input Group disabled" />
+      </InputGroup>
+      <InputGroup
+        mb="24px"
+        startIcon={
+          <IconButton>
+            <Search />
+          </IconButton>
+        }
+        endIcon={
+          <IconButton>
+            <Moon />
+          </IconButton>
+        }
+        scale="md"
+        disabled
+      >
+        <Input type="text" defaultValue="Input, Input Group disabled" disabled />
       </InputGroup>
     </Box>
   );

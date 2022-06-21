@@ -20,4 +20,5 @@ export interface InputGroupProps extends LayoutProps, SpaceProps {
   scale?: Scale;
   startIcon?: ReactNode;
   endIcon?: ReactNode;
+  disabled?: boolean;
 }
