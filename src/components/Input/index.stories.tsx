@@ -1,5 +1,5 @@
-import { Box } from '../Box';
 import { IconButton } from '../Button';
+import { Flex } from '../Flex';
 import { Heading } from '../Heading';
 import Moon from '../Svg/Icons/Moon';
 import Search from '../Svg/Icons/Search';
@@ -36,28 +36,27 @@ export const Default = () => {
 
 export const Icons = () => {
   return (
-    <Box width={300}>
-      <InputGroup mb="24px" startIcon={<Search />} endIcon={<Moon />} scale="xs">
+    <Flex width={400} flexDirection="column" rowGap={24}>
+      <InputGroup startIcon={<Search />} endIcon={<Moon />} scale="xs">
         <Input type="text" defaultValue="Input Group" />
       </InputGroup>
-      <InputGroup mb="24px" startIcon={<Search />} endIcon={<Moon />} scale="sm">
+      <InputGroup startIcon={<Search />} endIcon={<Moon />} scale="sm">
         <Input type="text" defaultValue="Input Group" />
       </InputGroup>
-      <InputGroup mb="24px" startIcon={<Search />} endIcon={<Moon />} scale="md">
+      <InputGroup startIcon={<Search />} endIcon={<Moon />} scale="md">
         <Input type="text" defaultValue="Input Group" />
       </InputGroup>
-      <InputGroup mb="24px" startIcon={<Search />} endIcon={<Moon />} scale="md">
+      <InputGroup startIcon={<Search />} endIcon={<Moon />} scale="md">
         <Input type="text" defaultValue="Input disabled" disabled />
       </InputGroup>
-    </Box>
+    </Flex>
   );
 };
 
 export const IconsButton = () => {
   return (
-    <Box width={300}>
+    <Flex width={400} flexDirection="column" rowGap={24}>
       <InputGroup
-        mb="24px"
         startIcon={
           <IconButton>
             <Search />
@@ -73,7 +72,6 @@ export const IconsButton = () => {
         <Input type="text" defaultValue="Input Group" />
       </InputGroup>
       <InputGroup
-        mb="24px"
         startIcon={
           <IconButton>
             <Search />
@@ -89,7 +87,6 @@ export const IconsButton = () => {
         <Input type="text" defaultValue="Input Group" />
       </InputGroup>
       <InputGroup
-        mb="24px"
         startIcon={
           <IconButton>
             <Search />
@@ -105,7 +102,6 @@ export const IconsButton = () => {
         <Input type="text" defaultValue="Input Group" />
       </InputGroup>
       <InputGroup
-        mb="24px"
         startIcon={
           <IconButton>
             <Search />
@@ -122,7 +118,6 @@ export const IconsButton = () => {
         <Input type="text" defaultValue="Input Group disabled" />
       </InputGroup>
       <InputGroup
-        mb="24px"
         startIcon={
           <IconButton>
             <Search />
@@ -138,6 +133,6 @@ export const IconsButton = () => {
       >
         <Input type="text" defaultValue="Input, Input Group disabled" disabled />
       </InputGroup>
-    </Box>
+    </Flex>
   );
 };
