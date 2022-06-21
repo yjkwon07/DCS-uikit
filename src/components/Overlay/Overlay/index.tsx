@@ -1,14 +1,23 @@
-import { OverlayProps } from '../@types';
+import { FC, useEffect } from 'react';
 
-const Overlay = ({ className, onClick }: OverlayProps) => {
-  return (
-    <div
-      role="presentation"
-      className={className}
-      tw="fixed top-0 left-0 z-overlay w-full h-full bg-overlay-primary opacity-[.8]"
-      onClick={() => onClick && onClick()}
-    />
-  );
+import { OverlayProps } from '../@types';
+import { StyledOverlay } from './styles';
+
+const Overlay: FC<OverlayProps> = (props) => {
+  useEffect(() => {
+    document.body.style.cssText = `
+      overflow: hidden;
+    `;
+    document.body.style.overflow = 'hidden';
+    return () => {
+      document.body.style.cssText = `
+        overflow: visible;
+        overflow: overlay;
+      `;
+    };
+  }, []);
+
+  return <StyledOverlay role="presentation" {...props} />;
 };
 
 export default Overlay;
