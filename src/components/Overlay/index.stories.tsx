@@ -1,3 +1,5 @@
+import { Box } from '../Box';
+import { Text } from '../Text';
 import Overlay from './Overlay';
 
 export default {
@@ -7,5 +9,15 @@ export default {
 };
 
 export const Default = () => {
-  return <Overlay />;
+  return (
+    <>
+      <Overlay />
+      <Box height={100000}>
+        <Text scale="6xl" color="black" bold>
+          height 100000px <br />
+          no scroll
+        </Text>
+      </Box>
+    </>
+  );
 };
