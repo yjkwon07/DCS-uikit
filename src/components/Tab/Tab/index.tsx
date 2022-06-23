@@ -6,6 +6,9 @@ import tw, { styled } from 'twin.macro';
 
 import { TabGroupProps, TabListProps, TabPanelProps, TabPanelsProps, TabProps } from '../@types';
 
+/**
+ * @see https://headlessui.dev/react/tabs
+ */
 const Tab = ({ as = Fragment, children, ...reset }: TabProps) => {
   return (
     <HTab as={as} {...reset}>

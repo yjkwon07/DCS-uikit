@@ -12,6 +12,10 @@ const StyledSelect = styled(HSelect)<SelectProps>`
   ${space}
 `;
 
+/**
+ * @see https://headlessui.dev/react/listbox
+ * @deprecated multiple
+ */
 const Select = (props: SelectProps) => {
   return <StyledSelect as="div" {...props} />;
 };
