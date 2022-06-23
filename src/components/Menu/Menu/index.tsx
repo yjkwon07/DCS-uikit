@@ -11,6 +11,9 @@ const StyledMenu = styled(HMenu)`
   ${space}
 `;
 
+/**
+ * @see https://headlessui.dev/react/menu
+ */
 const Menu = (props: MenuProps) => {
   return <StyledMenu as="div" css={[tw`relative inline-block text-left`]} {...props} />;
 };

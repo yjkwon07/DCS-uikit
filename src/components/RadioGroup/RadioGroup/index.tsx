@@ -10,6 +10,9 @@ const StyledRadioGroup = styled(HRadioGroup as any)`
   ${space}
 `;
 
+/**
+ * @see https://headlessui.dev/react/radio-group
+ */
 const RadioGroup = (props: RadioGroupProps) => {
   return <StyledRadioGroup {...props} />;
 };

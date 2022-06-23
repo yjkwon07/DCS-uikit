@@ -12,6 +12,9 @@ const StyledSwitch = styled(HSwitch)`
   ${space}
 `;
 
+/**
+ * @see https://headlessui.dev/react/switch
+ */
 const Switch = <E extends ElementType = 'button'>({
   checked,
   onChange,

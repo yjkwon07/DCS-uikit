@@ -28,6 +28,9 @@ const getProps = (props: TransitionProps) => {
   };
 };
 
+/**
+ * @see https://headlessui.dev/react/transition
+ */
 const Transition = (props: TransitionProps) => {
   return <HTransition {...getProps(props)} />;
 };
