@@ -1,17 +1,17 @@
-import { ComponentProps } from 'react';
-
 import { RadioGroup as HRadioGroup } from '@headlessui/react';
 import { LayoutProps, SpaceProps } from 'styled-system';
 
-export type RadioGroupProps = ComponentProps<typeof HRadioGroup> & LayoutProps & SpaceProps;
-export type RadioGroupLabelProps = ComponentProps<typeof HRadioGroup.Label> & {
+import { ExtractProps } from '../../../typings';
+
+export type RadioGroupProps = ExtractProps<typeof HRadioGroup> & LayoutProps & SpaceProps;
+export type RadioGroupLabelProps = ExtractProps<typeof HRadioGroup.Label> & {
   checked?: boolean;
   isScreenOnly?: boolean;
 };
-export type RadioGroupDescriptionProps = ComponentProps<typeof HRadioGroup.Description> & {
+export type RadioGroupDescriptionProps = ExtractProps<typeof HRadioGroup.Description> & {
   checked?: boolean;
 };
-export type RadioGroupOptionProps = ComponentProps<typeof HRadioGroup.Option> & {
+export type RadioGroupOptionProps = ExtractProps<typeof HRadioGroup.Option> & {
   children?: (bag: {
     checked: boolean;
     active: boolean;

@@ -27,7 +27,7 @@ const Tab = ({ as = Fragment, children, ...reset }: TabProps) => {
   );
 };
 
-const StyledTabGroup = styled(HTab.Group)`
+const StyledTabGroup = styled(HTab.Group)<TabGroupProps>`
   ${layout}
   ${space}
 `;

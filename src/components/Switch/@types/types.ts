@@ -1,9 +1,9 @@
-import { ComponentProps, CSSProperties, ElementType, ReactNode } from 'react';
+import { CSSProperties, ElementType, ReactNode } from 'react';
 
 import { Switch } from '@headlessui/react';
 import { LayoutProps, SpaceProps } from 'styled-system';
 
-import { PolymorphicComponentProps } from '../../../typings/utils';
+import { ExtractProps, PolymorphicComponentProps } from '../../../typings';
 
 export const SCALE = {
   MD: 'md',
@@ -13,7 +13,7 @@ export const SCALE = {
 
 export type Scale = typeof SCALE[keyof typeof SCALE];
 
-export type BaseSwitchProps = ComponentProps<typeof Switch> &
+export type BaseSwitchProps = ExtractProps<typeof Switch> &
   LayoutProps &
   SpaceProps & {
     as?: 'div' | 'button' | ElementType;
