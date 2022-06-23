@@ -16,5 +16,6 @@ export * from './components/Switch';
 export * from './components/Tab';
 export * from './components/Tag';
 export * from './components/Text';
+export * from './components/Transition';
 
 export * from './theme';
