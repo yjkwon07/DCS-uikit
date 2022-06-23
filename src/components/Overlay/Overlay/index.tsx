@@ -1,9 +1,9 @@
-import { FC, useEffect } from 'react';
+import { forwardRef, useEffect } from 'react';
 
 import { OverlayProps } from '../@types';
 import { StyledOverlay } from './styles';
 
-const Overlay: FC<OverlayProps> = (props) => {
+const Overlay = forwardRef<HTMLDivElement, OverlayProps>((props, ref) => {
   useEffect(() => {
     document.body.style.cssText = `
       overflow: hidden;
@@ -17,7 +17,9 @@ const Overlay: FC<OverlayProps> = (props) => {
     };
   }, []);
 
-  return <StyledOverlay role="presentation" {...props} />;
-};
+  return <StyledOverlay ref={ref} role="presentation" {...props} />;
+});
+
+Overlay.displayName = 'Overlay';
 
 export default Overlay;
