@@ -1,9 +1,9 @@
-import { ComponentProps, CSSProperties, ElementType, ReactNode } from 'react';
+import { CSSProperties, ElementType, ReactNode } from 'react';
 
 import { Combobox as HAutoSelect } from '@headlessui/react';
 import { LayoutProps, SpaceProps } from 'styled-system';
 
-import { PolymorphicComponentProps } from '../../../typings/utils';
+import { PolymorphicComponentProps, ExtractProps } from '../../../typings';
 
 export type AutoSelectProps<E extends ElementType = 'div', T = unknown> = LayoutProps &
   SpaceProps &
@@ -46,7 +46,7 @@ export type AutoSelectOptionsProps<E extends ElementType = 'ul'> = PolymorphicCo
     isNotFound?: boolean;
   }
 >;
-export type AutoSelectOptionProps = ComponentProps<typeof HAutoSelect.Option> & {
+export type AutoSelectOptionProps = ExtractProps<typeof HAutoSelect.Option> & {
   name: string;
   className?: string;
   style?: CSSProperties;

@@ -1,7 +1,6 @@
 import { useState } from 'react';
 
-import { IconComponent } from '@/components/Svg';
-
+import { IconComponent } from '../Svg';
 import { SCALE } from './@types';
 import Switch from './Switch';
 

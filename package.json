@@ -72,6 +72,7 @@
     "postcss": "^8.4.7",
     "prettier": "^2.5.1",
     "react-router-dom": "^6.2.2",
+    "react-use": "^17.4.0",
     "rimraf": "^3.0.2",
     "rollup": "^2.69.2",
     "rollup-plugin-bundle-size": "^1.0.3",
