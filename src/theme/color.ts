@@ -58,6 +58,14 @@ export const input = {
   },
 };
 
+export const modal = {
+  primary: '#ffff', // background
+  text: {
+    title: '#485861',
+    description: '#485861',
+  },
+};
+
 export const menu = {
   primary: '#485861',
   secondary: '#ffff',
@@ -187,6 +195,10 @@ export const base = {
   '--colors-input-icon': input.icon,
   '--text-colors-input-primary': input.text.primary,
   '--text-colors-input-disabled': input.text.disabled,
+
+  '--colors-modal-primary': modal.primary,
+  '--text-colors-modal-title': modal.text.title,
+  '--text-colors-modal-description': modal.text.description,
 
   '--colors-menu-primary': menu.primary,
   '--colors-menu-secondary': menu.secondary,

@@ -6,6 +6,7 @@ export * from './components/Flex';
 export * from './components/Grid';
 export * from './components/Heading';
 export * from './components/Input';
+export * from './components/Modal';
 export * from './components/Menu';
 export * from './components/Overlay';
 export * from './components/Radio';
