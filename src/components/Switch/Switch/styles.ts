@@ -1,6 +1,6 @@
 import tw, { css, theme } from 'twin.macro';
 
-import { SCALE } from '../@types/types';
+import { SCALE } from '../@types';
 
 export const switchClassName = {
   handle: 'switch--handle',

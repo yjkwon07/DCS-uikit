@@ -3,7 +3,7 @@ import { capitalize } from 'lodash-es';
 import { Box } from '../Box';
 import { Flex } from '../Flex';
 import { CommunityIcon, RemoveIcon } from '../Svg';
-import { SCALE, VARIANT } from './@types/types';
+import { SCALE, VARIANT } from './@types';
 import Tag from './Tag';
 
 export default {

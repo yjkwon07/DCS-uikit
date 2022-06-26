@@ -1,7 +1,7 @@
 import { space, variant, typography } from 'styled-system';
 import tw, { css, styled, theme } from 'twin.macro';
 
-import { TagProps, VARIANT, SCALE } from '../@types/types';
+import { TagProps, VARIANT, SCALE } from '../@types';
 
 export const scaleVariant = {
   [SCALE.MD]: {
