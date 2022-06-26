@@ -21,7 +21,7 @@ const StyledAutoSelect = styled(HAutoSelect as any)`
 
 /**
  * @see https://headlessui.dev/react/combobox
- * @deprecated multiple
+ * @props deprecated multiple
  */
 const AutoSelect = <E extends ElementType, T>(props: AutoSelectProps<E, T>) => {
   return <StyledAutoSelect as="div" {...props} />;
