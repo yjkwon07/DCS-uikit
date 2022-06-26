@@ -1,2 +1,2 @@
 export { default as Transition } from './Transition';
-export type { TransitionProps } from './@types/types';
+export type { TransitionProps } from './@types';

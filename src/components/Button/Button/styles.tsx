@@ -1,7 +1,7 @@
 import { space, layout, variant } from 'styled-system';
 import tw, { css, styled, theme } from 'twin.macro';
 
-import { BaseButtonProps, SCALE, VARIANT } from '../@types/types';
+import { BaseButtonProps, SCALE, VARIANT } from '../@types';
 
 export const buttonClassName = {
   disable: 'button--disabled',

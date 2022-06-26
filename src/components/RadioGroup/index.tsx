@@ -4,4 +4,4 @@ export type {
   RadioGroupLabelProps,
   RadioGroupOptionProps,
   RadioGroupProps,
-} from './@types/types';
+} from './@types';
