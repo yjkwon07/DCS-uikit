@@ -41,6 +41,9 @@ module.exports = {
           disabled: 'var(--colors-input-disabled)',
           icon: 'var(--colors-input-icon)',
         },
+        modal: {
+          primary: 'var(--colors-modal-primary)',
+        },
         menu: {
           primary: 'var(--colors-menu-primary)',
           secondary: 'var(--colors-menu-secondary)',
@@ -116,6 +119,10 @@ module.exports = {
         input: {
           primary: 'var(--text-colors-input-primary)',
           disabled: 'var(--text-colors-input-disabled)',
+        },
+        modal: {
+          title: 'var(--text-colors-modal-title)',
+          description: 'var(--text-colors-modal-description)',
         },
         menu: {
           primary: 'var(--text-colors-menu-primary)',
