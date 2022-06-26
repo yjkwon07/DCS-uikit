@@ -9,9 +9,9 @@ import { TabGroupProps, TabListProps, TabPanelProps, TabPanelsProps, TabProps } 
 /**
  * @see https://headlessui.dev/react/tabs
  */
-const Tab = ({ as = Fragment, children, ...reset }: TabProps) => {
+const Tab = ({ as = Fragment, children, ...props }: TabProps) => {
   return (
-    <HTab as={as} {...reset}>
+    <HTab as={as} {...props}>
       {({ selected }) => (
         <button
           type="button"
@@ -35,8 +35,8 @@ const StyledTabGroup = styled(HTab.Group)<TabGroupProps>`
   ${space}
 `;
 
-const Group = ({ as = 'div', ...reset }: TabGroupProps) => {
-  return <StyledTabGroup as={as} {...reset} />;
+const Group = ({ as = 'div', ...props }: TabGroupProps) => {
+  return <StyledTabGroup as={as} {...props} />;
 };
 
 const List = (props: TabListProps) => {

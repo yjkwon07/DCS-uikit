@@ -4,12 +4,12 @@ import getThemeValue from '../../../utils/getThemeValue';
 import { ButtonProps } from '../@types';
 import StyledIconButton from './styles';
 
-const IconButton = ({ children, ...reset }: ButtonProps<'button'>) => {
+const IconButton = ({ children, ...props }: ButtonProps<'button'>) => {
   return (
-    <StyledIconButton aria-label="icon-button" {...reset}>
+    <StyledIconButton aria-label="icon-button" {...props}>
       {isValidElement(children) &&
         cloneElement(children, {
-          fill: reset.variant && getThemeValue('colors', `button.icon.[${reset.variant}]`),
+          fill: props.variant && getThemeValue('colors', `button.icon.[${props.variant}]`),
         })}
     </StyledIconButton>
   );

@@ -18,7 +18,7 @@ const Button = <E extends ElementType = 'button'>({
   isLoading,
   disabled,
   children,
-  ...rest
+  ...props
 }: ButtonProps<E>) => {
   const internalProps = external ? externalLinkProps() : {};
 
@@ -35,19 +35,19 @@ const Button = <E extends ElementType = 'button'>({
       isLoading={isLoading}
       disabled={isDisabled}
       {...internalProps}
-      {...rest}
+      {...props}
     >
       <>
         {isValidElement(startIcon) &&
           cloneElement(startIcon, {
             mr: '0.5rem',
-            fill: rest.variant && getThemeValue('colors', `button.icon.[${rest.variant}]`),
+            fill: props.variant && getThemeValue('colors', `button.icon.[${props.variant}]`),
           })}
         {children}
         {isValidElement(endIcon) &&
           cloneElement(endIcon, {
             ml: '0.5rem',
-            fill: rest.variant && getThemeValue('colors', `button.icon.[${rest.variant}]`),
+            fill: props.variant && getThemeValue('colors', `button.icon.[${props.variant}]`),
           })}
       </>
     </StyledButton>

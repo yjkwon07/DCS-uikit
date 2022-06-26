@@ -22,7 +22,7 @@ const Switch = <E extends ElementType = 'button'>({
   description,
   startIcon,
   endIcon,
-  ...reset
+  ...props
 }: SwitchProps<E>) => {
   return (
     <StyledSwitch
@@ -39,7 +39,7 @@ const Switch = <E extends ElementType = 'button'>({
         disabledStyle,
         sizeVariant[scale].switch,
       ]}
-      {...reset}
+      {...props}
     >
       {(startIcon || endIcon) && (
         <div tw="absolute w-full h-full flex justify-center items-center gap-1">
