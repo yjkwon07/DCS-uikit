@@ -17,9 +17,9 @@ const RadioGroup = (props: RadioGroupProps) => {
   return <StyledRadioGroup {...props} />;
 };
 
-const Option = ({ children, ...reset }: RadioGroupOptionProps) => {
+const Option = ({ children, ...props }: RadioGroupOptionProps) => {
   return (
-    <HRadioGroup.Option {...reset}>
+    <HRadioGroup.Option {...props}>
       {(props) => (
         <div
           css={[
@@ -50,7 +50,7 @@ const Option = ({ children, ...reset }: RadioGroupOptionProps) => {
   );
 };
 
-const Label = ({ isScreenOnly, checked, children, ...reset }: RadioGroupLabelProps) => {
+const Label = ({ isScreenOnly, checked, children, ...props }: RadioGroupLabelProps) => {
   return (
     <HRadioGroup.Label
       css={[
@@ -58,18 +58,18 @@ const Label = ({ isScreenOnly, checked, children, ...reset }: RadioGroupLabelPro
         isScreenOnly && tw`sr-only`,
         checked ? tw`text-radioGroup-label-primary` : tw`text-radioGroup-label-secondary`,
       ]}
-      {...reset}
+      {...props}
     >
       {children}
     </HRadioGroup.Label>
   );
 };
 
-const Description = ({ checked, children, ...reset }: RadioGroupDescriptionProps) => {
+const Description = ({ checked, children, ...props }: RadioGroupDescriptionProps) => {
   return (
     <HRadioGroup.Description
       css={[checked ? tw`text-radioGroup-description-primary` : tw`text-radioGroup-description-secondary`]}
-      {...reset}
+      {...props}
     >
       {children}
     </HRadioGroup.Description>

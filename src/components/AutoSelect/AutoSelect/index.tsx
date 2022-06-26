@@ -68,7 +68,7 @@ const Options = <E extends ElementType = 'ul'>({
   afterLeave,
   isNotFound = false,
   children,
-  ...reset
+  ...props
 }: AutoSelectOptionsProps<E>) => {
   return (
     <Transition
@@ -87,7 +87,7 @@ const Options = <E extends ElementType = 'ul'>({
             tw`bg-select-secondary rounded-md shadow-sm`,
             tw`ring-1 ring-black ring-opacity-5 focus:outline-none`,
           ]}
-          {...reset}
+          {...props}
         >
           {isNotFound && <NotFound />}
           {children}
@@ -97,9 +97,9 @@ const Options = <E extends ElementType = 'ul'>({
   );
 };
 
-const Option = ({ name, ...reset }: AutoSelectOptionProps) => {
+const Option = ({ name, ...props }: AutoSelectOptionProps) => {
   return (
-    <HAutoSelect.Option {...reset}>
+    <HAutoSelect.Option {...props}>
       {(props) => (
         <div
           css={[

@@ -23,7 +23,7 @@ const Select = (props: SelectProps) => {
 const Button = <E extends ElementType = 'button'>({
   selectedName,
   placeholder = 'Select option...',
-  ...reset
+  ...props
 }: SelectButtonProps<E>) => {
   return (
     <HSelect.Button
@@ -36,7 +36,7 @@ const Button = <E extends ElementType = 'button'>({
         tw`focus:outline-none focus:ring-2 ring-offset-2 ring-offset-focus ring-white`,
         tw`hover:opacity-[0.65]`,
       ]}
-      {...reset}
+      {...props}
     >
       <span css={[tw`block truncate`]}>{selectedName || placeholder}</span>
       <span css={[tw`absolute inset-y-0 right-0 flex items-center pr-2 pointer-events-none`]}>
@@ -65,9 +65,9 @@ const Options = <E extends ElementType = 'ul'>(props: SelectOptionsProps<E>) => 
   );
 };
 
-const Option = ({ name, ...reset }: SelectOptionProps) => {
+const Option = ({ name, ...props }: SelectOptionProps) => {
   return (
-    <HSelect.Option {...reset}>
+    <HSelect.Option {...props}>
       {(props) => (
         <div
           css={[

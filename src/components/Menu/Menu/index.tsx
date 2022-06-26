@@ -58,9 +58,9 @@ const Items = <E extends ElementType = 'div'>(props: MenuItemsProps<E>) => {
   );
 };
 
-const Item = ({ children, ...reset }: MenuItemProps) => {
+const Item = ({ children, ...props }: MenuItemProps) => {
   return (
-    <HMenu.Item {...reset}>
+    <HMenu.Item {...props}>
       {(props) => (
         <button
           type="button"
