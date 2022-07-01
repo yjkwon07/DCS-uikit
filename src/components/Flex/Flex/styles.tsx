@@ -1,4 +1,3 @@
-import { flexbox } from 'styled-system';
 import { styled } from 'twin.macro';
 
 import colorStyle from '../../../utils/colorStyle';
@@ -9,8 +8,6 @@ import { FlexProps } from '../@types';
 export const StyledFlex = styled(Box)<FlexProps>`
   display: flex;
 
-  ${colorStyle('textColor')}
+  ${colorStyle}
   ${gapStyle}
-
-  ${flexbox}
 `;

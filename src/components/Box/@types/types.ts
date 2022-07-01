@@ -2,6 +2,8 @@ import { HTMLAttributes } from 'react';
 
 import { BackgroundProps, BorderProps, FlexboxProps, LayoutProps, PositionProps, SpaceProps } from 'styled-system';
 
+import { TextColorKey } from '../../../theme/color/@types';
+
 export interface BoxProps
   extends BackgroundProps,
     BorderProps,
@@ -9,4 +11,6 @@ export interface BoxProps
     PositionProps,
     SpaceProps,
     FlexboxProps,
-    HTMLAttributes<HTMLDivElement> {}
+    HTMLAttributes<HTMLDivElement> {
+  color?: TextColorKey | `#${string}`;
+}

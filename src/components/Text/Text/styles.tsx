@@ -6,7 +6,7 @@ import fontScaleStyle from '../../../utils/fontScaleStyle';
 import { TextProps } from '../@types';
 
 export const StyledText = styled.div<TextProps>`
-  ${colorStyle('textColor')}
+  ${colorStyle}
   ${fontScaleStyle}
 
   font-weight: ${({ bold }) => (bold ? 600 : 400)};

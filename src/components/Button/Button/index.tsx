@@ -1,7 +1,7 @@
 import { cloneElement, ElementType, isValidElement } from 'react';
 
+import { colors } from '../../../theme';
 import externalLinkProps from '../../../utils/externalLinkProps';
-import getThemeValue from '../../../utils/getThemeValue';
 import { ButtonProps, SCALE, VARIANT } from '../@types';
 import { buttonClassName, StyledButton } from './styles';
 
@@ -41,13 +41,13 @@ const Button = <E extends ElementType = 'button'>({
         {isValidElement(startIcon) &&
           cloneElement(startIcon, {
             mr: '0.5rem',
-            fill: props.variant && getThemeValue('colors', `button.icon.[${props.variant}]`),
+            fill: props.variant && colors.button.icon[props.variant],
           })}
         {children}
         {isValidElement(endIcon) &&
           cloneElement(endIcon, {
             ml: '0.5rem',
-            fill: props.variant && getThemeValue('colors', `button.icon.[${props.variant}]`),
+            fill: props.variant && colors.button.icon[props.variant],
           })}
       </>
     </StyledButton>

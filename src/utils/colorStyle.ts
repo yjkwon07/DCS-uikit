@@ -1,16 +1,16 @@
+import { get } from 'lodash-es';
 import { css } from 'twin.macro';
 
-import getThemeValue from './getThemeValue';
+import { textColor } from '../theme';
+import { TextColorKey } from '../theme/color/@types';
 
-const colorStyle =
-  (themeColorName: string) =>
-  ({ color }: { color?: string }) => {
-    return css`
-      ${color &&
-      css`
-        color: ${typeof color === 'string' && color.includes('#') ? color : getThemeValue(themeColorName, color)};
-      `}
-    `;
-  };
+const colorStyle = ({ color }: { color?: TextColorKey | `#${string}` }) => {
+  return css`
+    ${color &&
+    css`
+      color: ${color.includes('#') ? color : get(textColor, color)};
+    `}
+  `;
+};
 
 export default colorStyle;

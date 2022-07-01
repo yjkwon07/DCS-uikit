@@ -1,6 +1,6 @@
 import { cloneElement, isValidElement } from 'react';
 
-import getThemeValue from '../../../utils/getThemeValue';
+import { colors } from '../../../theme';
 import { ButtonProps } from '../@types';
 import StyledIconButton from './styles';
 
@@ -9,7 +9,7 @@ const IconButton = ({ children, ...props }: ButtonProps<'button'>) => {
     <StyledIconButton aria-label="icon-button" {...props}>
       {isValidElement(children) &&
         cloneElement(children, {
-          fill: props.variant && getThemeValue('colors', `button.icon.[${props.variant}]`),
+          fill: props.variant && colors.button.icon[props.variant],
         })}
     </StyledIconButton>
   );
