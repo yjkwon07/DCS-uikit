@@ -5,7 +5,7 @@ import colorStyle from '../../../utils/colorStyle';
 import { BoxProps } from '../@types';
 
 export const StyledBox = styled.div<BoxProps>`
-  ${colorStyle('textColor')}
+  ${colorStyle}
 
   ${background}
   ${border}
