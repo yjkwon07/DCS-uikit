@@ -6,6 +6,8 @@
       "esnext"
     ],
     "allowJs": true,
+    "checkJs": false,
+    "outDir": "dist",
     "allowSyntheticDefaultImports": true,
     "moduleResolution": "node",
     "esModuleInterop": true,

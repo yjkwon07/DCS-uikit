@@ -12,5 +12,5 @@ export interface BoxProps
     SpaceProps,
     FlexboxProps,
     HTMLAttributes<HTMLDivElement> {
-  color?: TextColorKey | `#${string}`;
+  color?: TextColorKey | `#${string}` | `rgb${string}`;
 }

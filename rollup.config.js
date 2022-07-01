@@ -19,6 +19,7 @@ export default {
     { file: pkg.main, format: 'cjs' },
     { file: pkg.module, format: 'es' },
   ],
+  external: ['tailwindcss/plugin'], // <-- suppresses the warning
   plugins: [
     // Automatically add peerDependencies to the `external` config
     // https://rollupjs.org/guide/en/#external
