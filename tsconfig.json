@@ -5,6 +5,7 @@
       "dom.iterable",
       "esnext"
     ],
+    "rootDir": "./",
     "allowJs": true,
     "checkJs": false,
     "outDir": "dist",
@@ -30,7 +31,7 @@
     ],
   },
   "include": [
-    "src",
+    "src/**/*",
     "src/typings/*",
   ],
   "exclude": [
