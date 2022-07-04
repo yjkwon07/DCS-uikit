@@ -1,2 +1,2 @@
-export { default as DisClosure } from './Disclosure';
+export { default as Disclosure } from './Disclosure';
 export type { DisclosureProps, DisclosureButtonProps, DisclosurePanelProps } from './@types';
