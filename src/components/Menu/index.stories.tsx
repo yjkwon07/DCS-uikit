@@ -18,6 +18,7 @@ import Menu from './Menu';
 
 export default {
   title: 'Components/Menu',
+  component: Menu,
   argTypes: {},
 };
 

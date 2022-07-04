@@ -3,9 +3,11 @@ import { useState } from 'react';
 import { Button } from '../Button';
 import { Flex } from '../Flex';
 import BaseModal from './BaseModal';
+import Modal from './Modal';
 
 export default {
   title: 'Components/Modal',
+  component: Modal,
   argTypes: {},
 };
 

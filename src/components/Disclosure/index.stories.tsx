@@ -7,6 +7,7 @@ import Disclosure from './Disclosure';
 
 export default {
   title: 'Utils/Disclosure',
+  component: Disclosure,
   argTypes: {},
 };
 

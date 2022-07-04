@@ -5,6 +5,7 @@ import Select from './Select';
 
 export default {
   title: 'Form/Select',
+  component: Select,
   argTypes: {},
 };
 

@@ -4,6 +4,7 @@ import AutoSelect from './AutoSelect';
 
 export default {
   title: 'Form/AutoSelect',
+  component: AutoSelect,
   argTypes: {},
 };
 
