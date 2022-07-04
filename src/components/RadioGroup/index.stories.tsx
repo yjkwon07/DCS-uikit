@@ -5,6 +5,7 @@ import RadioGroup from './RadioGroup';
 
 export default {
   title: 'Form/RadioGroup',
+  component: RadioGroup,
   argTypes: {},
 };
 

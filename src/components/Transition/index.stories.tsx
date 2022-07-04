@@ -7,6 +7,7 @@ import Transition from './Transition';
 
 export default {
   title: 'Components/Transition',
+  component: Transition,
   argTypes: {},
 };
 
