@@ -4,7 +4,7 @@
   "description": "",
   "main": "dist/components.cjs.js",
   "module": "dist/components.esm.js",
-  "types": "dist/index.d.ts",
+  "types": "dist/src/index.d.ts",
   "files": [
     "dist"
   ],
