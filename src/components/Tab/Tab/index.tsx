@@ -4,14 +4,15 @@ import { Tab as HTab } from '@headlessui/react';
 import { layout, space } from 'styled-system';
 import tw, { styled } from 'twin.macro';
 
+import shouldForwardProp from '../../../utils/shouldForwardProp';
 import { TabGroupProps, TabListProps, TabPanelProps, TabPanelsProps, TabProps } from '../@types';
 
 /**
  * @see https://headlessui.dev/react/tabs
  */
-const Tab = ({ as = Fragment, children, ...props }: TabProps) => {
+const Tab = ({ children, ...props }: TabProps) => {
   return (
-    <HTab as={as} {...props}>
+    <HTab as={Fragment} {...props}>
       {({ selected }) => (
         <button
           type="button"
@@ -30,13 +31,13 @@ const Tab = ({ as = Fragment, children, ...props }: TabProps) => {
   );
 };
 
-const StyledTabGroup = styled(HTab.Group)<TabGroupProps>`
+const StyledTabGroup = styled(HTab.Group, { shouldForwardProp })<TabGroupProps>`
   ${layout}
   ${space}
 `;
 
-const Group = ({ as = 'div', ...props }: TabGroupProps) => {
-  return <StyledTabGroup as={as} {...props} />;
+const Group = ({ ...props }: TabGroupProps) => {
+  return <StyledTabGroup as="div" {...props} />;
 };
 
 const List = (props: TabListProps) => {
