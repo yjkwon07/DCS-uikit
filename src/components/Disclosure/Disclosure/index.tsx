@@ -1,12 +1,12 @@
 import { ElementType } from 'react';
 
 import { Disclosure as HDisclosure } from '@headlessui/react';
-import shouldForwardProp from '@styled-system/should-forward-prop';
 import { background, border, flexbox, layout, position, space, typography } from 'styled-system';
 import { styled } from 'twin.macro';
 
 import colorStyle from '../../../utils/colorStyle';
 import gapStyle from '../../../utils/gapStyle';
+import shouldForwardProp from '../../../utils/shouldForwardProp';
 import { DisclosureButtonProps, DisclosurePanelProps, DisclosureProps } from '../@types';
 
 const Disclosure = <E extends ElementType = 'div'>(props: DisclosureProps<E>) => {
