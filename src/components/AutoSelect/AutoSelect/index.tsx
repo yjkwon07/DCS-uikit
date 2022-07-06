@@ -1,10 +1,12 @@
 import { ElementType, Fragment } from 'react';
 
-import { Combobox as HAutoSelect, Transition } from '@headlessui/react';
+import { Combobox as HAutoSelect } from '@headlessui/react';
 import { space, layout } from 'styled-system';
 import tw, { styled } from 'twin.macro';
 
+import shouldForwardProp from '../../../utils/shouldForwardProp';
 import { CheckIcon, SelectorIcon } from '../../Svg';
+import { Transition } from '../../Transition';
 import {
   AutoSelectProps,
   AutoSelectButtonProps,
@@ -14,7 +16,9 @@ import {
   AutoSelectInputGroupProps,
 } from '../@types';
 
-const StyledAutoSelect = styled(HAutoSelect as any)`
+const StyledAutoSelect = styled(HAutoSelect as any, {
+  shouldForwardProp,
+})`
   ${layout}
   ${space}
 `;
@@ -60,22 +64,23 @@ const Button = <E extends ElementType = 'button'>(props: AutoSelectButtonProps<E
   );
 };
 
-const NotFound = () => {
-  return <div tw="cursor-pointer select-none relative py-2 px-4 text-select-secondary">Nothing found.</div>;
+const NotFound = ({ text }: { text: string }) => {
+  return <div tw="select-none py-2 px-4 text-select-secondary">{text}</div>;
 };
 
 const Options = <E extends ElementType = 'ul'>({
   afterLeave,
   isNotFound = false,
   children,
+  textNotFound = 'Nothing found.',
   ...props
 }: AutoSelectOptionsProps<E>) => {
   return (
     <Transition
       as={Fragment}
-      leave="transition ease-in duration-100"
-      leaveFrom="opacity-100"
-      leaveTo="opacity-0"
+      leave={tw`transition ease-in duration-100`}
+      leaveFrom={tw`opacity-100`}
+      leaveTo={tw`opacity-0`}
       afterLeave={afterLeave}
     >
       <div tw="relative mt-1">
@@ -89,8 +94,7 @@ const Options = <E extends ElementType = 'ul'>({
           ]}
           {...props}
         >
-          {isNotFound && <NotFound />}
-          {children}
+          {isNotFound ? <NotFound text={textNotFound} /> : children}
         </HAutoSelect.Options>
       </div>
     </Transition>
