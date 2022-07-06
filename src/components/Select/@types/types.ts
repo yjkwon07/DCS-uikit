@@ -6,16 +6,12 @@ import { LayoutProps, SpaceProps } from 'styled-system';
 import { PolymorphicComponentProps, ExtractProps } from '../../../typings';
 
 export type SelectProps = ExtractProps<typeof Select> & LayoutProps & SpaceProps;
+
 export type SelectButtonProps<E extends ElementType = 'button'> = PolymorphicComponentProps<
   E,
-  {
-    as?: 'button' | ElementType;
-    placeholder?: string;
-    selectedName?: string;
-    className?: string;
-    style?: CSSProperties;
-  }
+  ExtractProps<typeof Select.Button>
 >;
+
 export type SelectOptionsProps<E extends ElementType = 'ul'> = PolymorphicComponentProps<
   E,
   {
@@ -27,6 +23,7 @@ export type SelectOptionsProps<E extends ElementType = 'ul'> = PolymorphicCompon
     children?: ReactNode;
   }
 >;
+
 export type SelectOptionProps = ExtractProps<typeof Select.Option> & {
   name: string;
   className?: string;
