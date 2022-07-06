@@ -4,10 +4,11 @@ import { Switch as HSwitch } from '@headlessui/react';
 import { layout, space } from 'styled-system';
 import tw, { styled, theme } from 'twin.macro';
 
+import shouldForwardProp from '../../../utils/shouldForwardProp';
 import { SCALE, SwitchProps } from '../@types';
 import { activeRingStyle, disabledStyle, sizeVariant, switchClassName } from './styles';
 
-const StyledSwitch = styled(HSwitch)`
+const StyledSwitch = styled(HSwitch, { shouldForwardProp })`
   ${layout}
   ${space}
 `;

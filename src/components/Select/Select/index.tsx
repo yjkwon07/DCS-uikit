@@ -1,13 +1,17 @@
 import { ElementType, Fragment } from 'react';
 
-import { Listbox as HSelect, Transition } from '@headlessui/react';
+import { Listbox as HSelect } from '@headlessui/react';
 import { space, layout } from 'styled-system';
 import tw, { styled } from 'twin.macro';
 
+import shouldForwardProp from '../../../utils/shouldForwardProp';
 import { CheckIcon, SelectorIcon } from '../../Svg';
+import { Transition } from '../../Transition';
 import { SelectButtonProps, SelectOptionProps, SelectOptionsProps, SelectProps } from '../@types';
 
-const StyledSelect = styled(HSelect)<SelectProps>`
+const StyledSelect = styled(HSelect, {
+  shouldForwardProp,
+})<SelectProps>`
   ${layout}
   ${space}
 `;
@@ -48,7 +52,12 @@ const Button = <E extends ElementType = 'button'>({
 
 const Options = <E extends ElementType = 'ul'>(props: SelectOptionsProps<E>) => {
   return (
-    <Transition as={Fragment} leave="transition ease-in duration-100" leaveFrom="opacity-100" leaveTo="opacity-0">
+    <Transition
+      as={Fragment}
+      leave={tw`transition ease-in duration-100`}
+      leaveFrom={tw`opacity-100`}
+      leaveTo={tw`opacity-0`}
+    >
       <div tw="relative mt-1">
         <HSelect.Options
           css={[

@@ -7,9 +7,9 @@ export type AsProps<E extends ElementType = ElementType> = {
   as?: E;
 };
 
-export type MergeProps<E extends ElementType> = AsProps<E> & Omit<ComponentProps<E>, keyof AsProps>;
+export type MergeProps<E extends ElementType, P> = AsProps<E> & Omit<ComponentProps<E>, keyof AsProps | keyof P>;
 
-export type PolymorphicComponentProps<E extends ElementType, P> = P | (MergeProps<E> & P);
+export type PolymorphicComponentProps<E extends ElementType, P> = P & MergeProps<E, P>;
 
 export type PolymorphicComponent<P, D extends ElementType> = <E extends ElementType = D>(
   props: PolymorphicComponentProps<E, P>,

@@ -18,6 +18,7 @@ export const VARIANT = {
 } as const;
 
 export type Scale = typeof SCALE[keyof typeof SCALE];
+
 export type Variant = typeof VARIANT[keyof typeof VARIANT];
 
 export interface BaseButtonProps

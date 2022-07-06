@@ -57,6 +57,7 @@ export const Default = () => {
           {({ open }) => (
             <>
               <Disclosure.Button
+                as={Flex}
                 display="flex"
                 width="100%"
                 justifyContent="space-between"

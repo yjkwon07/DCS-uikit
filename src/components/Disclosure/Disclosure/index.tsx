@@ -6,25 +6,14 @@ import { styled } from 'twin.macro';
 
 import colorStyle from '../../../utils/colorStyle';
 import gapStyle from '../../../utils/gapStyle';
+import shouldForwardProp from '../../../utils/shouldForwardProp';
 import { DisclosureButtonProps, DisclosurePanelProps, DisclosureProps } from '../@types';
 
-const StyledDisClosure = styled(HDisclosure)<DisclosureProps<'div'>>`
-  ${colorStyle}
-  ${gapStyle}
-
-  ${background}
-  ${border}
-  ${layout}
-  ${position}
-  ${space}
-  ${flexbox}
-`;
-
-const Disclosure = <E extends ElementType>(props: DisclosureProps<E>) => {
-  return <StyledDisClosure as="div" {...props} />;
+const Disclosure = <E extends ElementType = 'div'>(props: DisclosureProps<E>) => {
+  return <HDisclosure {...props} />;
 };
 
-const StyledDisClosureButton = styled(HDisclosure.Button)<DisclosureButtonProps>`
+const StyledDisClosureButton = styled(HDisclosure.Button, { shouldForwardProp })<DisclosureButtonProps<any>>`
   ${colorStyle}
   ${gapStyle}
 
@@ -37,11 +26,11 @@ const StyledDisClosureButton = styled(HDisclosure.Button)<DisclosureButtonProps>
   ${flexbox}
 `;
 
-const Button = (props: DisclosureButtonProps) => {
+const Button = <E extends ElementType = 'button'>(props: DisclosureButtonProps<E>) => {
   return <StyledDisClosureButton {...props} />;
 };
 
-const StyledDisClosurePanel = styled(HDisclosure.Panel)<DisclosurePanelProps>`
+const StyledDisClosurePanel = styled(HDisclosure.Panel, { shouldForwardProp })<DisclosurePanelProps<any>>`
   ${colorStyle}
   ${gapStyle}
 
@@ -54,7 +43,7 @@ const StyledDisClosurePanel = styled(HDisclosure.Panel)<DisclosurePanelProps>`
   ${flexbox}
 `;
 
-const Panel = (props: DisclosurePanelProps) => {
+const Panel = <E extends ElementType = 'div'>(props: DisclosurePanelProps<E>) => {
   return <StyledDisClosurePanel {...props} />;
 };
 

@@ -1,12 +1,14 @@
 import { ElementType, Fragment } from 'react';
 
-import { Menu as HMenu, Transition } from '@headlessui/react';
+import { Menu as HMenu } from '@headlessui/react';
 import { layout, space } from 'styled-system';
 import tw, { styled } from 'twin.macro';
 
+import shouldForwardProp from '../../../utils/shouldForwardProp';
+import { Transition } from '../../Transition';
 import { MenuButtonProps, MenuItemProps, MenuItemsProps, MenuProps } from '../@types';
 
-const StyledMenu = styled(HMenu)`
+const StyledMenu = styled(HMenu, { shouldForwardProp })`
   ${layout}
   ${space}
 `;
@@ -37,12 +39,12 @@ const Items = <E extends ElementType = 'div'>(props: MenuItemsProps<E>) => {
   return (
     <Transition
       as={Fragment}
-      enter="transition ease-out duration-100"
-      enterFrom="transform opacity-0 scale-95"
-      enterTo="transform opacity-100 scale-100"
-      leave="transition ease-in duration-75"
-      leaveFrom="transform opacity-100 scale-100"
-      leaveTo="transform opacity-0 scale-95"
+      enter={tw`transition ease-out duration-100`}
+      enterFrom={tw`transform opacity-0 scale-95`}
+      enterTo={tw`transform opacity-100 scale-100`}
+      leave={tw`transition ease-in duration-75`}
+      leaveFrom={tw`transform opacity-100 scale-100`}
+      leaveTo={tw`transform opacity-0 scale-95`}
     >
       <HMenu.Items
         css={[

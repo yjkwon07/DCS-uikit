@@ -6,10 +6,13 @@ import { LayoutProps, SpaceProps } from 'styled-system';
 import { ExtractProps } from '../../../typings';
 
 export type RModalPRops = ExtractProps<typeof Dialog>;
+
 export interface ModalPanelProps extends LayoutProps, SpaceProps {
   children: ReactNode;
 }
+
 export type ModalTitleProps = ExtractProps<typeof Dialog.Title>;
+
 export type ModalDescriptionProps = ExtractProps<typeof Dialog.Description>;
 
 export type ModalProps = ForwardRefExoticComponent<

@@ -58,6 +58,7 @@ export const StyledInput = styled.input<InputProps>`
   ::placeholder {
     color: ${theme`textColor.input.primary`};
   }
+
   ${layout}
   ${space}
 `;
