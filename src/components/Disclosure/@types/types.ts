@@ -4,24 +4,28 @@ import { Disclosure as HDisclosure } from '@headlessui/react';
 import { TypographyProps } from 'styled-system';
 
 import { TextColorKey } from '../../../theme/color/@types';
-import { ExtractProps } from '../../../typings';
-import { PolymorphicComponentProps } from '../../../typings/utils';
+import { ExtractProps, ColorStyleProps, PolymorphicComponentProps } from '../../../typings';
 import { FlexProps } from '../../Flex';
 
 export type DisclosureProps<E extends ElementType = 'div'> = PolymorphicComponentProps<
   E,
   ExtractProps<typeof HDisclosure> &
     FlexProps & {
-      color?: TextColorKey | `#${string}` | `rgb${string}`;
+      color?: ColorStyleProps<TextColorKey>;
     }
 >;
 export type DisclosureButtonProps = ExtractProps<typeof HDisclosure.Button> &
   FlexProps &
   TypographyProps & {
-    color?: TextColorKey | `#${string}` | `rgb${string}`;
+    color?: ColorStyleProps<TextColorKey>;
   };
 export type DisclosurePanelProps = ExtractProps<typeof HDisclosure.Panel> &
   FlexProps &
   TypographyProps & {
-    color?: TextColorKey | `#${string}` | `rgb${string}`;
+    color?: ColorStyleProps<TextColorKey>;
   };
+
+export type D = DisclosureProps<'div'> & {
+  Button: DisclosureButtonProps;
+  Panel: DisclosurePanelProps;
+};
