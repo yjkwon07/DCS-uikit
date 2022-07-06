@@ -7,25 +7,28 @@ import { TextColorKey } from '../../../theme/color/@types';
 import { ExtractProps, ColorStyleProps, PolymorphicComponentProps } from '../../../typings';
 import { FlexProps } from '../../Flex';
 
-export type DisclosureProps<E extends ElementType = 'div'> = PolymorphicComponentProps<
-  E,
-  ExtractProps<typeof HDisclosure> &
-    FlexProps & {
+export type DisclosureProps<E extends ElementType = 'div'> = ExtractProps<typeof HDisclosure> &
+  PolymorphicComponentProps<
+    E,
+    {
       color?: ColorStyleProps<TextColorKey>;
     }
->;
-export type DisclosureButtonProps = ExtractProps<typeof HDisclosure.Button> &
-  FlexProps &
-  TypographyProps & {
-    color?: ColorStyleProps<TextColorKey>;
-  };
-export type DisclosurePanelProps = ExtractProps<typeof HDisclosure.Panel> &
-  FlexProps &
-  TypographyProps & {
-    color?: ColorStyleProps<TextColorKey>;
-  };
+  >;
 
-export type D = DisclosureProps<'div'> & {
-  Button: DisclosureButtonProps;
-  Panel: DisclosurePanelProps;
-};
+export type DisclosureButtonProps<E extends ElementType = 'button'> = ExtractProps<typeof HDisclosure.Button> &
+  PolymorphicComponentProps<
+    E,
+    FlexProps &
+      TypographyProps & {
+        color?: ColorStyleProps<TextColorKey>;
+      }
+  >;
+
+export type DisclosurePanelProps<E extends ElementType = 'div'> = ExtractProps<typeof HDisclosure.Panel> &
+  PolymorphicComponentProps<
+    E,
+    FlexProps &
+      TypographyProps & {
+        color?: ColorStyleProps<TextColorKey>;
+      }
+  >;
