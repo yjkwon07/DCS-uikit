@@ -1,4 +1,4 @@
-import { ElementType, ExoticComponent, MutableRefObject, Ref } from 'react';
+import { ElementType, Ref } from 'react';
 
 import { Disclosure as HDisclosure } from '@headlessui/react';
 import { TypographyProps } from 'styled-system';
@@ -42,13 +42,9 @@ export type DisclosurePanelRenderProps = (<E extends ElementType = 'div'>(
   displayName: string;
 };
 
-export type DisclosureProps = ExoticComponent<{
-  defaultOpen?: boolean;
-  children?: (option: {
-    open: boolean;
-    close(focusableElement?: HTMLElement | MutableRefObject<HTMLElement | null>): void;
-  }) => React.ReactElement<any, string | React.JSXElementConstructor<any>>;
-}> & {
+export type DisclosureProps = (<E extends ElementType>(
+  props: CDisclosureProps<E>,
+) => React.ReactElement<any, string | React.JSXElementConstructor<any>> | null) & {
   Button: DisclosureButtonRenderProps;
   Panel: DisclosurePanelRenderProps;
 };

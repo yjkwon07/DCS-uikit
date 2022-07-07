@@ -1,7 +1,6 @@
 import { useEffect, useRef } from 'react';
 
 import { ChevronUpIcon } from '@heroicons/react/solid';
-import { Link } from 'react-router-dom';
 import tw from 'twin.macro';
 
 import { colors } from '../../theme';
