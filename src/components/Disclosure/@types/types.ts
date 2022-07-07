@@ -1,4 +1,4 @@
-import { ElementType } from 'react';
+import { ElementType, ExoticComponent, MutableRefObject, Ref } from 'react';
 
 import { Disclosure as HDisclosure } from '@headlessui/react';
 import { TypographyProps } from 'styled-system';
@@ -7,13 +7,8 @@ import { TextColorKey } from '../../../theme/color/@types';
 import { ExtractProps, ColorStyleProps, PolymorphicComponentProps } from '../../../typings';
 import { FlexProps } from '../../Flex';
 
-export type DisclosureProps<E extends ElementType = 'div'> = ExtractProps<typeof HDisclosure> &
-  PolymorphicComponentProps<
-    E,
-    {
-      color?: ColorStyleProps<TextColorKey>;
-    }
-  >;
+export type CDisclosureProps<E extends ElementType = 'div'> = ExtractProps<typeof HDisclosure> &
+  PolymorphicComponentProps<E, unknown>;
 
 export type DisclosureButtonProps<E extends ElementType = 'button'> = ExtractProps<typeof HDisclosure.Button> &
   PolymorphicComponentProps<
@@ -32,3 +27,28 @@ export type DisclosurePanelProps<E extends ElementType = 'div'> = ExtractProps<t
         color?: ColorStyleProps<TextColorKey>;
       }
   >;
+
+export type DisclosureButtonRenderProps = (<E extends ElementType = 'button'>(
+  props: DisclosureButtonProps<E>,
+  ref: Ref<HTMLButtonElement>,
+) => React.ReactElement<any, string | React.JSXElementConstructor<any>> | null) & {
+  displayName: string;
+};
+
+export type DisclosurePanelRenderProps = (<E extends ElementType = 'div'>(
+  props: DisclosurePanelProps<E>,
+  ref: Ref<HTMLDivElement>,
+) => React.ReactElement<any, string | React.JSXElementConstructor<any>> | null) & {
+  displayName: string;
+};
+
+export type DisclosureProps = ExoticComponent<{
+  defaultOpen?: boolean;
+  children?: (option: {
+    open: boolean;
+    close(focusableElement?: HTMLElement | MutableRefObject<HTMLElement | null>): void;
+  }) => React.ReactElement<any, string | React.JSXElementConstructor<any>>;
+}> & {
+  Button: DisclosureButtonRenderProps;
+  Panel: DisclosurePanelRenderProps;
+};

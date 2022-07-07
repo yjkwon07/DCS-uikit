@@ -1,17 +1,20 @@
-import { ElementType } from 'react';
+import { ElementType, Ref } from 'react';
 
 import { Disclosure as HDisclosure } from '@headlessui/react';
 import { background, border, flexbox, layout, position, space, typography } from 'styled-system';
 import { styled } from 'twin.macro';
 
 import colorStyle from '../../../utils/colorStyle';
+import forwardRefWithAs from '../../../utils/forwardRefWidthAs';
 import gapStyle from '../../../utils/gapStyle';
 import shouldForwardProp from '../../../utils/shouldForwardProp';
-import { DisclosureButtonProps, DisclosurePanelProps, DisclosureProps } from '../@types';
+import { CDisclosureProps, DisclosureButtonProps, DisclosurePanelProps, DisclosureProps } from '../@types';
 
-const Disclosure = <E extends ElementType = 'div'>(props: DisclosureProps<E>) => {
+const CDisclosure = <E extends ElementType>(props: CDisclosureProps<E>) => {
   return <HDisclosure {...props} />;
 };
+
+const DEFAULT_BUTTON_TAG = 'button' as const;
 
 const StyledDisClosureButton = styled(HDisclosure.Button, { shouldForwardProp })<DisclosureButtonProps<any>>`
   ${colorStyle}
@@ -26,9 +29,16 @@ const StyledDisClosureButton = styled(HDisclosure.Button, { shouldForwardProp })
   ${flexbox}
 `;
 
-const Button = <E extends ElementType = 'button'>(props: DisclosureButtonProps<E>) => {
-  return <StyledDisClosureButton {...props} />;
-};
+const Button = forwardRefWithAs(function Button<E extends ElementType = typeof DEFAULT_BUTTON_TAG>(
+  props: DisclosureButtonProps<E>,
+  ref: Ref<HTMLButtonElement>,
+) {
+  return <StyledDisClosureButton ref={ref} {...props} />;
+});
+
+Button.displayName = 'Button';
+
+const DEFAULT_PANEL_TAG = 'div' as const;
 
 const StyledDisClosurePanel = styled(HDisclosure.Panel, { shouldForwardProp })<DisclosurePanelProps<any>>`
   ${colorStyle}
@@ -43,13 +53,19 @@ const StyledDisClosurePanel = styled(HDisclosure.Panel, { shouldForwardProp })<D
   ${flexbox}
 `;
 
-const Panel = <E extends ElementType = 'div'>(props: DisclosurePanelProps<E>) => {
-  return <StyledDisClosurePanel {...props} />;
-};
+const Panel = forwardRefWithAs(function Panel<E extends ElementType = typeof DEFAULT_PANEL_TAG>(
+  props: DisclosurePanelProps<E>,
+  ref: Ref<HTMLDivElement>,
+) {
+  return <StyledDisClosurePanel ref={ref} {...props} />;
+});
+
+Panel.displayName = 'Panel';
 
 /**
  * @see https://headlessui.dev/react/disclosure
  */
+const Disclosure: DisclosureProps = Object.assign(CDisclosure);
 Disclosure.Button = Button;
 Disclosure.Panel = Panel;
 
