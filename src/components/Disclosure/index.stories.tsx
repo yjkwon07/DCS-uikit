@@ -1,4 +1,7 @@
+import { useEffect, useRef } from 'react';
+
 import { ChevronUpIcon } from '@heroicons/react/solid';
+import { Link } from 'react-router-dom';
 import tw from 'twin.macro';
 
 import { colors } from '../../theme';
@@ -12,6 +15,12 @@ export default {
 };
 
 export const Default = () => {
+  const ref = useRef(null);
+
+  useEffect(() => {
+    console.log('ref', ref);
+  });
+
   return (
     <Flex justifyContent="center" alignItems="center">
       <Flex width={400} borderRadius={16} background={colors.primary} padding="8px" flexDirection="column" rowGap="8px">
@@ -19,6 +28,7 @@ export const Default = () => {
           {({ open }) => (
             <>
               <Disclosure.Button
+                ref={ref}
                 display="flex"
                 width="100%"
                 justifyContent="space-between"
