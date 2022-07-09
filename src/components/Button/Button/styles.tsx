@@ -63,9 +63,9 @@ export const disabledStyle = ({ isLoading }: BaseButtonProps) => {
   return css`
     &:disabled,
     &.${buttonClassName.disable} {
-      background-color: ${theme`colors.disabled`};
-      color: ${theme`textColor.disabled`};
-      border-color: ${theme`colors.disabled`};
+      background-color: ${theme`colors.button.disabled`};
+      color: ${theme`textColor.button.disabled`};
+      border-color: ${theme`colors.button.disabled`};
       box-shadow: none;
       cursor: not-allowed;
     }
@@ -99,6 +99,7 @@ export const StyledButton = styled.button<BaseButtonProps>`
     prop: 'scale',
     variants: scaleVariant,
   })}
+  
   ${variant({
     variants: styleVariant,
   })}

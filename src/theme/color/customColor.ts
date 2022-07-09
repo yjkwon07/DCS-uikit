@@ -28,12 +28,6 @@ const button = {
   primary: '#485861',
   tertiary: '#EFF4F5',
   disabled: '#E9EAEB',
-  icon: {
-    primary: '#ffff',
-    secondary: '#485861',
-    tertiary: '#ffff',
-    text: '#ffff',
-  },
   text: {
     primary: theme`colors.sky.100`,
     secondary: '#485861',
@@ -177,10 +171,6 @@ export const base = {
   '--colors-button-primary': button.primary,
   '--colors-button-tertiary': button.tertiary,
   '--colors-button-disabled': button.disabled,
-  '--colors-button-icon-primary': button.icon.primary,
-  '--colors-button-icon-secondary': button.icon.secondary,
-  '--colors-button-icon-tertiary': button.icon.tertiary,
-  '--colors-button-icon-text': button.icon.text,
   '--text-colors-button-primary': button.text.primary,
   '--text-colors-button-secondary': button.text.secondary,
   '--text-colors-button-tertiary': button.text.tertiary,

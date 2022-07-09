@@ -24,12 +24,6 @@ module.exports = {
           primary: 'var(--colors-button-primary)',
           tertiary: 'var(--colors-button-tertiary)',
           disabled: 'var(--colors-button-disabled)',
-          icon: {
-            primary: 'var(--colors-button-icon-primary)',
-            secondary: 'var(--colors-button-icon-secondary)',
-            tertiary: 'var(--colors-button-icon-tertiary)',
-            text: 'var(--colors-button-icon-text)',
-          },
         },
         checkbox: {
           primary: 'var(--colors-checkbox-primary)',

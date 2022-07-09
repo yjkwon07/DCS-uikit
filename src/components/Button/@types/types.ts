@@ -1,4 +1,4 @@
-import { ButtonHTMLAttributes, CSSProperties, ElementType, ReactNode } from 'react';
+import { ElementType, ReactNode } from 'react';
 
 import { LayoutProps, SpaceProps } from 'styled-system';
 
@@ -21,13 +21,8 @@ export type Scale = typeof SCALE[keyof typeof SCALE];
 
 export type Variant = typeof VARIANT[keyof typeof VARIANT];
 
-export interface BaseButtonProps
-  extends Omit<ButtonHTMLAttributes<HTMLButtonElement>, 'size'>,
-    LayoutProps,
-    SpaceProps {
-  as?: 'a' | 'button' | ElementType;
+export interface BaseButtonProps extends LayoutProps, SpaceProps {
   className?: string;
-  style?: CSSProperties;
   external?: boolean;
   isLoading?: boolean;
   scale?: Scale;
