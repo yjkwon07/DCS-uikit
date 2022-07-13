@@ -4,7 +4,7 @@ import { Box } from '../Box';
 import Grid from './Grid';
 
 export default {
-  title: 'Layout/Grid',
+  title: 'Utils/Layout/Grid',
   component: Grid,
   argTypes: {},
 };

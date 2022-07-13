@@ -2,9 +2,9 @@ import { background, border, flexbox, layout, position, space } from 'styled-sys
 import { styled } from 'twin.macro';
 
 import colorStyle from '../../../utils/colorStyle';
-import { BoxProps } from '../@types';
+import { BaseBoxProps } from '../@types';
 
-export const StyledBox = styled.div<BoxProps>`
+export const StyledBox = styled.div<BaseBoxProps>`
   ${colorStyle}
 
   ${background}
