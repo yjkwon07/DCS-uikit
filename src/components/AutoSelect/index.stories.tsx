@@ -38,7 +38,11 @@ export const Default = () => {
           />
           <AutoSelect.Button />
         </AutoSelect.InputGroup>
-        <AutoSelect.Options afterLeave={() => setQuery('')} isNotFound={filteredPeople.length === 0 && query !== ''}>
+        <AutoSelect.Options
+          afterLeave={() => setQuery('')}
+          isNotFound={filteredPeople.length === 0 && query !== ''}
+          textNotFound="검색 결과가 없습니다."
+        >
           {filteredPeople.map((person) => (
             <AutoSelect.Option key={person.id} name={person.name} value={person} />
           ))}

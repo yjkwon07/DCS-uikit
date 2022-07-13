@@ -7,4 +7,4 @@ import { BaseFlexProps } from '../../Flex';
 
 export interface BaseGridProps extends BaseFlexProps, _GridProps {}
 
-export type GridProps<E extends ElementType> = PolymorphicComponentProps<E, BaseGridProps>;
+export type GridProps<E extends ElementType = 'div'> = PolymorphicComponentProps<E, BaseGridProps>;

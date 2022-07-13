@@ -16,4 +16,4 @@ export interface BaseBoxProps
   color?: ColorStyleProps<TextColorKey>;
 }
 
-export type BoxProps<E extends ElementType> = PolymorphicComponentProps<E, BaseBoxProps>;
+export type BoxProps<E extends ElementType = 'div'> = PolymorphicComponentProps<E, BaseBoxProps>;
