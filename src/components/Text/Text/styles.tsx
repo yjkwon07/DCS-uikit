@@ -3,13 +3,13 @@ import { styled } from 'twin.macro';
 
 import colorStyle from '../../../utils/colorStyle';
 import fontScaleStyle from '../../../utils/fontScaleStyle';
-import { TextProps } from '../@types';
+import { BaseTextProps } from '../@types';
 
-export const StyledText = styled.div<TextProps>`
+export const StyledText = styled.div<BaseTextProps>`
   ${colorStyle}
   ${fontScaleStyle}
 
-  font-weight: ${({ bold }) => (bold ? 600 : 400)};
+  font-weight: ${({ bold }) => bold && 600};
   ${({ textTransform }) => textTransform && `text-transform: ${textTransform};`}
   ${({ ellipsis }) =>
     ellipsis &&
@@ -17,7 +17,7 @@ export const StyledText = styled.div<TextProps>`
     overflow: hidden;
     text-overflow: ellipsis;`}
 
-  ${space}
   ${typography}
   ${layout}
+  ${space}
 `;

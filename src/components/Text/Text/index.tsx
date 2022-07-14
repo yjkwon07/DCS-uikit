@@ -1,10 +1,16 @@
-import { StyledText as Text } from './styles';
+import { ElementType } from 'react';
+
+import { TextProps } from '../@types';
+import { StyledText } from './styles';
+
+const Text = <E extends ElementType = 'div'>(props: TextProps<E>) => {
+  return <StyledText {...props} />;
+};
 
 Text.defaultProps = {
   scale: 'base',
+  background: 'primary',
   color: 'primary',
-  ellipsis: false,
-  lineHeight: 1.5,
 };
 
 export default Text;

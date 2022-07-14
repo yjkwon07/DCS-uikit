@@ -1,12 +1,15 @@
+import { ElementType } from 'react';
+
 import { LayoutProps, SpaceProps, TypographyProps } from 'styled-system';
 
 import { fontScale } from '../../../theme';
-import { TextColorKey } from '../../../theme/color/@types';
+import { PolymorphicComponentProps } from '../../../typings';
 
-export interface TextProps extends SpaceProps, TypographyProps, LayoutProps {
-  color?: TextColorKey | `#${string}`;
+export interface BaseTextProps extends LayoutProps, SpaceProps, TypographyProps, StyledColorProps {
   scale?: keyof typeof fontScale;
   bold?: boolean;
   ellipsis?: boolean;
   textTransform?: 'uppercase' | 'lowercase' | 'capitalize';
 }
+
+export type TextProps<E extends ElementType = 'div'> = PolymorphicComponentProps<E, BaseTextProps>;
