@@ -1,3 +1,5 @@
+import { BaseTextProps } from '../../Text';
+
 export const TAG = {
   H1: 'h1',
   H2: 'h2',
@@ -9,6 +11,6 @@ export const TAG = {
 
 export type Tag = typeof TAG[keyof typeof TAG];
 
-export interface HeadingProps {
+export interface HeadingProps extends BaseTextProps {
   as?: Tag;
 }
