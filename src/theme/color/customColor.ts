@@ -147,8 +147,12 @@ const tab = {
 const tag = {
   primary: '#485861',
   secondary: '#394952',
+  disabled: '#E9EAEB',
   success: '#96b0ff',
   warning: '#ff97cc',
+  text: {
+    disabled: '#BDC2C4',
+  },
 };
 
 export const base = {
@@ -242,8 +246,10 @@ export const base = {
 
   '--colors-tag-primary': tag.primary,
   '--colors-tag-secondary': tag.secondary,
+  '--colors-tag-disabled': tag.disabled,
   '--colors-tag-success': tag.success,
   '--colors-tag-warning': tag.warning,
+  '--text-colors-tag-disabled': tag.text.disabled,
 };
 
 export const dark = {};

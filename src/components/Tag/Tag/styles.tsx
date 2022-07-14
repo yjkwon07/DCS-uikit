@@ -1,5 +1,5 @@
-import { space, variant, typography } from 'styled-system';
-import tw, { css, styled, theme } from 'twin.macro';
+import { space, variant, typography, layout } from 'styled-system';
+import { css, styled, theme } from 'twin.macro';
 
 import { TagProps, VARIANT, SCALE } from '../@types';
 
@@ -13,6 +13,15 @@ export const scaleVariant = {
     height: '24px',
     padding: '0 6px',
     fontSize: '12px',
+  },
+};
+
+export const iconButtonScaleVariant = {
+  [SCALE.MD]: {
+    height: '20px',
+  },
+  [SCALE.SM]: {
+    height: '16px',
   },
 };
 
@@ -51,8 +60,27 @@ export const StyledTag = styled.div<TagProps>`
   font-weight: 400;
   white-space: nowrap;
 
-  & > svg {
-    ${tw`[fill:currentColor]`};
+  & > button {
+    width: 100%;
+    ${({ scale = SCALE.MD }) => iconButtonScaleVariant[scale]}
+
+    color: ${theme`backgroundColor.inherit`};
+    background: ${theme`backgroundColor.inherit`};
+
+    &:disabled {
+      background-color: ${theme`colors.tag.disabled`};
+      color: ${theme`textColor.tag.disabled`};
+      box-shadow: none;
+      cursor: not-allowed;
+    }
+
+    &:focus:not(:disabled) {
+      box-shadow: ${theme`shadow.focus`};
+    }
+  }
+
+  & svg {
+    fill: currentColor;
   }
 
   ${({ textTransform }) => textTransform && `text-transform: ${textTransform};`}
@@ -65,6 +93,7 @@ export const StyledTag = styled.div<TagProps>`
     variants: styleVariant,
   })}
 
+  ${layout}
   ${space}
   ${typography}
 

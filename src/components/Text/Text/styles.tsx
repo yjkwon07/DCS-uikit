@@ -17,7 +17,7 @@ export const StyledText = styled.div<BaseTextProps>`
     overflow: hidden;
     text-overflow: ellipsis;`}
 
-  ${typography}
   ${layout}
   ${space}
+  ${typography}
 `;

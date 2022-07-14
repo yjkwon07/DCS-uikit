@@ -85,6 +85,7 @@ module.exports = {
         tag: {
           primary: 'var(--colors-tag-primary)',
           secondary: 'var(--colors-tag-secondary)',
+          disabled: 'var(--colors-tag-disabled)',
           success: 'var(--colors-tag-success)',
           warning: 'var(--colors-tag-warning)',
         },
@@ -138,6 +139,9 @@ module.exports = {
         tab: {
           primary: 'var(--text-colors-tab-primary)',
           secondary: 'var(--text-colors-tab-secondary)',
+        },
+        tag: {
+          disabled: 'var(--text-colors-tag-disabled)',
         },
       },
     },
