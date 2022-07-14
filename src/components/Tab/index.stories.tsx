@@ -1,3 +1,4 @@
+import { Flex } from '../Flex';
 import Tab from './Tab';
 
 export default {
@@ -58,8 +59,8 @@ const categories = {
 
 export const Default = () => {
   return (
-    <div tw="flex justify-center">
-      <Tab.Group width={1 / 2}>
+    <Flex justifyContent="center">
+      <Tab.Group width={1 / 2} defaultIndex={1}>
         <Tab.List>
           {Object.keys(categories).map((category) => (
             <Tab key={category}>{category}</Tab>
@@ -87,6 +88,6 @@ export const Default = () => {
           ))}
         </Tab.Panels>
       </Tab.Group>
-    </div>
+    </Flex>
   );
 };
