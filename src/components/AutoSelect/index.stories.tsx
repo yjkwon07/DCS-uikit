@@ -1,5 +1,6 @@
 import { useState } from 'react';
 
+import { Flex } from '../Flex';
 import AutoSelect from './AutoSelect';
 
 export default {
@@ -29,7 +30,7 @@ export const Default = () => {
         );
 
   return (
-    <div tw="flex justify-center">
+    <Flex flexDirection="column" justifyContent="center" alignItems="center" rowGap="10px">
       <AutoSelect width="300px" value={selected} onChange={setSelected}>
         <AutoSelect.InputGroup>
           <AutoSelect.Input
@@ -48,6 +49,24 @@ export const Default = () => {
           ))}
         </AutoSelect.Options>
       </AutoSelect>
-    </div>
+      <AutoSelect width="300px" value={selected} onChange={setSelected} disabled>
+        <AutoSelect.InputGroup>
+          <AutoSelect.Input
+            displayValue={(person: { name: string }) => person.name}
+            onChange={(event) => setQuery(event.target.value)}
+          />
+          <AutoSelect.Button />
+        </AutoSelect.InputGroup>
+        <AutoSelect.Options
+          afterLeave={() => setQuery('')}
+          isNotFound={filteredPeople.length === 0 && query !== ''}
+          textNotFound="검색 결과가 없습니다."
+        >
+          {filteredPeople.map((person) => (
+            <AutoSelect.Option key={person.id} name={person.name} value={person} />
+          ))}
+        </AutoSelect.Options>
+      </AutoSelect>
+    </Flex>
   );
 };

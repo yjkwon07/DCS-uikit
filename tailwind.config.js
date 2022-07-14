@@ -15,11 +15,6 @@ module.exports = {
         success: 'var(--success)',
         warning: 'var(--warning)',
         focus: 'var(--focus)',
-        yellow: {
-          200: '#ffe6cf',
-          300: '#fedd15',
-          400: '#ffc000',
-        },
         button: {
           primary: 'var(--colors-button-primary)',
           tertiary: 'var(--colors-button-tertiary)',
@@ -59,6 +54,7 @@ module.exports = {
         select: {
           primary: 'var(--colors-select-primary)',
           secondary: 'var(--colors-select-secondary)',
+          disabled: 'var(--colors-select-disabled)',
           icon: 'var(--colors-select-icon)',
           active: 'var(--colors-select-active)',
           selected: 'var(--colors-select-selected)',
@@ -137,6 +133,7 @@ module.exports = {
           secondary: 'var(--text-colors-select-secondary)',
           active: 'var(--text-colors-select-active)',
           selected: 'var(--text-colors-select-selected)',
+          disabled: 'var(--text-colors-select-disabled)',
         },
         tab: {
           primary: 'var(--text-colors-tab-primary)',
@@ -156,8 +153,24 @@ module.exports = {
         '.z-overlay': {
           zIndex: 19,
         },
+        '.z-select-options': {
+          zIndex: 18,
+        },
         '.z-modal': {
           zIndex: 20,
+        },
+
+        '.ring-shadow-success': {
+          boxShadow: 'var(--shadow-success)',
+        },
+        '.ring-shadow-warning': {
+          boxShadow: 'var(--shadow-warning)',
+        },
+        '.ring-shadow-inset': {
+          boxShadow: 'var(--shadow-inset)',
+        },
+        '.ring-shadow-focus': {
+          boxShadow: 'var(--shadow-focus)',
         },
       });
     }),

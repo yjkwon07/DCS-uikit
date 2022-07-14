@@ -99,6 +99,7 @@ const radioGroup = {
 const select = {
   primary: '#485861', // button
   secondary: '#EFF4F5', // option background
+  disabled: '#E9EAEB',
   icon: '#ffff', // select button icon
   active: '#485861', // hover
   selected: '#485861',
@@ -107,6 +108,7 @@ const select = {
     secondary: '#485861', // none-select color
     active: theme`colors.sky.100`,
     selected: theme`colors.sky.100`,
+    disabled: '#BDC2C4',
   },
 };
 
@@ -212,6 +214,7 @@ export const base = {
 
   '--colors-select-primary': select.primary,
   '--colors-select-secondary': select.secondary,
+  '--colors-select-disabled': select.disabled,
   '--colors-select-icon': select.icon,
   '--colors-select-active': select.active,
   '--colors-select-selected': select.selected,
@@ -219,6 +222,7 @@ export const base = {
   '--text-colors-select-secondary': select.text.secondary,
   '--text-colors-select-active': select.text.active,
   '--text-colors-select-selected': select.text.selected,
+  '--text-colors-select-disabled': select.text.disabled,
 
   '--colors-svg-primary': svg.primary,
 
