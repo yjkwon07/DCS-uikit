@@ -6,7 +6,7 @@ import tw from 'twin.macro';
 import Transition from './Transition';
 
 export default {
-  title: 'Components/Transition',
+  title: 'Utils/Transition',
   component: Transition,
   argTypes: {},
 };
