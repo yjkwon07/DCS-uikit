@@ -49,12 +49,23 @@ const BaseModal = ({
           leaveFrom={tw`opacity-100 scale-100`}
           leaveTo={tw`opacity-0 scale-95`}
         >
-          <Modal.Panel {...props}>
-            {title && <Modal.Title {...titleProps}>{title}</Modal.Title>}
+          <Modal.Panel
+            css={[
+              tw`w-full max-w-md transform overflow-hidden rounded-2xl bg-modal-primary p-6 text-left align-middle shadow-xl transition-all`,
+            ]}
+            {...props}
+          >
+            {title && (
+              <Modal.Title as="h2" css={[tw`text-lg font-medium leading-6 text-modal-title`]} {...titleProps}>
+                {title}
+              </Modal.Title>
+            )}
 
             {description && (
               <Box marginTop="8px">
-                <Modal.Description {...descriptionProps}>{description}</Modal.Description>
+                <Modal.Description css={[tw`text-sm text-modal-description`]} {...descriptionProps}>
+                  {description}
+                </Modal.Description>
               </Box>
             )}
 

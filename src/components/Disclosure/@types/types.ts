@@ -1,4 +1,4 @@
-import { ElementType, Ref } from 'react';
+import { ElementType, JSXElementConstructor, ReactElement, Ref } from 'react';
 
 import { Disclosure as HDisclosure } from '@headlessui/react';
 import { TypographyProps } from 'styled-system';
@@ -22,20 +22,20 @@ export type DisclosurePanelProps<E extends ElementType = 'div'> = ExtractProps<t
 export type DisclosureButtonRenderProps = (<E extends ElementType = 'button'>(
   props: DisclosureButtonProps<E>,
   ref: Ref<HTMLButtonElement>,
-) => React.ReactElement<any, string | React.JSXElementConstructor<any>> | null) & {
+) => ReactElement<any, string | JSXElementConstructor<any>> | null) & {
   displayName: string;
 };
 
 export type DisclosurePanelRenderProps = (<E extends ElementType = 'div'>(
   props: DisclosurePanelProps<E>,
   ref: Ref<HTMLDivElement>,
-) => React.ReactElement<any, string | React.JSXElementConstructor<any>> | null) & {
+) => ReactElement<any, string | JSXElementConstructor<any>> | null) & {
   displayName: string;
 };
 
 export type DisclosureProps = (<E extends ElementType = 'div'>(
   props: RDisclosureProps<E>,
-) => React.ReactElement<any, string | React.JSXElementConstructor<any>> | null) & {
+) => ReactElement<any, string | JSXElementConstructor<any>> | null) & {
   Button: DisclosureButtonRenderProps;
   Panel: DisclosurePanelRenderProps;
 };
