@@ -1,4 +1,4 @@
-import { CSSProperties, ElementType, JSXElementConstructor, ReactElement, ReactNode } from 'react';
+import { ChangeEvent, CSSProperties, ElementType, JSXElementConstructor, ReactElement, ReactNode } from 'react';
 
 import { Combobox as HAutoSelect } from '@headlessui/react';
 import { LayoutProps, SpaceProps } from 'styled-system';
@@ -25,7 +25,7 @@ export type AutoSelectInputGroupProps = {
 
 export type AutoSelectInputProps<T = unknown> = {
   displayValue?(item: T): string;
-  onChange(event: React.ChangeEvent<HTMLInputElement>): void;
+  onChange(event: ChangeEvent<HTMLInputElement>): void;
 };
 
 export type AutoSelectButtonProps<E extends ElementType = 'button'> = PolymorphicComponentProps<

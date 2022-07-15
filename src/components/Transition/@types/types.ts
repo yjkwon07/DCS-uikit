@@ -1,3 +1,5 @@
+import { ElementType, ReactNode } from 'react';
+
 import { SerializedStyles } from '@emotion/react';
 import { TransitionEvents } from '@headlessui/react';
 import { TwStyle } from 'twin.macro';
@@ -10,9 +12,9 @@ export type TransitionProps = {
   leave?: TwStyle | SerializedStyles;
   leaveFrom?: TwStyle | SerializedStyles;
   leaveTo?: TwStyle | SerializedStyles;
-  children: React.ReactNode;
+  children: ReactNode;
   show?: boolean;
-  as?: React.ElementType;
+  as?: ElementType;
   appear?: boolean;
   unmount?: boolean;
 } & TransitionEvents;
