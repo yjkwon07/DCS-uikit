@@ -76,6 +76,7 @@ module.exports = {
               start: 'var(--colors-toggle-icon-secondary-start)',
               end: 'var(--colors-toggle-icon-secondary-end)',
             },
+            disabled: 'var(--colors-toggle-icon-disabled)',
           },
         },
         tab: {

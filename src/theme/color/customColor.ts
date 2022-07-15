@@ -132,6 +132,7 @@ const toggle = {
       start: '#485861',
       end: '#485861',
     },
+    disabled: '#BDC2C4',
   },
 };
 
@@ -238,6 +239,7 @@ export const base = {
   '--colors-toggle-icon-primary-end': toggle.icon.primary.end,
   '--colors-toggle-icon-secondary-start': toggle.icon.secondary.start,
   '--colors-toggle-icon-secondary-end': toggle.icon.secondary.end,
+  '--colors-toggle-icon-disabled': toggle.icon.disabled,
 
   '--colors-tab-primary': tab.primary,
   '--colors-tab-secondary': tab.secondary,

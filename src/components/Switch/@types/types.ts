@@ -13,17 +13,17 @@ export const SCALE = {
 
 export type Scale = typeof SCALE[keyof typeof SCALE];
 
-export type BaseSwitchProps = ExtractProps<typeof Switch> &
-  LayoutProps &
-  SpaceProps & {
-    as?: 'div' | 'button' | ElementType;
-    description?: string;
-    className?: string;
-    style?: CSSProperties;
-    scale?: Scale;
-    disabled?: boolean;
-    startIcon?: ReactNode;
-    endIcon?: ReactNode;
-  };
+export interface BaseSwitchProps extends LayoutProps, SpaceProps {
+  as?: 'div' | 'button' | ElementType;
+  description?: string;
+  className?: string;
+  style?: CSSProperties;
+  scale?: Scale;
+  disabled?: boolean;
+  startIcon?: ReactNode;
+  endIcon?: ReactNode;
+  onChange: (value: boolean) => void;
+}
 
-export type SwitchProps<E extends ElementType = 'button'> = PolymorphicComponentProps<E, BaseSwitchProps>;
+export type SwitchProps<E extends ElementType = 'button'> = ExtractProps<typeof Switch> &
+  PolymorphicComponentProps<E, BaseSwitchProps>;
