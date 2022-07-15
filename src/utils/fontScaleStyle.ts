@@ -4,10 +4,7 @@ import { fontScale } from '../theme';
 
 const fontScaleStyle = ({ scale }: { scale?: keyof typeof fontScale }) => {
   return css`
-    ${scale &&
-    css`
-      font-size: ${fontScale[scale]};
-    `}
+    font-size: ${scale && fontScale[scale]};
   `;
 };
 

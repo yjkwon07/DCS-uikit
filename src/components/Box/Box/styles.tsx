@@ -5,7 +5,7 @@ import colorStyle from '../../../utils/colorStyle';
 import { BaseBoxProps } from '../@types';
 
 export const StyledBox = styled.div<BaseBoxProps>`
-  ${colorStyle}
+  ${({ color }) => colorStyle({ color })}
 
   ${background}
   ${border}

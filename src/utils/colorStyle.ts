@@ -5,14 +5,8 @@ import { colors, textColor } from '../theme';
 
 const colorStyle = ({ background, color }: StyledColorProps) => {
   return css`
-    ${background &&
-    css`
-      background-color: ${get(colors, background) || background};
-    `}
-    ${color &&
-    css`
-      color: ${get(textColor, color) || color};
-    `}
+    background: ${(background && get(colors, background)) || background};
+    color: ${(color && get(textColor, color)) || color};
   `;
 };
 
