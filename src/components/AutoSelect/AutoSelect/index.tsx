@@ -14,7 +14,6 @@ import {
   AutoSelectOptionsProps,
   AutoSelectOptionProps,
   AutoSelectInputGroupProps,
-  RAutoSelectProps,
 } from '../@types';
 
 const StyledAutoSelect = styled(HAutoSelect as any, {
@@ -28,7 +27,7 @@ const StyledAutoSelect = styled(HAutoSelect as any, {
  * @see https://headlessui.dev/react/combobox
  * @props deprecated multiple
  */
-const RAutoSelect = <E extends ElementType = 'div', T = unknown>({ disabled, ...props }: RAutoSelectProps<E, T>) => {
+const AutoSelect = <E extends ElementType = 'div', T = unknown>({ disabled, ...props }: AutoSelectProps<E, T>) => {
   return (
     <StyledAutoSelect
       as="div"
@@ -150,7 +149,6 @@ const Option = ({ name, ...props }: AutoSelectOptionProps) => {
   );
 };
 
-const AutoSelect: AutoSelectProps = Object.assign(RAutoSelect);
 AutoSelect.InputGroup = InputGroup;
 AutoSelect.Input = Input;
 AutoSelect.Button = Button;

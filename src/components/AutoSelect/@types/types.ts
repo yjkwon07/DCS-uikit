@@ -14,7 +14,7 @@ export interface BaseAutoSelectProps<T = unknown> extends LayoutProps, SpaceProp
   disabled?: boolean;
 }
 
-export type RAutoSelectProps<E extends ElementType = 'div', T = unknown> = PolymorphicComponentProps<
+export type AutoSelectProps<E extends ElementType = 'div', T = unknown> = PolymorphicComponentProps<
   E,
   BaseAutoSelectProps<T>
 >;
@@ -54,20 +54,4 @@ export type AutoSelectOptionProps<T = unknown> = {
     active: boolean;
     disabled: boolean;
   }) => ReactElement<any, string | JSXElementConstructor<any>> | null;
-};
-
-export type AutoSelectProps = (<E extends ElementType = 'div', T = unknown>(
-  props: RAutoSelectProps<E, T>,
-) => ReactElement<any, string | JSXElementConstructor<any>> | null) & {
-  InputGroup: (props: AutoSelectInputGroupProps) => ReactElement<any, string | JSXElementConstructor<any>> | null;
-  Input: <T = unknown>(props: AutoSelectInputProps<T>) => ReactElement<any, string | JSXElementConstructor<any>> | null;
-  Button: <E extends ElementType = 'button'>(
-    props: AutoSelectButtonProps<E>,
-  ) => ReactElement<any, string | JSXElementConstructor<any>> | null;
-  Option: <T = unknown>(
-    props: AutoSelectOptionProps<T>,
-  ) => ReactElement<any, string | JSXElementConstructor<any>> | null;
-  Options: <E extends ElementType = 'ul'>(
-    props: AutoSelectOptionsProps<E>,
-  ) => ReactElement<any, string | JSXElementConstructor<any>> | null;
 };

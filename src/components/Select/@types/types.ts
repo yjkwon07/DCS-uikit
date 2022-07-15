@@ -14,7 +14,7 @@ export interface BaseSelectProps<T = string> extends LayoutProps, SpaceProps {
   horizontal?: boolean;
 }
 
-export type RSelectProps<E extends ElementType = 'div', T = string> = PolymorphicComponentProps<E, BaseSelectProps<T>>;
+export type SelectProps<E extends ElementType = 'div', T = string> = PolymorphicComponentProps<E, BaseSelectProps<T>>;
 
 export type SelectButtonProps<E extends ElementType = 'button'> = PolymorphicComponentProps<
   E,
@@ -39,16 +39,4 @@ export type SelectOptionProps = ExtractProps<typeof Select.Option> & {
     active: boolean;
     disabled: boolean;
   }) => ReactElement<any, string | JSXElementConstructor<any>>;
-};
-
-export type SelectProps = (<E extends ElementType = 'div', T = unknown>(
-  props: RSelectProps<E, T>,
-) => ReactElement<any, string | JSXElementConstructor<any>> | null) & {
-  Button: <E extends ElementType = 'button'>(
-    props: SelectButtonProps<E>,
-  ) => ReactElement<any, string | JSXElementConstructor<any>> | null;
-  Option: (props: SelectOptionProps) => ReactElement<any, string | JSXElementConstructor<any>> | null;
-  Options: <E extends ElementType = 'ul'>(
-    props: SelectOptionsProps<E>,
-  ) => ReactElement<any, string | JSXElementConstructor<any>> | null;
 };

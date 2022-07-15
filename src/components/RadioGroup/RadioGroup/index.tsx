@@ -1,9 +1,11 @@
+import { ElementType } from 'react';
+
 import { RadioGroup as HRadioGroup } from '@headlessui/react';
 import { layout, space } from 'styled-system';
-import tw, { styled } from 'twin.macro';
+import tw, { css, styled, theme } from 'twin.macro';
 
 import shouldForwardProp from '../../../utils/shouldForwardProp';
-import { CheckIcon } from '../../Svg';
+import { CheckmarkCircleFillIcon } from '../../Svg';
 import { RadioGroupDescriptionProps, RadioGroupLabelProps, RadioGroupOptionProps, RadioGroupProps } from '../@types';
 
 const StyledRadioGroup = styled(HRadioGroup as any, { shouldForwardProp })`
@@ -14,8 +16,28 @@ const StyledRadioGroup = styled(HRadioGroup as any, { shouldForwardProp })`
 /**
  * @see https://headlessui.dev/react/radio-group
  */
-const RadioGroup = (props: RadioGroupProps) => {
-  return <StyledRadioGroup {...props} />;
+const RadioGroup = <E extends ElementType = 'div', T = string>({ disabled, ...props }: RadioGroupProps<E, T>) => {
+  return (
+    <StyledRadioGroup
+      css={[
+        css`
+          ${disabled &&
+          css`
+            & * {
+              color: ${theme`textColor.radioGroup.disabled`};
+              box-shadow: none;
+              cursor: not-allowed;
+            }
+            & svg {
+              fill: ${theme`colors.radioGroup.icon.disabled`};
+            }
+          `}
+        `,
+      ]}
+      disabled={disabled}
+      {...props}
+    />
+  );
 };
 
 const Option = ({ children, ...props }: RadioGroupOptionProps) => {
@@ -29,19 +51,20 @@ const Option = ({ children, ...props }: RadioGroupOptionProps) => {
             tw`[font-size:14px] [font-weight:600] [letter-spacing:0.03em] [line-height:18px]`,
             tw`border-0 [border-radius:8px]`,
             tw`focus:outline-none`,
-            props.active && tw`ring-2 ring-offset-2 ring-offset-focus ring-white bg-radioGroup-primary`,
+            props.active && tw`outline-none ring-shadow-focus`,
             props.checked
               ? tw`bg-radioGroup-primary bg-opacity-75 text-radioGroup-primary`
               : tw`bg-radioGroup-secondary`,
+            props.disabled && tw`bg-radioGroup-disabled shadow-none`,
           ]}
         >
-          <div tw="flex items-center justify-between w-full">
-            <div tw="flex items-center">
-              <div tw="text-sm">{children && children(props)}</div>
+          <div css={[tw`flex items-center justify-between w-full`]}>
+            <div css={[tw`flex items-center`]}>
+              <div css={[tw`text-sm`]}>{children && children(props)}</div>
             </div>
             {props.checked && (
-              <div tw="shrink-0">
-                <CheckIcon width="1.5rem" height="1.5rem" />
+              <div css={[tw`shrink-0`]}>
+                <CheckmarkCircleFillIcon width="1.5rem" height="1.5rem" />
               </div>
             )}
           </div>

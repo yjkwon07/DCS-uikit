@@ -1,6 +1,7 @@
 import { useState } from 'react';
 
 import { Box } from '../Box';
+import { Flex } from '../Flex';
 import RadioGroup from './RadioGroup';
 
 export default {
@@ -34,31 +35,52 @@ export const Default = () => {
   const [selected, setSelected] = useState(plans[0]);
 
   return (
-    <div tw="w-full px-4 py-16">
-      <div tw="w-full max-w-md mx-auto">
-        <RadioGroup value={selected} onChange={setSelected}>
-          <RadioGroup.Label tw="sr-only">Server size</RadioGroup.Label>
-          <Box tw="space-y-2">
-            {plans.map((plan) => (
-              <RadioGroup.Option key={plan.name} value={plan}>
-                {({ checked }) => (
-                  <>
-                    <RadioGroup.Label as="p" checked={checked}>
-                      {plan.name}
-                    </RadioGroup.Label>
-                    <RadioGroup.Description as="p" checked={checked}>
-                      <span>
-                        {plan.ram}/{plan.cpus}
-                      </span>{' '}
-                      <span aria-hidden="true">&middot;</span> <span>{plan.disk}</span>
-                    </RadioGroup.Description>
-                  </>
-                )}
-              </RadioGroup.Option>
-            ))}
-          </Box>
-        </RadioGroup>
-      </div>
-    </div>
+    <Flex flexDirection="row" justifyContent="center" alignItems="center" columnGap={20}>
+      <RadioGroup width={400} value={selected} onChange={setSelected}>
+        <RadioGroup.Label tw="sr-only">Server size</RadioGroup.Label>
+        <Box tw="space-y-2">
+          {plans.map((plan) => (
+            <RadioGroup.Option key={plan.name} value={plan}>
+              {({ checked }) => (
+                <>
+                  <RadioGroup.Label as="p" checked={checked}>
+                    {plan.name}
+                  </RadioGroup.Label>
+                  <RadioGroup.Description as="p" checked={checked}>
+                    <span>
+                      {plan.ram}/{plan.cpus}
+                    </span>{' '}
+                    <span aria-hidden="true">&middot;</span> <span>{plan.disk}</span>
+                  </RadioGroup.Description>
+                </>
+              )}
+            </RadioGroup.Option>
+          ))}
+        </Box>
+      </RadioGroup>
+
+      <RadioGroup width={400} value={selected} onChange={setSelected} disabled>
+        <RadioGroup.Label tw="sr-only">Server size</RadioGroup.Label>
+        <Box tw="space-y-2">
+          {plans.map((plan) => (
+            <RadioGroup.Option key={plan.name} value={plan}>
+              {({ checked }) => (
+                <>
+                  <RadioGroup.Label as="p" checked={checked}>
+                    {plan.name}
+                  </RadioGroup.Label>
+                  <RadioGroup.Description as="p" checked={checked}>
+                    <span>
+                      {plan.ram}/{plan.cpus}
+                    </span>{' '}
+                    <span aria-hidden="true">&middot;</span> <span>{plan.disk}</span>
+                  </RadioGroup.Description>
+                </>
+              )}
+            </RadioGroup.Option>
+          ))}
+        </Box>
+      </RadioGroup>
+    </Flex>
   );
 };

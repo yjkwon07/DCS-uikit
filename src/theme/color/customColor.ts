@@ -84,6 +84,10 @@ const radio = {
 const radioGroup = {
   primary: '#485861', // select background
   secondary: '#EFF4F5', // none-select background
+  disabled: '#E9EAEB',
+  icon: {
+    disabled: '#BDC2C4',
+  },
   text: {
     label: {
       primary: theme`colors.sky.100`, // select color
@@ -93,6 +97,7 @@ const radioGroup = {
       primary: '#ffff', // select color
       secondary: '#485861', // none-select color
     },
+    disabled: '#BDC2C4',
   },
 };
 
@@ -212,10 +217,13 @@ export const base = {
 
   '--colors-radioGroup-primary': radioGroup.primary,
   '--colors-radioGroup-secondary': radioGroup.secondary,
+  '--colors-radioGroup-disabled': radioGroup.disabled,
+  '--colors-radioGroup-icon-disabled': radioGroup.icon.disabled,
   '--text-colors-radioGroup-label-primary': radioGroup.text.label.primary,
   '--text-colors-radioGroup-label-secondary': radioGroup.text.label.secondary,
   '--text-colors-radioGroup-description-primary': radioGroup.text.description.primary,
   '--text-colors-radioGroup-description-secondary': radioGroup.text.description.secondary,
+  '--text-colors-radioGroup-disabled': radioGroup.text.disabled,
 
   '--colors-select-primary': select.primary,
   '--colors-select-secondary': select.secondary,

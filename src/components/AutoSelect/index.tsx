@@ -7,5 +7,4 @@ export type {
   AutoSelectOptionsProps,
   AutoSelectProps,
   BaseAutoSelectProps,
-  RAutoSelectProps,
 } from './@types';

@@ -7,11 +7,11 @@ import tw, { css, styled, theme } from 'twin.macro';
 import shouldForwardProp from '../../../utils/shouldForwardProp';
 import { CheckmarkCircleFillIcon, SelectorIcon } from '../../Svg';
 import { Transition } from '../../Transition';
-import { RSelectProps, SelectButtonProps, SelectOptionProps, SelectOptionsProps, SelectProps } from '../@types';
+import { SelectProps, SelectButtonProps, SelectOptionProps, SelectOptionsProps } from '../@types';
 
 const StyledSelect = styled(HSelect as any, {
   shouldForwardProp,
-})<RSelectProps>`
+})<SelectProps>`
   ${layout}
   ${space}
 `;
@@ -20,7 +20,7 @@ const StyledSelect = styled(HSelect as any, {
  * @see https://headlessui.dev/react/listbox
  * @props deprecated multiple
  */
-const RSelect = <E extends ElementType = 'div', T = string>({ disabled, ...props }: RSelectProps<E, T>) => {
+const Select = <E extends ElementType = 'div', T = string>({ disabled, ...props }: SelectProps<E, T>) => {
   return (
     <StyledSelect
       as="div"
@@ -122,7 +122,6 @@ const Option = ({ name, ...props }: SelectOptionProps) => {
   );
 };
 
-const Select: SelectProps = Object.assign(RSelect);
 Select.Button = Button;
 Select.Options = Options;
 Select.Option = Option;

@@ -50,6 +50,10 @@ module.exports = {
         radioGroup: {
           primary: 'var(--colors-radioGroup-primary)',
           secondary: 'var(--colors-radioGroup-secondary)',
+          disabled: 'var(--colors-radioGroup-disabled)',
+          icon: {
+            disabled: 'var(--colors-radioGroup-icon-disabled)',
+          },
         },
         select: {
           primary: 'var(--colors-select-primary)',
@@ -129,6 +133,7 @@ module.exports = {
             primary: 'var(--text-colors-radioGroup-description-primary)',
             secondary: 'var(--text-colors-radioGroup-description-secondary)',
           },
+          disabled: 'var(--text-colors-radioGroup-disabled)',
         },
         select: {
           primary: 'var(--text-colors-select-primary)',
