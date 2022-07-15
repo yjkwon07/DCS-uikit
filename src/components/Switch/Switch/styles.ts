@@ -69,7 +69,9 @@ export const disabledStyle = css`
   &:disabled,
   &.${switchClassName.disable} {
     background-color: ${theme`colors.toggle.disabled`};
-    border-color: ${theme`colors.toggle.disabled`};
+    & svg {
+      fill: ${theme`colors.toggle.icon.disabled`};
+    }
     box-shadow: none;
     cursor: not-allowed;
   }

@@ -17,6 +17,7 @@ const StyledSwitch = styled(HSwitch, { shouldForwardProp })`
  * @see https://headlessui.dev/react/switch
  */
 const Switch = <E extends ElementType = 'button'>({
+  disabled,
   checked,
   onChange,
   scale = SCALE.MD,
@@ -29,6 +30,8 @@ const Switch = <E extends ElementType = 'button'>({
     <StyledSwitch
       checked={checked}
       onChange={onChange}
+      disabled={disabled}
+      className={disabled && switchClassName.disable}
       css={[
         checked ? tw`bg-toggle-primary` : tw`bg-toggle-secondary`,
         tw`relative inline-flex shrink-0 
@@ -56,7 +59,7 @@ const Switch = <E extends ElementType = 'button'>({
         className={switchClassName.handle}
         css={[
           checked ? sizeVariant[scale].checked : tw`translate-x-0`,
-          tw`rounded-full bg-toggle-handle ring-0 transform transition ease-in duration-200`,
+          tw`rounded-full bg-toggle-handle transform transition ease-in duration-200`,
           tw`inline-flex items-center justify-center`,
           sizeVariant[scale].handle,
         ]}

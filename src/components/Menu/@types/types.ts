@@ -1,4 +1,4 @@
-import { CSSProperties, ElementType } from 'react';
+import { CSSProperties, ElementType, JSXElementConstructor, ReactElement } from 'react';
 
 import { Menu as HMenu } from '@headlessui/react';
 import { LayoutProps, SpaceProps } from 'styled-system';
@@ -19,15 +19,11 @@ export type MenuItemsProps<E extends ElementType = 'div'> = PolymorphicComponent
     className?: string;
     style?: CSSProperties;
     static?: boolean;
-    unmount?: undefined;
   }
 >;
 
 export type MenuItemProps = {
-  as?: React.ElementType;
+  as?: ElementType;
   disabled?: boolean;
-  children: (bag: {
-    active: boolean;
-    disabled: boolean;
-  }) => React.ReactElement<any, string | React.JSXElementConstructor<any>>;
+  children: (option: { active: boolean; disabled: boolean }) => ReactElement<any, string | JSXElementConstructor<any>>;
 };

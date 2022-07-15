@@ -1,4 +1,4 @@
-import { space, variant } from 'styled-system';
+import { layout, space, variant } from 'styled-system';
 import { styled, theme } from 'twin.macro';
 
 import { RadioProps, SCALE } from '../@types';
@@ -81,5 +81,6 @@ export const StyledRadio = styled.input<RadioProps>`
     cursor: not-allowed;
   }
 
+  ${layout}
   ${space}
 `;

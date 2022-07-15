@@ -1,11 +1,20 @@
-import { CSSProperties, ElementType, ReactNode } from 'react';
+import { ElementType, JSXElementConstructor, ReactElement, ReactNode } from 'react';
 
 import { Listbox as Select } from '@headlessui/react';
 import { LayoutProps, SpaceProps } from 'styled-system';
 
 import { PolymorphicComponentProps, ExtractProps } from '../../../typings';
 
-export type SelectProps = ExtractProps<typeof Select> & LayoutProps & SpaceProps;
+export interface BaseSelectProps<T = string> extends LayoutProps, SpaceProps {
+  as?: ElementType;
+  className?: string;
+  value: T;
+  onChange(value: T): void;
+  disabled?: boolean;
+  horizontal?: boolean;
+}
+
+export type SelectProps<E extends ElementType = 'div', T = string> = PolymorphicComponentProps<E, BaseSelectProps<T>>;
 
 export type SelectButtonProps<E extends ElementType = 'button'> = PolymorphicComponentProps<
   E,
@@ -17,9 +26,7 @@ export type SelectOptionsProps<E extends ElementType = 'ul'> = PolymorphicCompon
   {
     as?: ElementType;
     className?: string;
-    style?: CSSProperties;
     static?: boolean;
-    unmount?: undefined;
     children?: ReactNode;
   }
 >;
@@ -27,10 +34,9 @@ export type SelectOptionsProps<E extends ElementType = 'ul'> = PolymorphicCompon
 export type SelectOptionProps = ExtractProps<typeof Select.Option> & {
   name: string;
   className?: string;
-  style?: CSSProperties;
-  children?: (bag: {
+  children?: (option: {
     selected: boolean;
     active: boolean;
     disabled: boolean;
-  }) => React.ReactElement<any, string | React.JSXElementConstructor<any>>;
+  }) => ReactElement<any, string | JSXElementConstructor<any>>;
 };

@@ -1,4 +1,4 @@
-import { space, variant } from 'styled-system';
+import { layout, space, variant } from 'styled-system';
 import { styled, theme } from 'twin.macro';
 
 import { CheckboxProps, SCALE } from '../@types';
@@ -73,5 +73,6 @@ export const StyledCheckbox = styled.input<CheckboxProps>`
     cursor: not-allowed;
   }
 
+  ${layout}
   ${space}
 `;

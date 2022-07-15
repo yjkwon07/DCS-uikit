@@ -16,16 +16,14 @@ export const Default = () => {
   return (
     <div>
       <div tw="mb-[10px]">
-        {Object.values(SCALE).map((scale) => {
-          return (
-            <div key={scale} tw="mb-[10px]">
-              <Switch.Group>
-                <Switch.Label tw="mr-10">{scale}</Switch.Label>
-                <Switch scale={scale} checked={enabled} onChange={setEnabled} description="toggle button" />
-              </Switch.Group>
-            </div>
-          );
-        })}
+        {Object.values(SCALE).map((scale) => (
+          <div key={scale} tw="mb-[10px]">
+            <Switch.Group>
+              <Switch.Label tw="mr-10">{scale}</Switch.Label>
+              <Switch scale={scale} checked={enabled} onChange={setEnabled} description="toggle button" />
+            </Switch.Group>
+          </div>
+        ))}
       </div>
       <div tw="flex gap-10">
         <div>
@@ -51,23 +49,21 @@ export const Icon = () => {
   return (
     <div>
       <div tw="mb-[10px]">
-        {Object.values(SCALE).map((scale) => {
-          return (
-            <div key={scale} tw="mb-[10px]">
-              <Switch.Group>
-                <Switch.Label tw="mr-10">{scale}</Switch.Label>
-                <Switch
-                  scale={scale}
-                  checked={enabled}
-                  onChange={setEnabled}
-                  description="toggle button"
-                  startIcon={<IconComponent iconName="Sun" />}
-                  endIcon={<IconComponent iconName="Moon" />}
-                />
-              </Switch.Group>
-            </div>
-          );
-        })}
+        {Object.values(SCALE).map((scale) => (
+          <div key={scale} tw="mb-[10px]">
+            <Switch.Group>
+              <Switch.Label tw="mr-10">{scale}</Switch.Label>
+              <Switch
+                scale={scale}
+                checked={enabled}
+                onChange={setEnabled}
+                description="toggle button"
+                startIcon={<IconComponent iconName="Sun" />}
+                endIcon={<IconComponent iconName="Moon" />}
+              />
+            </Switch.Group>
+          </div>
+        ))}
       </div>
       <div tw="flex gap-10">
         <div>

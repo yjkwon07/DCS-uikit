@@ -1,14 +1,11 @@
-import { grid, flexbox } from 'styled-system';
+import { grid } from 'styled-system';
 import { styled } from 'twin.macro';
 
-import gapStyle from '../../../utils/gapStyle';
-import { Box } from '../../Box';
-import { GridProps } from '../@types';
+import { StyledBox } from '../../Box/Box/styles';
+import { BaseGridProps } from '../@types';
 
-export const StyledGrid = styled(Box)<GridProps>`
+export const StyledGrid = styled(StyledBox)<BaseGridProps>`
   display: grid;
 
-  ${gapStyle}
-  ${flexbox}
   ${grid}
 `;

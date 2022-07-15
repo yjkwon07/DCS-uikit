@@ -18,7 +18,7 @@ export const Default = () => {
     <div>
       {Object.values(SCALE).map((scale) => (
         <>
-          <Heading mb="16px" bold>
+          <Heading background="transparent" color="black" mb="16px">
             {scale.toUpperCase()}
           </Heading>
           <div tw="flex mb-[32px] [gap:16px]">
@@ -125,7 +125,7 @@ export const IconsButton = () => {
         }
         endIcon={
           <IconButton>
-            <Moon />
+            <Moon fill="#dfdf !important" />
           </IconButton>
         }
         scale="md"

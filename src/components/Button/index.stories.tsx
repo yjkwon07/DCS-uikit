@@ -1,23 +1,26 @@
 import { capitalize } from 'lodash-es';
 import { BrowserRouter, Link } from 'react-router-dom';
 
+import { colors } from '../../theme';
+import { Box } from '../Box';
+import { Flex } from '../Flex';
 import { AutoRenewIcon, SearchIcon } from '../Svg';
 import { SCALE, VARIANT } from './@types';
 import Button from './Button';
 import IconButton from './IconButton';
 
 export default {
-  title: 'Form/Button',
+  title: 'Components/Button',
   component: Button,
   argTypes: {},
 };
 
 export const Default = () => {
   return (
-    <div>
+    <Flex flexDirection="column" rowGap={10}>
       {Object.values(VARIANT).map((variant) => {
         return (
-          <div tw="mb-[10px]" key={variant}>
+          <Box key={variant}>
             {Object.values(SCALE).map((scale) => {
               return (
                 <Button mr="8px" key={scale} variant={variant} scale={scale}>
@@ -25,33 +28,33 @@ export const Default = () => {
                 </Button>
               );
             })}
-          </div>
+          </Box>
         );
       })}
-      <div tw="mb-[10px]">
-        <Button mr="10px" disabled>
+      <Flex rowGap={10}>
+        <Button mr={10} disabled>
           Disabled
         </Button>
         <Button variant="secondary" disabled>
           Disabled
         </Button>
-      </div>
-    </div>
+      </Flex>
+    </Flex>
   );
 };
 
 export const Anchors = () => {
   return (
-    <div>
+    <Flex flexDirection="column" rowGap={10}>
       {Object.values(VARIANT).map((variant) => {
         return (
-          <div key={variant} tw="mb-[10px]">
+          <Box key={variant}>
             {Object.values(SCALE).map((scale) => {
               return (
                 <Button
                   key={scale}
                   as="a"
-                  mr="10px"
+                  mr={10}
                   href="https://www.naver.com"
                   variant={variant}
                   scale={scale}
@@ -61,60 +64,60 @@ export const Anchors = () => {
                 </Button>
               );
             })}
-          </div>
+          </Box>
         );
       })}
-      <div tw="mb-[10px]">
-        <Button as="a" href="https://www.naver.com" mr="10px" external disabled>
+      <Flex rowGap={10}>
+        <Button as="a" href="https://www.naver.com" mr={10} external disabled>
           Disabled
         </Button>
         <Button as="a" href="https://www.naver.com" variant="secondary" external disabled>
           Disabled
         </Button>
-      </div>
-    </div>
+      </Flex>
+    </Flex>
   );
 };
 
 export const Variants = () => {
   return (
-    <div>
-      <div tw="mb-[10px]">
+    <Flex flexDirection="column" rowGap={10}>
+      <Box>
         <BrowserRouter>
           <Button as={Link} to="/" variant="secondary">
             As an React Router link
           </Button>
         </BrowserRouter>
-      </div>
-      <div tw="flex mb-[10px] gap-[10px]">
-        <Button width="100%" variant="primary" startIcon={<SearchIcon />}>
+      </Box>
+      <Box>
+        <Button width="100%" startIcon={<SearchIcon fill={colors.current} />}>
           Full scale
         </Button>
-      </div>
-      <div tw="flex mb-[10px] gap-[10px]">
-        <Button variant="primary" isLoading startIcon={<AutoRenewIcon spin />}>
+      </Box>
+      <Flex columnGap={10}>
+        <Button isLoading startIcon={<AutoRenewIcon fill={colors.orange[600]} spin />}>
           Search
         </Button>
-        <Button variant="primary" isLoading startIcon={<SearchIcon />}>
+        <Button isLoading startIcon={<SearchIcon fill={colors.current} />}>
           Search
         </Button>
-      </div>
-      <div tw="flex mb-[10px] gap-[10px]">
-        <IconButton variant="primary" scale="md">
-          <SearchIcon />
+      </Flex>
+      <Flex columnGap={10}>
+        <IconButton scale="md">
+          <SearchIcon fill={colors.current} />
         </IconButton>
         <IconButton variant="secondary" scale="md">
-          <SearchIcon />
+          <SearchIcon fill={colors.current} />
         </IconButton>
-      </div>
-      <div tw="flex mb-[10px] gap-[10px]">
-        <IconButton variant="primary" scale="sm">
-          <SearchIcon />
+      </Flex>
+      <Flex columnGap={10}>
+        <IconButton scale="sm">
+          <SearchIcon fill={colors.current} />
         </IconButton>
         <IconButton variant="secondary" scale="sm">
-          <SearchIcon />
+          <SearchIcon fill={colors.current} />
         </IconButton>
-      </div>
-    </div>
+      </Flex>
+    </Flex>
   );
 };

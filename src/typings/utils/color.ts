@@ -1,1 +1,2 @@
-export type ColorStyleProps<E> = E | `#${string}` | `rgb${string}`;
+/* eslint-disable @typescript-eslint/ban-types */
+export type ColorStyleProps<E> = E | (string & {});

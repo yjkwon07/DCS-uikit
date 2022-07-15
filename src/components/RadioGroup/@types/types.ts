@@ -1,9 +1,22 @@
+import { ElementType, JSXElementConstructor, ReactElement } from 'react';
+
 import { RadioGroup as HRadioGroup } from '@headlessui/react';
 import { LayoutProps, SpaceProps } from 'styled-system';
 
-import { ExtractProps } from '../../../typings';
+import { ExtractProps, PolymorphicComponentProps } from '../../../typings';
 
-export type RadioGroupProps = ExtractProps<typeof HRadioGroup> & LayoutProps & SpaceProps;
+export interface BaseRadioGroupProps<T = string> extends LayoutProps, SpaceProps {
+  as?: ElementType;
+  className?: string;
+  value: T;
+  onChange(value: T): void;
+  disabled?: boolean;
+}
+
+export type RadioGroupProps<E extends ElementType = 'div', T = string> = PolymorphicComponentProps<
+  E,
+  BaseRadioGroupProps<T>
+>;
 
 export type RadioGroupLabelProps = ExtractProps<typeof HRadioGroup.Label> & {
   checked?: boolean;
@@ -15,9 +28,9 @@ export type RadioGroupDescriptionProps = ExtractProps<typeof HRadioGroup.Descrip
 };
 
 export type RadioGroupOptionProps = ExtractProps<typeof HRadioGroup.Option> & {
-  children?: (bag: {
+  children?: (option: {
     checked: boolean;
     active: boolean;
     disabled: boolean;
-  }) => React.ReactElement<any, string | React.JSXElementConstructor<any>>;
+  }) => ReactElement<any, string | JSXElementConstructor<any>>;
 };

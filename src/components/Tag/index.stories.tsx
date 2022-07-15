@@ -1,6 +1,8 @@
+import { css } from '@emotion/react';
 import { capitalize } from 'lodash-es';
 
 import { Box } from '../Box';
+import { IconButton } from '../Button';
 import { Flex } from '../Flex';
 import { CommunityIcon, RemoveIcon } from '../Svg';
 import { SCALE, VARIANT } from './@types';
@@ -19,7 +21,17 @@ export const Default = () => {
         <Box key={variant} mb="32px ">
           <Flex alignItems="center">
             {Object.values(SCALE).map((scale) => (
-              <Tag key={scale} scale={scale} variant={variant} mr="8px">
+              <Tag
+                key={scale}
+                scale={scale}
+                variant={variant}
+                mr="8px"
+                startIcon={
+                  <IconButton>
+                    <CommunityIcon />
+                  </IconButton>
+                }
+              >
                 {`${capitalize(variant)}: ${scale.toUpperCase()}`}
               </Tag>
             ))}
@@ -32,7 +44,26 @@ export const Default = () => {
             <Tag variant={variant} outline endIcon={<RemoveIcon />} mr="8px">
               {`${capitalize(variant)} Icon Right`}
             </Tag>
-            <Tag variant={variant} outline startIcon={<CommunityIcon />} endIcon={<RemoveIcon />}>
+            <Tag
+              variant={variant}
+              outline
+              startIcon={
+                <IconButton disabled>
+                  <CommunityIcon />
+                </IconButton>
+              }
+              endIcon={
+                <IconButton
+                  css={css`
+                    &:hover {
+                      background-color: red;
+                    }
+                  `}
+                >
+                  <RemoveIcon />
+                </IconButton>
+              }
+            >
               {`${capitalize(variant)} Both`}
             </Tag>
           </Flex>

@@ -1,5 +1,3 @@
-import { theme } from 'twin.macro';
-
 import { Box } from '../Box';
 import Heading from './Heading';
 
@@ -9,9 +7,9 @@ export default {
   argTypes: {},
 };
 
-export const Scale = () => {
+export const Default = () => {
   return (
-    <Box background={theme`colors.primary`}>
+    <Box>
       <Heading>Default</Heading>
       <Heading scale="9xl">(9xl) In Heading</Heading>
       <Heading scale="8xl">(8xl) In Heading</Heading>
@@ -31,8 +29,7 @@ export const Scale = () => {
 
 export const Tag = () => {
   return (
-    <Box background={theme`colors.primary`}>
-      <Heading>Default</Heading>
+    <Box>
       <Heading as="h1">Tag h1</Heading>
       <Heading as="h2">Tag h2</Heading>
       <Heading as="h3">Tag h3</Heading>
@@ -45,7 +42,7 @@ export const Tag = () => {
 
 export const Ellipsis = () => {
   return (
-    <Box background={theme`colors.primary`}>
+    <Box>
       <Heading color="sky.50" ellipsis>
         Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing
         layouts and visual mockups.

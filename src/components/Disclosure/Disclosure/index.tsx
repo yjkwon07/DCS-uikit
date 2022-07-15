@@ -8,9 +8,9 @@ import colorStyle from '../../../utils/colorStyle';
 import forwardRefWithAs from '../../../utils/forwardRefWidthAs';
 import gapStyle from '../../../utils/gapStyle';
 import shouldForwardProp from '../../../utils/shouldForwardProp';
-import { CDisclosureProps, DisclosureButtonProps, DisclosurePanelProps, DisclosureProps } from '../@types';
+import { RDisclosureProps, DisclosureButtonProps, DisclosurePanelProps, DisclosureProps } from '../@types';
 
-const CDisclosure = <E extends ElementType>(props: CDisclosureProps<E>) => {
+const RDisclosure = <E extends ElementType>(props: RDisclosureProps<E>) => {
   return <HDisclosure {...props} />;
 };
 
@@ -65,7 +65,7 @@ Panel.displayName = 'Panel';
 /**
  * @see https://headlessui.dev/react/disclosure
  */
-const Disclosure: DisclosureProps = Object.assign(CDisclosure);
+const Disclosure: DisclosureProps = Object.assign(RDisclosure);
 Disclosure.Button = Button;
 Disclosure.Panel = Panel;
 

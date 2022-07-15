@@ -1,13 +1,13 @@
+import { flexbox } from 'styled-system';
 import { styled } from 'twin.macro';
 
-import colorStyle from '../../../utils/colorStyle';
 import gapStyle from '../../../utils/gapStyle';
-import { Box } from '../../Box';
-import { FlexProps } from '../@types';
+import { StyledBox } from '../../Box/Box/styles';
+import { BaseFlexProps } from '../@types';
 
-export const StyledFlex = styled(Box)<FlexProps>`
+export const StyledFlex = styled(StyledBox)<BaseFlexProps>`
   display: flex;
 
-  ${colorStyle}
   ${gapStyle}
+  ${flexbox}
 `;

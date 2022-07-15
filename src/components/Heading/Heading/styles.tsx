@@ -1,9 +1,6 @@
 import { styled } from 'twin.macro';
 
-import { Text } from '../../Text';
+import { StyledText } from '../../Text/Text/styles';
 import { HeadingProps } from '../@types';
 
-export const StyledHeading = styled(Text)<HeadingProps>`
-  font-weight: 600;
-  line-height: 1.1;
-`;
+export const StyledHeading = styled(StyledText)<HeadingProps>``;

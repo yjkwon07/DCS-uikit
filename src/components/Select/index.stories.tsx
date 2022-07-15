@@ -22,8 +22,16 @@ export const Default = () => {
   const [selected, setSelected] = useState<{ name: string }>();
 
   return (
-    <Flex justifyContent="center">
-      <Select width={500} value={selected} onChange={setSelected}>
+    <Flex flexDirection="column" justifyContent="center" alignItems="center" rowGap="10px">
+      <Select width="300px" value={selected} onChange={setSelected}>
+        <Select.Button selectedName={selected?.name} />
+        <Select.Options>
+          {people.map((person) => (
+            <Select.Option key={person.name} name={person.name} value={person} />
+          ))}
+        </Select.Options>
+      </Select>
+      <Select width="300px" value={selected} onChange={setSelected} disabled>
         <Select.Button selectedName={selected?.name} />
         <Select.Options>
           {people.map((person) => (

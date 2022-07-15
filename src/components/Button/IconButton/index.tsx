@@ -1,18 +1,19 @@
-import { cloneElement, isValidElement } from 'react';
+import { cloneElement, ElementType, isValidElement } from 'react';
 
-import { colors } from '../../../theme';
-import { ButtonProps } from '../@types';
+import { ButtonProps, SCALE, VARIANT } from '../@types';
 import StyledIconButton from './styles';
 
-const IconButton = ({ children, ...props }: ButtonProps<'button'>) => {
+const IconButton = <E extends ElementType = 'button'>({ children, ...props }: ButtonProps<E>) => {
   return (
     <StyledIconButton aria-label="icon-button" {...props}>
-      {isValidElement(children) &&
-        cloneElement(children, {
-          fill: props.variant && colors.button.icon[props.variant],
-        })}
+      {isValidElement(children) && cloneElement(children)}
     </StyledIconButton>
   );
+};
+
+IconButton.defaultProps = {
+  variant: VARIANT.PRIMARY,
+  scale: SCALE.MD,
 };
 
 export default IconButton;

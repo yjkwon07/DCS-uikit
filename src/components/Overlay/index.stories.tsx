@@ -3,7 +3,7 @@ import { Text } from '../Text';
 import Overlay from './Overlay';
 
 export default {
-  title: 'Components/Overlay',
+  title: 'Utils/Overlay',
   component: Overlay,
   argTypes: {},
 };

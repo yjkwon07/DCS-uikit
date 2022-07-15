@@ -27,7 +27,7 @@ const Button = <E extends ElementType = 'button'>(props: MenuButtonProps<E>) => 
         tw`inline-flex justify-center w-full px-4 py-2 bg-menu-primary text-menu-primary`,
         tw`[font-size:14px] [font-weight:600] [letter-spacing:0.03em] [line-height:18px]`,
         tw`border-0 [border-radius:8px]`,
-        tw`focus:outline-none focus:ring-2 ring-offset-2 ring-offset-focus`,
+        tw`focus:outline-none focus:ring-shadow-focus`,
         tw`hover:opacity-[0.65]`,
       ]}
       {...props}

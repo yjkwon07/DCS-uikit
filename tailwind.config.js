@@ -15,21 +15,10 @@ module.exports = {
         success: 'var(--success)',
         warning: 'var(--warning)',
         focus: 'var(--focus)',
-        yellow: {
-          200: '#ffe6cf',
-          300: '#fedd15',
-          400: '#ffc000',
-        },
         button: {
           primary: 'var(--colors-button-primary)',
           tertiary: 'var(--colors-button-tertiary)',
           disabled: 'var(--colors-button-disabled)',
-          icon: {
-            primary: 'var(--colors-button-icon-primary)',
-            secondary: 'var(--colors-button-icon-secondary)',
-            tertiary: 'var(--colors-button-icon-tertiary)',
-            text: 'var(--colors-button-icon-text)',
-          },
         },
         checkbox: {
           primary: 'var(--colors-checkbox-primary)',
@@ -61,10 +50,15 @@ module.exports = {
         radioGroup: {
           primary: 'var(--colors-radioGroup-primary)',
           secondary: 'var(--colors-radioGroup-secondary)',
+          disabled: 'var(--colors-radioGroup-disabled)',
+          icon: {
+            disabled: 'var(--colors-radioGroup-icon-disabled)',
+          },
         },
         select: {
           primary: 'var(--colors-select-primary)',
           secondary: 'var(--colors-select-secondary)',
+          disabled: 'var(--colors-select-disabled)',
           icon: 'var(--colors-select-icon)',
           active: 'var(--colors-select-active)',
           selected: 'var(--colors-select-selected)',
@@ -86,6 +80,7 @@ module.exports = {
               start: 'var(--colors-toggle-icon-secondary-start)',
               end: 'var(--colors-toggle-icon-secondary-end)',
             },
+            disabled: 'var(--colors-toggle-icon-disabled)',
           },
         },
         tab: {
@@ -95,6 +90,7 @@ module.exports = {
         tag: {
           primary: 'var(--colors-tag-primary)',
           secondary: 'var(--colors-tag-secondary)',
+          disabled: 'var(--colors-tag-disabled)',
           success: 'var(--colors-tag-success)',
           warning: 'var(--colors-tag-warning)',
         },
@@ -137,16 +133,21 @@ module.exports = {
             primary: 'var(--text-colors-radioGroup-description-primary)',
             secondary: 'var(--text-colors-radioGroup-description-secondary)',
           },
+          disabled: 'var(--text-colors-radioGroup-disabled)',
         },
         select: {
           primary: 'var(--text-colors-select-primary)',
           secondary: 'var(--text-colors-select-secondary)',
           active: 'var(--text-colors-select-active)',
           selected: 'var(--text-colors-select-selected)',
+          disabled: 'var(--text-colors-select-disabled)',
         },
         tab: {
           primary: 'var(--text-colors-tab-primary)',
           secondary: 'var(--text-colors-tab-secondary)',
+        },
+        tag: {
+          disabled: 'var(--text-colors-tag-disabled)',
         },
       },
     },
@@ -162,8 +163,24 @@ module.exports = {
         '.z-overlay': {
           zIndex: 19,
         },
+        '.z-select-options': {
+          zIndex: 18,
+        },
         '.z-modal': {
           zIndex: 20,
+        },
+
+        '.ring-shadow-success': {
+          boxShadow: 'var(--shadow-success)',
+        },
+        '.ring-shadow-warning': {
+          boxShadow: 'var(--shadow-warning)',
+        },
+        '.ring-shadow-inset': {
+          boxShadow: 'var(--shadow-inset)',
+        },
+        '.ring-shadow-focus': {
+          boxShadow: 'var(--shadow-focus)',
         },
       });
     }),

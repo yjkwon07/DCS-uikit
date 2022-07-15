@@ -1,9 +1,15 @@
-import { forwardRef, useEffect } from 'react';
+import { ElementType, Ref, useEffect } from 'react';
 
+import forwardRefWithAs from '../../../utils/forwardRefWidthAs';
 import { OverlayProps } from '../@types';
 import { StyledOverlay } from './styles';
 
-const Overlay = forwardRef<HTMLDivElement, OverlayProps>((props, ref) => {
+const DEFAULT_OVERLAY_TAG = 'div' as const;
+
+const Overlay = forwardRefWithAs(function Overlay<E extends ElementType = typeof DEFAULT_OVERLAY_TAG>(
+  props: OverlayProps<E>,
+  ref: Ref<HTMLDivElement>,
+) {
   useEffect(() => {
     document.body.style.cssText = `
       overflow: hidden;

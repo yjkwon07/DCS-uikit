@@ -1,48 +1,16 @@
-import { theme } from 'twin.macro';
-
 import { Box } from '../Box';
 import Text from './Text';
 
 export default {
   title: 'Typography/Text',
   component: Text,
-  argTypes: {
-    bold: {
-      name: 'bold',
-      table: {
-        type: { summary: 'boolean', detail: 'Bold the text' },
-        defaultValue: { summary: false },
-      },
-      control: {
-        type: null,
-      },
-    },
-    scale: {
-      name: 'scale',
-      table: {
-        type: { summary: 'string', detail: 'Fontsize in px or em' },
-        defaultValue: { summary: 'base' },
-      },
-      control: {
-        type: null,
-      },
-    },
-    color: {
-      name: 'color',
-      table: {
-        type: { summary: 'string', detail: 'textColor from the theme(twinConfig), or CSS color' },
-        defaultValue: { summary: 'colors.black' },
-      },
-      control: {
-        type: null,
-      },
-    },
-  },
+  argTypes: {},
 };
 
 export const Default = () => {
   return (
-    <Box background={theme`colors.primary`}>
+    <Box>
+      <Text>Default</Text>
       <Text scale="9xl">(9xl) In Text</Text>
       <Text scale="8xl">(8xl) In Text</Text>
       <Text scale="7xl">(7xl) In Text</Text>
@@ -53,6 +21,7 @@ export const Default = () => {
       <Text scale="2xl">(2xl) In Text</Text>
       <Text scale="xl">(xl) In Text</Text>
       <Text scale="lg">(lg) In Text</Text>
+      <Text scale="sm">(sm) In Text</Text>
       <Text scale="xs">(xs) In Text</Text>
       <Text scale="base">(base) In Text</Text>
     </Box>
@@ -61,7 +30,7 @@ export const Default = () => {
 
 export const Ellipsis = () => {
   return (
-    <Box background={theme`colors.primary`}>
+    <Box>
       <Text color="sky.50" bold ellipsis>
         Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing
         layouts and visual mockups.
@@ -108,8 +77,8 @@ export const Ellipsis = () => {
 
 export const Transform = () => {
   return (
-    <Box background={theme`colors.primary`}>
-      <Text color={theme`colors.violet.500`} textTransform="uppercase">
+    <Box background="primary">
+      <Text color="violet.500" textTransform="uppercase">
         (uppercase) In Text
       </Text>
       <Text textTransform="lowercase">(lowercase) In Text</Text>

@@ -1,4 +1,4 @@
-import { SpaceProps } from 'styled-system';
+import { LayoutProps, SpaceProps } from 'styled-system';
 
 export const SCALE = {
   MD: 'md',
@@ -7,6 +7,6 @@ export const SCALE = {
 
 export type Scale = typeof SCALE[keyof typeof SCALE];
 
-export interface RadioProps extends SpaceProps {
+export interface RadioProps extends LayoutProps, SpaceProps {
   scale?: Scale;
 }

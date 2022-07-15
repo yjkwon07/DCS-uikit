@@ -6,4 +6,5 @@ export type {
   AutoSelectOptionProps,
   AutoSelectOptionsProps,
   AutoSelectProps,
+  BaseAutoSelectProps,
 } from './@types';

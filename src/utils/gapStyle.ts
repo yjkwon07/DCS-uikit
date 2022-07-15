@@ -1,27 +1,10 @@
 import { css } from 'twin.macro';
 
-const gapStyle = ({
-  gap,
-  rowGap,
-  columnGap,
-}: {
-  gap?: string | number;
-  rowGap?: string | number;
-  columnGap?: string | number;
-}) => {
+const gapStyle = ({ gap, rowGap, columnGap }: GapProps) => {
   return css`
-    ${gap &&
-    css`
-      gap: ${typeof gap === 'string' ? gap : `${gap}px`};
-    `}
-    ${rowGap &&
-    css`
-      row-gap: ${typeof rowGap === 'string' ? rowGap : `${rowGap}px`};
-    `}
-    ${columnGap &&
-    css`
-      column-gap: ${typeof columnGap === 'string' ? columnGap : `${columnGap}px`};
-    `}
+    gap: ${gap && (typeof gap === 'string' ? gap : `${gap}px`)};
+    row-gap: ${rowGap && (typeof rowGap === 'string' ? rowGap : `${rowGap}px`)};
+    column-gap: ${columnGap && (typeof columnGap === 'string' ? columnGap : `${columnGap}px`)};
   `;
 };
 

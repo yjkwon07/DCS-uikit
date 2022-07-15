@@ -1,21 +1,22 @@
-import { CSSProperties, ElementType, ReactNode } from 'react';
+import { ChangeEvent, CSSProperties, ElementType, JSXElementConstructor, ReactElement, ReactNode } from 'react';
 
 import { Combobox as HAutoSelect } from '@headlessui/react';
 import { LayoutProps, SpaceProps } from 'styled-system';
 
 import { PolymorphicComponentProps, ExtractProps } from '../../../typings';
 
+export interface BaseAutoSelectProps<T = unknown> extends LayoutProps, SpaceProps {
+  as?: ElementType;
+  className?: string;
+  style?: CSSProperties;
+  value: T;
+  onChange(value: T): void;
+  disabled?: boolean;
+}
+
 export type AutoSelectProps<E extends ElementType = 'div', T = unknown> = PolymorphicComponentProps<
   E,
-  LayoutProps &
-    SpaceProps & {
-      as?: ElementType;
-      className?: string;
-      style?: CSSProperties;
-      value: T;
-      onChange(value: T): void;
-      disabled?: boolean | undefined;
-    }
+  BaseAutoSelectProps<T>
 >;
 
 export type AutoSelectInputGroupProps = {
@@ -24,7 +25,7 @@ export type AutoSelectInputGroupProps = {
 
 export type AutoSelectInputProps<T = unknown> = {
   displayValue?(item: T): string;
-  onChange(event: React.ChangeEvent<HTMLInputElement>): void;
+  onChange(event: ChangeEvent<HTMLInputElement>): void;
 };
 
 export type AutoSelectButtonProps<E extends ElementType = 'button'> = PolymorphicComponentProps<
@@ -37,9 +38,6 @@ export type AutoSelectOptionsProps<E extends ElementType = 'ul'> = PolymorphicCo
   {
     as?: ElementType;
     className?: string;
-    style?: CSSProperties;
-    static?: boolean;
-    unmount?: undefined;
     children?: ReactNode;
     afterLeave?: () => void;
     isNotFound?: boolean;
@@ -47,13 +45,13 @@ export type AutoSelectOptionsProps<E extends ElementType = 'ul'> = PolymorphicCo
   }
 >;
 
-export type AutoSelectOptionProps = ExtractProps<typeof HAutoSelect.Option> & {
+export type AutoSelectOptionProps<T = unknown> = {
   name: string;
+  value: T;
   className?: string;
-  style?: CSSProperties;
   children?: (option: {
     selected: boolean;
     active: boolean;
     disabled: boolean;
-  }) => React.ReactElement<any, string | React.JSXElementConstructor<any>>;
+  }) => ReactElement<any, string | JSXElementConstructor<any>> | null;
 };

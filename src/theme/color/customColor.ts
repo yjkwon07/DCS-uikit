@@ -28,12 +28,6 @@ const button = {
   primary: '#485861',
   tertiary: '#EFF4F5',
   disabled: '#E9EAEB',
-  icon: {
-    primary: '#ffff',
-    secondary: '#485861',
-    tertiary: '#ffff',
-    text: '#ffff',
-  },
   text: {
     primary: theme`colors.sky.100`,
     secondary: '#485861',
@@ -90,6 +84,10 @@ const radio = {
 const radioGroup = {
   primary: '#485861', // select background
   secondary: '#EFF4F5', // none-select background
+  disabled: '#E9EAEB',
+  icon: {
+    disabled: '#BDC2C4',
+  },
   text: {
     label: {
       primary: theme`colors.sky.100`, // select color
@@ -99,12 +97,14 @@ const radioGroup = {
       primary: '#ffff', // select color
       secondary: '#485861', // none-select color
     },
+    disabled: '#BDC2C4',
   },
 };
 
 const select = {
   primary: '#485861', // button
   secondary: '#EFF4F5', // option background
+  disabled: '#E9EAEB',
   icon: '#ffff', // select button icon
   active: '#485861', // hover
   selected: '#485861',
@@ -113,6 +113,7 @@ const select = {
     secondary: '#485861', // none-select color
     active: theme`colors.sky.100`,
     selected: theme`colors.sky.100`,
+    disabled: '#BDC2C4',
   },
 };
 
@@ -136,6 +137,7 @@ const toggle = {
       start: '#485861',
       end: '#485861',
     },
+    disabled: '#BDC2C4',
   },
 };
 
@@ -151,8 +153,12 @@ const tab = {
 const tag = {
   primary: '#485861',
   secondary: '#394952',
+  disabled: '#E9EAEB',
   success: '#96b0ff',
   warning: '#ff97cc',
+  text: {
+    disabled: '#BDC2C4',
+  },
 };
 
 export const base = {
@@ -177,10 +183,6 @@ export const base = {
   '--colors-button-primary': button.primary,
   '--colors-button-tertiary': button.tertiary,
   '--colors-button-disabled': button.disabled,
-  '--colors-button-icon-primary': button.icon.primary,
-  '--colors-button-icon-secondary': button.icon.secondary,
-  '--colors-button-icon-tertiary': button.icon.tertiary,
-  '--colors-button-icon-text': button.icon.text,
   '--text-colors-button-primary': button.text.primary,
   '--text-colors-button-secondary': button.text.secondary,
   '--text-colors-button-tertiary': button.text.tertiary,
@@ -215,13 +217,17 @@ export const base = {
 
   '--colors-radioGroup-primary': radioGroup.primary,
   '--colors-radioGroup-secondary': radioGroup.secondary,
+  '--colors-radioGroup-disabled': radioGroup.disabled,
+  '--colors-radioGroup-icon-disabled': radioGroup.icon.disabled,
   '--text-colors-radioGroup-label-primary': radioGroup.text.label.primary,
   '--text-colors-radioGroup-label-secondary': radioGroup.text.label.secondary,
   '--text-colors-radioGroup-description-primary': radioGroup.text.description.primary,
   '--text-colors-radioGroup-description-secondary': radioGroup.text.description.secondary,
+  '--text-colors-radioGroup-disabled': radioGroup.text.disabled,
 
   '--colors-select-primary': select.primary,
   '--colors-select-secondary': select.secondary,
+  '--colors-select-disabled': select.disabled,
   '--colors-select-icon': select.icon,
   '--colors-select-active': select.active,
   '--colors-select-selected': select.selected,
@@ -229,6 +235,7 @@ export const base = {
   '--text-colors-select-secondary': select.text.secondary,
   '--text-colors-select-active': select.text.active,
   '--text-colors-select-selected': select.text.selected,
+  '--text-colors-select-disabled': select.text.disabled,
 
   '--colors-svg-primary': svg.primary,
 
@@ -240,6 +247,7 @@ export const base = {
   '--colors-toggle-icon-primary-end': toggle.icon.primary.end,
   '--colors-toggle-icon-secondary-start': toggle.icon.secondary.start,
   '--colors-toggle-icon-secondary-end': toggle.icon.secondary.end,
+  '--colors-toggle-icon-disabled': toggle.icon.disabled,
 
   '--colors-tab-primary': tab.primary,
   '--colors-tab-secondary': tab.secondary,
@@ -248,8 +256,10 @@ export const base = {
 
   '--colors-tag-primary': tag.primary,
   '--colors-tag-secondary': tag.secondary,
+  '--colors-tag-disabled': tag.disabled,
   '--colors-tag-success': tag.success,
   '--colors-tag-warning': tag.warning,
+  '--text-colors-tag-disabled': tag.text.disabled,
 };
 
 export const dark = {};

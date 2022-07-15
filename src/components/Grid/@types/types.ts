@@ -1,11 +1,10 @@
+import { ElementType } from 'react';
+
 import { GridProps as _GridProps } from 'styled-system';
 
-import { FlexProps } from '../../Flex';
+import { PolymorphicComponentProps } from '../../../typings';
+import { BaseFlexProps } from '../../Flex';
 
-export interface GapProps {
-  gap?: string | number;
-  rowGap?: string | number;
-  columnGap?: string | number;
-}
+export interface BaseGridProps extends BaseFlexProps, _GridProps {}
 
-export interface GridProps extends FlexProps, _GridProps, GapProps {}
+export type GridProps<E extends ElementType = 'div'> = PolymorphicComponentProps<E, BaseGridProps>;

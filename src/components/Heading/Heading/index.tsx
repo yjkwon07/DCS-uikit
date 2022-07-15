@@ -3,8 +3,8 @@ import { StyledHeading as Heading } from './styles';
 
 Heading.defaultProps = {
   as: TAG.H1,
+  background: 'primary',
   color: 'primary',
-  ellipsis: false,
   bold: true,
 };
 
