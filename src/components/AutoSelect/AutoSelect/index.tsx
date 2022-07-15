@@ -89,7 +89,7 @@ const Button = <E extends ElementType = 'button'>(props: AutoSelectButtonProps<E
 };
 
 const NotFound = ({ text }: { text: string }) => {
-  return <div tw="select-none py-2 px-4 text-select-secondary">{text}</div>;
+  return <div css={[tw`select-none py-2 px-4 text-select-secondary`]}>{text}</div>;
 };
 
 const Options = <E extends ElementType = 'ul'>({
@@ -107,7 +107,7 @@ const Options = <E extends ElementType = 'ul'>({
       leaveTo={tw`opacity-0`}
       afterLeave={afterLeave}
     >
-      <div tw="relative mt-1 z-select-options">
+      <div css={[tw`relative mt-1 z-select-options`]}>
         <HAutoSelect.Options
           css={[
             tw`absolute w-full py-1 mt-1 max-h-60`,
@@ -139,7 +139,7 @@ const Option = ({ name, ...props }: AutoSelectOptionProps) => {
           ]}
         >
           {props.selected && (
-            <span tw="absolute inset-y-0 left-0 flex items-center pl-3">
+            <span css={[tw`absolute inset-y-0 left-0 flex items-center pl-3`]}>
               <CheckmarkCircleFillIcon width="1.25rem" height="1.25rem" aria-hidden="true" />
             </span>
           )}
