@@ -1,7 +1,9 @@
 import { keyframes } from '@emotion/react';
+import { get } from 'lodash-es';
 import { space } from 'styled-system';
-import { styled, css, theme } from 'twin.macro';
+import { styled, css } from 'twin.macro';
 
+import { colors } from '../../../theme';
 import { SvgProps } from '../@types';
 
 const rotate = keyframes`
@@ -19,7 +21,7 @@ const spinStyle = css`
 
 export const StyledSvg = styled.svg<SvgProps>`
   align-self: center; // Safari fix
-  fill: ${({ fill = theme`colors.svg.primary` }) => fill};
+  fill: ${({ fill }) => (fill && get(colors, fill)) || fill};
   flex-shrink: 0;
   ${({ spin }) => spin && spinStyle}
 

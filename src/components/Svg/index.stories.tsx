@@ -5,7 +5,7 @@ import IconComponent from './IconComponent';
 import Svg from './Svg';
 
 export default {
-  title: 'Components/Svg Icons',
+  title: 'Icons/Svg',
   component: Svg,
   argTypes: {},
 };

@@ -2,6 +2,8 @@ export { default as ArchiveActiveIcon } from './ArchiveActive';
 export { default as ArchiveInactiveIcon } from './ArchiveInactive';
 export { default as AutoRenewIcon } from './AutoRenew';
 export { default as CheckIcon } from './Check';
+export { default as CheckmarkCircleIcon } from './CheckmarkCircle';
+export { default as CheckmarkCircleFillIcon } from './CheckmarkCircleFill';
 export { default as ChevronDownIcon } from './ChevronDown';
 export { default as ChevronLeftIcon } from './ChevronLeft';
 export { default as ChevronRightIcon } from './ChevronRight';

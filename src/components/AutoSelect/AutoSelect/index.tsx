@@ -5,7 +5,7 @@ import { space, layout } from 'styled-system';
 import tw, { css, styled, theme } from 'twin.macro';
 
 import shouldForwardProp from '../../../utils/shouldForwardProp';
-import { CheckIcon, SelectorIcon } from '../../Svg';
+import { CheckmarkCircleFillIcon, SelectorIcon } from '../../Svg';
 import { Transition } from '../../Transition';
 import {
   AutoSelectProps,
@@ -140,7 +140,7 @@ const Option = ({ name, ...props }: AutoSelectOptionProps) => {
         >
           {props.selected && (
             <span tw="absolute inset-y-0 left-0 flex items-center pl-3">
-              <CheckIcon width="1.25rem" height="1.25rem" aria-hidden="true" />
+              <CheckmarkCircleFillIcon width="1.25rem" height="1.25rem" aria-hidden="true" />
             </span>
           )}
           <span css={[tw`block truncate`]}>{name}</span>
