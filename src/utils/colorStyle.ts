@@ -1,18 +1,12 @@
-import { get } from 'lodash-es';
 import { css } from 'twin.macro';
 
 import { colors, textColor } from '../theme';
+import getThemeStyle from './getThemeStyle';
 
 const colorStyle = ({ background, color }: StyledColorProps) => {
   return css`
-    background: ${background &&
-    (get(colors, background.replace(' !important', ''))
-      ? get(colors, background.replace(' !important', '')) + (background.includes('!important') ? ' !important' : '')
-      : background)};
-    color: ${color &&
-    (get(textColor, color.replace(' !important', ''))
-      ? get(textColor, color.replace(' !important', '')) + (color.includes('!important') ? ' !important' : '')
-      : color)};
+    background: ${background && getThemeStyle(colors, background)};
+    color: ${color && getThemeStyle(textColor, color)};
   `;
 };
 
