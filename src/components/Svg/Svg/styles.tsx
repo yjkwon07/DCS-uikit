@@ -4,6 +4,7 @@ import { space } from 'styled-system';
 import { styled, css } from 'twin.macro';
 
 import { colors } from '../../../theme';
+import getThemeStyle from '../../../utils/getThemeStyle';
 import { SvgProps } from '../@types';
 
 const rotate = keyframes`
@@ -21,11 +22,7 @@ const spinStyle = css`
 
 export const StyledSvg = styled.svg<SvgProps>`
   align-self: center; // Safari fix
-  fill: ${({ fill }) =>
-    fill &&
-    (get(colors, fill.replace(' !important', ''))
-      ? get(colors, fill.replace(' !important', '')) + (fill.includes('!important') ? ' !important' : '')
-      : fill)};
+  fill: ${({ fill }) => fill && getThemeStyle(colors, fill)};
   flex-shrink: 0;
   ${({ spin }) => spin && spinStyle}
 

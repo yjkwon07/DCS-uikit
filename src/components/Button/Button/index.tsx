@@ -1,13 +1,9 @@
 import { cloneElement, ElementType, isValidElement } from 'react';
 
+import cx from '../../../utils/cx';
 import externalLinkProps from '../../../utils/externalLinkProps';
 import { ButtonProps, SCALE, VARIANT } from '../@types';
 import { buttonClassName, StyledButton } from './styles';
-
-/**
- * Component Generic
- * @see https://ui.toast.com/weekly-pick/ko_20210505
- */
 
 const Button = <E extends ElementType = 'button'>({
   startIcon,
@@ -21,16 +17,11 @@ const Button = <E extends ElementType = 'button'>({
 }: ButtonProps<E>) => {
   const internalProps = external ? externalLinkProps() : {};
 
-  const classNameList = className ? [className] : [];
   const isDisabled = isLoading || disabled;
-
-  if (isDisabled) {
-    classNameList.push(buttonClassName.disable);
-  }
 
   return (
     <StyledButton
-      className={classNameList.join(' ')}
+      className={cx(className, isDisabled && buttonClassName.disable)}
       isLoading={isLoading}
       disabled={isDisabled}
       {...internalProps}
