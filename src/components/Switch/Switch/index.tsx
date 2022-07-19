@@ -8,7 +8,7 @@ import shouldForwardProp from '../../../utils/shouldForwardProp';
 import { SCALE, SwitchProps } from '../@types';
 import { activeRingStyle, disabledStyle, sizeVariant, switchClassName } from './styles';
 
-const StyledSwitch = styled(HSwitch, { shouldForwardProp })`
+const StyledSwitch = styled(HSwitch as any, { shouldForwardProp })`
   ${layout}
   ${space}
 `;
