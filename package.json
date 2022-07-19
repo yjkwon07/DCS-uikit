@@ -1,6 +1,6 @@
 {
   "name": "dcs-uikit",
-  "version": "0.6.0",
+  "version": "0.7.0",
   "description": "",
   "main": "dist/components.cjs.js",
   "module": "dist/components.esm.js",
