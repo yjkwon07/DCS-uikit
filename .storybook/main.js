@@ -9,6 +9,7 @@ module.exports = {
   core: {
     builder: 'webpack5',
   },
+  typescript: { reactDocgen: false },
   babel: async (options) => {
     const pluginsPackageNameList = babelOptionFlatName(babel.plugins);
     const presetsPackageNameList = babelOptionFlatName(babel.presets);
