@@ -11,5 +11,11 @@ module.exports = {
     ],
     '@emotion/babel-preset-css-prop',
   ],
-  plugins: ['@babel/transform-runtime', '@emotion/babel-plugin', 'twin', 'macros', 'lodash'],
+  plugins: [
+    '@babel/transform-runtime',
+    '@emotion/babel-plugin',
+    'babel-plugin-lodash',
+    'babel-plugin-twin',
+    'babel-plugin-macros',
+  ],
 };

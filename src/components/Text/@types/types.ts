@@ -3,7 +3,7 @@ import { ElementType } from 'react';
 import { LayoutProps, SpaceProps, TypographyProps } from 'styled-system';
 
 import { fontScale } from '../../../theme';
-import { PolymorphicComponentProps } from '../../../typings';
+import { PolymorphicComponentProps, StyledColorProps } from '../../../typings';
 
 export interface BaseTextProps extends LayoutProps, SpaceProps, TypographyProps, StyledColorProps {
   scale?: keyof typeof fontScale;

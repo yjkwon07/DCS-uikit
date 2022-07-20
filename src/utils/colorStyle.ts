@@ -1,6 +1,7 @@
 import { css } from 'twin.macro';
 
 import { colors, textColor } from '../theme';
+import { StyledColorProps } from '../typings';
 import getThemeStyle from './getThemeStyle';
 
 const colorStyle = ({ background, color }: StyledColorProps) => {
