@@ -1,6 +1,6 @@
 import { ElementType } from 'react';
 
-import { PolymorphicComponentProps } from '../../../typings';
+import { GapProps, PolymorphicComponentProps } from '../../../typings';
 import { BaseBoxProps } from '../../Box';
 
 export interface BaseFlexProps extends BaseBoxProps, GapProps {}

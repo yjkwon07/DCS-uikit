@@ -1,7 +1,7 @@
 import { Tab as HTab } from '@headlessui/react';
 import { LayoutProps, SpaceProps } from 'styled-system';
 
-import { ExtractProps } from '../../../typings';
+import { ExtractProps, StyledColorProps } from '../../../typings';
 
 export type TabProps = ExtractProps<typeof HTab> & LayoutProps & SpaceProps;
 

@@ -1,5 +1,7 @@
 import { css } from 'twin.macro';
 
+import { GapProps } from '../typings';
+
 const gapStyle = ({ gap, rowGap, columnGap }: GapProps) => {
   return css`
     gap: ${gap && (typeof gap === 'string' ? gap : `${gap}px`)};
